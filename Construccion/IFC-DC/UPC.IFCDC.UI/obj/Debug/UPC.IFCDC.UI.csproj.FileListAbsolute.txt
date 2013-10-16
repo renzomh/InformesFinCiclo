@@ -1,0 +1,13 @@
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.UI.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.UI.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.BC.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.BE.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.Utilitarios.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\Newtonsoft.Json.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.BC.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.BE.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\UPC.IFCDC.Utilitarios.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\obj\Debug\UPC.IFCDC.UI.csprojResolveAssemblyReference.cache
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\obj\Debug\UPC.IFCDC.UI.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\obj\Debug\UPC.IFCDC.UI.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.UI\bin\itextsharp.dll

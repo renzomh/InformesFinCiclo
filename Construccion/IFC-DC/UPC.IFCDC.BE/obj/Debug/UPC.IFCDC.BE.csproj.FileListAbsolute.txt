@@ -1,0 +1,5 @@
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.BE\bin\Debug\UPC.IFCDC.BE.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.BE\bin\Debug\UPC.IFCDC.BE.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.csprojResolveAssemblyReference.cache

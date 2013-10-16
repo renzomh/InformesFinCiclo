@@ -1,0 +1,5 @@
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\bin\Debug\UPC.SSIA2013.SI.DataContracts.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\bin\Debug\UPC.SSIA2013.SI.DataContracts.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\obj\Debug\UPC.SSIA2013.SI.DataContracts.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\obj\Debug\UPC.SSIA2013.SI.DataContracts.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\obj\Debug\UPC.SSIA2013.SI.DataContracts.csprojResolveAssemblyReference.cache

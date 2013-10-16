@@ -1,0 +1,11 @@
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\UPC.IFCDC.Utilitarios.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\UPC.IFCDC.Utilitarios.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\UPC.IFCDC.Utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\UPC.IFCDC.Utilitarios.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\UPC.IFCDC.Utilitarios.pdb
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\itextsharp.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\itextsharp.xtra.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\UPC.IFCDC.BE.dll
+C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\UPC.IFCDC.BE.pdb
