@@ -11,14 +11,14 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class PersonaDALC
     {
-        public up_IFCDC_Obtener_PersonaResult obtenerPersona(String personaId)
+        public up_Obtener_PersonaResult obtenerPersona(String personaId)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                up_IFCDC_Obtener_PersonaResult persona = dataContext.up_IFCDC_Obtener_Persona(personaId).SingleOrDefault();
+                up_Obtener_PersonaResult persona = dataContext.up_Obtener_Persona(personaId).SingleOrDefault();
 
                 return persona;
             }

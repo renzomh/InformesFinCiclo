@@ -10,14 +10,14 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class ResultadoProgramaDALC
     {
-        public List<up_IFCDC_Listar_ResultadoPrograma_x_CursoResult> listarResultadoProgramaxCurso(int cursoId)
+        public List<up_Listar_ResultadoPrograma_x_CursoResult> listarResultadoProgramaxCurso(int cursoId, int periodoId)
         {
             SSIA2013DataContext dataContext = null;
             
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<up_IFCDC_Listar_ResultadoPrograma_x_CursoResult> lstResultadoProgramas = dataContext.up_IFCDC_Listar_ResultadoPrograma_x_Curso(cursoId).ToList();
+                List<up_Listar_ResultadoPrograma_x_CursoResult> lstResultadoProgramas = dataContext.up_Listar_ResultadoPrograma_x_Curso(cursoId, periodoId).ToList();
                 
                 return lstResultadoProgramas;
             }

@@ -10,14 +10,14 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class CursoDALC
     {
-        public List<up_IFCDC_Listar_CursosResult> listarCursos()
+        public List<up_Listar_CursosResult> listarCursos()
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<up_IFCDC_Listar_CursosResult> lstCursos = dataContext.up_IFCDC_Listar_Cursos().ToList();
+                List<up_Listar_CursosResult> lstCursos = dataContext.up_Listar_Cursos().ToList();
 
                 return lstCursos;
             }
@@ -36,14 +36,14 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public List<up_IFCDC_Listar_Cursos_x_ProfesorResult> listarCursosxProfesor(string profesorId)
+        public List<up_Listar_Cursos_x_ProfesorResult> listarCursosxProfesor(string profesorId)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<up_IFCDC_Listar_Cursos_x_ProfesorResult> lstCursosxProfesor = dataContext.up_IFCDC_Listar_Cursos_x_Profesor(profesorId).ToList();
+                List<up_Listar_Cursos_x_ProfesorResult> lstCursosxProfesor = dataContext.up_Listar_Cursos_x_Profesor(profesorId).ToList();
 
                 return lstCursosxProfesor;
             }

@@ -1,0 +1,4 @@
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\bin\Release\UPC.SSIA2013.SI.DataContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\bin\Release\UPC.SSIA2013.SI.DataContracts.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\obj\Release\UPC.SSIA2013.SI.DataContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.DataContracts\obj\Release\UPC.SSIA2013.SI.DataContracts.pdb

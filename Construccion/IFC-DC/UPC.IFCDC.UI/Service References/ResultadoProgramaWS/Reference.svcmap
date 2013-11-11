@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1a5327f8-fdf1-49c3-a08b-025e4f24651e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4526/ResultadoProgramaWS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResultadoPrograma.wsdl" MetadataType="Wsdl" ID="a7108e45-1eb8-419e-803f-b090e6831a49" SourceId="1" SourceUrl="http://localhost:4526/ResultadoProgramaWS.svc?wsdl" />
+    <MetadataFile FileName="ResultadoProgramaWS.xsd" MetadataType="Schema" ID="67f9b2db-4401-4887-97df-b099740eb1ef" SourceId="1" SourceUrl="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResultadoProgramaWS1.xsd" MetadataType="Schema" ID="f215e017-3ea7-4ba0-9c86-a722acff9ec5" SourceId="1" SourceUrl="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResultadoProgramaWS.disco" MetadataType="Disco" ID="0eff24ee-8d72-4803-aba0-cebd2772977d" SourceId="1" SourceUrl="http://localhost:4526/ResultadoProgramaWS.svc?disco" />
+    <MetadataFile FileName="ResultadoProgramaWS2.xsd" MetadataType="Schema" ID="ab3c9b15-b864-4066-b5fb-6f94554b1504" SourceId="1" SourceUrl="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

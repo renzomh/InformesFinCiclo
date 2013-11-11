@@ -1,0 +1,17 @@
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\SSIA20131.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\SSIA20131.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\obj\Debug\SSIA20131.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\obj\Debug\SSIA20131.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.SI.ServiceImplementation.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.SI.ServiceContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.SI.DataContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.DL.DataModel.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.BL.BC.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.DL.DALC.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.SI.ServiceImplementation.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.SI.ServiceContracts.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.SI.DataContracts.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.DL.DataModel.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.BL.BC.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\bin\UPC.SSIA2013.DL.DALC.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\SSIA20131\obj\Debug\SSIA20131.csprojResolveAssemblyReference.cache

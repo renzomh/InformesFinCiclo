@@ -9,7 +9,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class AccionMejoraBC
     {
-        public List<up_IFCDC_Registrar_AccionMejoraResult> registrarAccionMejora(int hallazgoId, int informeFinCicloId, int cicloEjecucionId, String descripcion)
+        public List<up_Registrar_AccionMejoraResult> registrarAccionMejora(int hallazgoId, int informeFinCicloId, int cicloEjecucionId, String descripcion)
         {
             AccionMejoraDALC objAccionMejoraDALC;
             
@@ -24,7 +24,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult> listarAccionesMejoraxInformeFinCiclo(int informeFinCicloId)
+        public List<up_Listar_AccionMejora_x_InformeFinCicloResult> listarAccionesMejoraxInformeFinCiclo(int informeFinCicloId)
         {
             AccionMejoraDALC objAccionesMejoraDALC;
 
@@ -39,7 +39,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Listar_AccionMejora_PreviasResult> listarAccionesMejoraPrevias(int cursoId, int periodoId)
+        public List<up_Listar_AccionMejora_PreviasResult> listarAccionesMejoraPrevias(int cursoId, int periodoId)
         {
             AccionMejoraDALC objAccionesMejoraDALC;
 
@@ -54,7 +54,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Editar_AccionMejoraResult> editarAccionMejora(int accionMejoraId, int informeFinCicloId, int cicloEjecucionId, String descripcion)
+        public List<up_Editar_AccionMejoraResult> editarAccionMejora(int accionMejoraId, int informeFinCicloId, int cicloEjecucionId, String descripcion)
         {
             AccionMejoraDALC objAccionMejoraDALC;
 
@@ -69,7 +69,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Editar_AccionMejora_PreviaResult> editarAccionMejoraPrevia(int cursoId, int periodoId, int accionMejoraId, String estado)
+        public List<up_Editar_AccionMejora_PreviaResult> editarAccionMejoraPrevia(int cursoId, int periodoId, int accionMejoraId, String estado)
         {
             AccionMejoraDALC objAccionMejoraDALC;
 
@@ -84,7 +84,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Eliminar_AccionMejoraResult> eliminarAccionMejora(int accionMejoraId, int informeFinCicloId)
+        public List<up_Eliminar_AccionMejoraResult> eliminarAccionMejora(int accionMejoraId, int informeFinCicloId)
         {
             AccionMejoraDALC objAccionMejoraDALC;
 
@@ -99,7 +99,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Listar_Reporte_AccionMejoraResult> listarReporteAccionMejora(int cursoId, int periodoId, String estado)
+        public List<up_Listar_Reporte_AccionMejoraResult> listarReporteAccionMejora(int cursoId, int periodoId, String estado)
         {
             AccionMejoraDALC objAccionMejoraDALC;
 

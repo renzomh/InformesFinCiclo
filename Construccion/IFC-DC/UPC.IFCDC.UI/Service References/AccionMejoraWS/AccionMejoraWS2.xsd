@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" />
+  <xs:element name="WSRegistrarAccionMejora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hallazgoId" type="xs:int" />
+        <xs:element minOccurs="0" name="informeFinCicloId" type="xs:int" />
+        <xs:element minOccurs="0" name="periodoEjecucionId" type="xs:int" />
+        <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSRegistrarAccionMejoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSRegistrarAccionMejoraResult" nillable="true" type="q1:AccionMejoraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarAccionesMejoraxInformeFinCiclo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="informeFinCicloId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarAccionesMejoraxInformeFinCicloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSListarAccionesMejoraxInformeFinCicloResult" nillable="true" type="q2:AccionMejoraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarAccionesMejoraPrevias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cursoId" type="xs:int" />
+        <xs:element minOccurs="0" name="periodoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarAccionesMejoraPreviasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSListarAccionesMejoraPreviasResult" nillable="true" type="q3:AccionMejoraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSEditarAccionMejora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accionMejoraId" type="xs:int" />
+        <xs:element minOccurs="0" name="informeFinCicloId" type="xs:int" />
+        <xs:element minOccurs="0" name="periodoEjecucionId" type="xs:int" />
+        <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSEditarAccionMejoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSEditarAccionMejoraResult" nillable="true" type="q4:AccionMejoraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSEditarAccionMejoraPrevia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cursoId" type="xs:int" />
+        <xs:element minOccurs="0" name="periodoId" type="xs:int" />
+        <xs:element minOccurs="0" name="accionMejoraId" type="xs:int" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSEditarAccionMejoraPreviaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSEditarAccionMejoraPreviaResult" nillable="true" type="q5:AccionMejoraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSEliminarAccionMejora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accionMejoraId" type="xs:int" />
+        <xs:element minOccurs="0" name="informeFinCicloId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSEliminarAccionMejoraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSEliminarAccionMejoraResult" nillable="true" type="q6:AccionMejoraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarAccionMejoraReporte">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cursoId" type="xs:int" />
+        <xs:element minOccurs="0" name="periodoId" type="xs:int" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarAccionMejoraReporteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSListarAccionMejoraReporteResult" nillable="true" type="q7:AccionMejoraReporteCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

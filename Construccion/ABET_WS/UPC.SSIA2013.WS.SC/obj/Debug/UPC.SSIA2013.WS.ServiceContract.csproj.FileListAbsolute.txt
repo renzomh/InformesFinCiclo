@@ -1,0 +1,56 @@
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.csprojResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.csprojResolveAssemblyReference.cache
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.csprojResolveAssemblyReference.cache
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.csprojResolveAssemblyReference.cache
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.csprojResolveAssemblyReference.cache
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb

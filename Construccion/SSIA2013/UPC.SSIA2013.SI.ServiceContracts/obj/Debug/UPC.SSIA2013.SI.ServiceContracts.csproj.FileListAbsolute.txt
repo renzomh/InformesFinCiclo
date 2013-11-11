@@ -5,3 +5,10 @@ C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.Ser
 C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\obj\Debug\UPC.SSIA2013.SI.ServiceContracts.csprojResolveAssemblyReference.cache
 C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\obj\Debug\UPC.SSIA2013.SI.ServiceContracts.dll
 C:\Users\Renzo\Documents\GitHub\IFC-DC\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\obj\Debug\UPC.SSIA2013.SI.ServiceContracts.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\bin\Debug\UPC.SSIA2013.SI.ServiceContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\bin\Debug\UPC.SSIA2013.SI.ServiceContracts.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\bin\Debug\UPC.SSIA2013.SI.DataContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\bin\Debug\UPC.SSIA2013.SI.DataContracts.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\obj\Debug\UPC.SSIA2013.SI.ServiceContracts.csprojResolveAssemblyReference.cache
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\obj\Debug\UPC.SSIA2013.SI.ServiceContracts.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\obj\Debug\UPC.SSIA2013.SI.ServiceContracts.pdb

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="HallazgoCollectionDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LstHallazgos" nillable="true" type="tns:ArrayOfHallazgoDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HallazgoCollectionDC" nillable="true" type="tns:HallazgoCollectionDC" />
+  <xs:complexType name="ArrayOfHallazgoDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HallazgoDC" nillable="true" type="tns:HallazgoDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHallazgoDC" nillable="true" type="tns:ArrayOfHallazgoDC" />
+  <xs:complexType name="HallazgoDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HallazgoId" type="xs:int" />
+      <xs:element minOccurs="0" name="InformeFinCicloId" type="xs:int" />
+      <xs:element minOccurs="0" name="PeriodoId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HallazgoDC" nillable="true" type="tns:HallazgoDC" />
+  <xs:complexType name="HallazgoReporteCollectionDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LstHallazgoReporte" nillable="true" type="tns:ArrayOfHallazgoReporteDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HallazgoReporteCollectionDC" nillable="true" type="tns:HallazgoReporteCollectionDC" />
+  <xs:complexType name="ArrayOfHallazgoReporteDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HallazgoReporteDC" nillable="true" type="tns:HallazgoReporteDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHallazgoReporteDC" nillable="true" type="tns:ArrayOfHallazgoReporteDC" />
+  <xs:complexType name="HallazgoReporteDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoHallazgo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HallazogId" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCurso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HallazgoReporteDC" nillable="true" type="tns:HallazgoReporteDC" />
+</xs:schema>

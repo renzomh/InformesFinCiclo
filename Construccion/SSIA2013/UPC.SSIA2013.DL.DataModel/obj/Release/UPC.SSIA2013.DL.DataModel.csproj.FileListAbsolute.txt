@@ -1,0 +1,5 @@
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.DL.DataModel\bin\Release\UPC.SSIA2013.DL.DataModel.dll.config
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.DL.DataModel\bin\Release\UPC.SSIA2013.DL.DataModel.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.DL.DataModel\bin\Release\UPC.SSIA2013.DL.DataModel.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.DL.DataModel\obj\Release\UPC.SSIA2013.DL.DataModel.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\SSIA2013\UPC.SSIA2013.DL.DataModel\obj\Release\UPC.SSIA2013.DL.DataModel.pdb

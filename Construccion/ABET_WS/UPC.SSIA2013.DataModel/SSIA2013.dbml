@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SSIA2013" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=SSIA2013;User ID=sa" SettingsObjectName="UPC.SSIA2013.DataModel.Properties.Settings" SettingsPropertyName="SSIA2013ConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="GPPP.uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado" Method="uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado">
+    <Parameter Name="_ALUMNOID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstadoResult">
+      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarreraNombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PPPNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CREDITOSAPROBADOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREDITOSPPPCUMPLIDOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Registrar_AccionMejora" Method="up_Registrar_AccionMejora">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_Registrar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado_SinMatricula" Method="uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado_SinMatricula">
+    <Parameter Name="_ALUMNOID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado_SinMatriculaResult">
+      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CarreraNombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PPPNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CREDITOSAPROBADOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREDITOSPPPCUMPLIDOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspAlumno_ReporteXCarreraXPeriodoXPPPXEstado" Method="uspAlumno_ReporteXCarreraXPeriodoXPPPXEstado">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspAlumno_ReporteXCarreraXPeriodoXPPPXEstadoResult">
+      <Column Name="ALUMNOHABIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENCUESTASREGISTRADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENCUESTASNOREGISTRADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspCarrera_ListarXEscuela" Method="uspCarrera_ListarXEscuela">
+    <Parameter Name="_ESCUELAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspCarrera_ListarXEscuelaResult">
+      <Column Name="ESCUELAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspCompetenciaAbet_ListarPDFXMallaEncuesta" Method="uspCompetenciaAbet_ListarPDFXMallaEncuesta">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspCompetenciaAbet_ListarPDFXMallaEncuestaResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMPETENCIAABETID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspCompetenciaAbet_ListarXCarreraXPeriodo" Method="uspCompetenciaAbet_ListarXCarreraXPeriodo">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspCompetenciaAbet_ListarXCarreraXPeriodoResult">
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMPETENCIAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CODIGO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspCompetenciaAbet_ListarXMallaEncuestaXResultadoPrograma" Method="uspCompetenciaAbet_ListarXMallaEncuestaXResultadoPrograma">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspCompetenciaAbet_ListarXMallaEncuestaXResultadoProgramaResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMPETENCIAABETID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspCompetenciaAbetXEncuesta_Actualizar" Method="uspCompetenciaAbetXEncuesta_Actualizar">
+    <Parameter Name="_ENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_COMPETENCIAABETID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PUNTUACION" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspCompetenciaAbetXEncuesta_Registrar" Method="uspCompetenciaAbetXEncuesta_Registrar">
+    <Parameter Name="_ENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_COMPETENCIAABETID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PUNTUACION" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspCompetenciaAbetXEncuesta_ReporteXMallaEncuesta" Method="uspCompetenciaAbetXEncuesta_ReporteXMallaEncuesta">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspCompetenciaAbetXEncuesta_ReporteXMallaEncuestaResult">
+      <Column Name="OUTCOME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Puntuacion" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Carrera" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PPP" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspEmpresa_ListarXRazonSocialXRuc" Method="uspEmpresa_ListarXRazonSocialXRuc">
+    <Parameter Name="_RAZONSOCIAL" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="_RUC" Type="System.String" DbType="VarChar(11)" />
+    <ElementType Name="uspEmpresa_ListarXRazonSocialXRucResult">
+      <Column Name="RUC" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EMPRESAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspEmpresa_Registrar" Method="uspEmpresa_Registrar">
+    <Parameter Name="_RUC" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="_RAZONSOCIAL" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="_DIRECCION" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspEncuesta_Actualizar" Method="uspEncuesta_Actualizar">
+    <Parameter Name="_ENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_EMPRESAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_JEFEDIRECTOID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="_FECHAINICIO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_FECHAFIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_TOTALHORAS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_COMENTARIO" Type="System.String" DbType="VarChar(5000)" />
+    <Parameter Name="_TIPOREGISTRO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="_FECHAREGISTROJEFE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspEncuesta_Eliminar" Method="uspEncuesta_Eliminar">
+    <Parameter Name="_ENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspEncuesta_ListarCompetencias" Method="uspEncuesta_ListarCompetencias">
+    <Parameter Name="_ENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspEncuesta_ListarCompetenciasResult">
+      <Column Name="CompetenciaAbetId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Puntuacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspEncuesta_ListarXCarreraXPeriodoXPPPXEstadoXTipoRegistro" Method="uspEncuesta_ListarXCarreraXPeriodoXPPPXEstadoXTipoRegistro">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_TIPOREGISTRO" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="uspEncuesta_ListarXCarreraXPeriodoXPPPXEstadoXTipoRegistroResult">
+      <Column Name="ENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERA_NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRACTICAPREPROFESIONAL_NOMBRE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MALLAENCUESTA_NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MALLAENCUESTA_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENCUESTA_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPRESAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JEFEDIRECTOID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ALUMNOID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ALUMNO_NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ALUMNO_APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="TOTALHORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOREGISTRO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRODIGITAL" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspEncuesta_ListarXFechas" Method="uspEncuesta_ListarXFechas">
+    <Parameter Name="_FECHAFIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_FECHAINICIO" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="uspEncuesta_ListarXFechasResult">
+      <Column Name="ENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERA_NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRACTICAPREPROFESIONAL_NOMBRE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MALLAENCUESTA_NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MALLAENCUESTA_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENCUESTA_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPRESAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JEFEDIRECTOID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERSONAID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ALUMNOID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ALUMNO_NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ALUMNO_APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="TOTALHORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOREGISTRO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="JEFEDIRECTO_NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="JEFEDIRECTO_APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRODIGITAL" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspEncuesta_ObetenerXEncuestaId" Method="uspEncuesta_ObetenerXEncuestaId">
+    <Parameter Name="_ENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspEncuesta_ObetenerXEncuestaIdResult">
+      <Column Name="ENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MALLAENCUESTA_NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MALLAENCUESTA_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENCUESTA_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPRESAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JEFEDIRECTOID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PERSONAID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ALUMNOID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ALUMNO_NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ALUMNO_APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="TOTALHORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOREGISTRO" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="JEFEDIRECTO_NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="JEFEDIRECTO_APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Anexo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaRegistroJefe" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JefeDirectoId1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ruc" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="NroDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TELEFONO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspEncuesta_Registrar" Method="uspEncuesta_Registrar">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_EMPRESAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_JEFEDIRECTOID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="_ALUMNOID" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="_FECHAINICIO" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_FECHAFIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_TOTALHORAS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_COMENTARIO" Type="System.String" DbType="VarChar(5000)" />
+    <Parameter Name="_TIPOREGISTRO" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="_FECHAREGISTROJEFE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspJefeDirecto_ListarXNombreXApellidoXDNI" Method="uspJefeDirecto_ListarXNombreXApellidoXDNI">
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="_APELLIDO" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="_DNI" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="uspJefeDirecto_ListarXNombreXApellidoXDNIResult">
+      <Column Name="NOMBRECOMPLETO" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="NRODOCUMENTO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TELEFONO1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ANEXO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JEFEDIRECTOID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspJefeDirecto_Registrar" Method="uspJefeDirecto_Registrar">
+    <Parameter Name="_JEFEDIRECTOID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="_APELLIDOS" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="_NRODOCUMENTO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="_TELEFONO1" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="_CARGO" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="_ANEXO" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspMallaEncuesta_Actualizar" Method="uspMallaEncuesta_Actualizar">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspMallaEncuesta_CambiarEstadoXMallaEncuestaXEstadoXURL" Method="uspMallaEncuesta_CambiarEstadoXMallaEncuestaXEstadoXURL">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO_IMAGEURL" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspMallaEncuesta_ListarCompetencias" Method="uspMallaEncuesta_ListarCompetencias">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspMallaEncuesta_ListarCompetenciasResult">
+      <Column Name="CompetenciaAbetId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspMallaEncuesta_ListarXCarreraXPeriodoXPPPXEstado" Method="uspMallaEncuesta_ListarXCarreraXPeriodoXPPPXEstado">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspMallaEncuesta_ListarXCarreraXPeriodoXPPPXEstadoResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESTADO_IMAGEURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspMallaEncuesta_ObtenerXMallaEncuestaId" Method="uspMallaEncuesta_ObtenerXMallaEncuestaId">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspMallaEncuesta_ObtenerXMallaEncuestaIdResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESTADO_IMAGEURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspMallaEncuesta_Registrar" Method="uspMallaEncuesta_Registrar">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO_IMAGEURL" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspPeriodo_ListarXEstadoXEsActual" Method="uspPeriodo_ListarXEstadoXEsActual">
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESACTUAL" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspPeriodo_ListarXEstadoXEsActualResult">
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ESACTUAL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspPractica_Actualizar" Method="uspPractica_Actualizar">
+    <Parameter Name="_PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_NUMERO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="_NOMBREINFORME" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="_CREDITOSACUMPLIRINICIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CREDITOSACUMPLIRFIN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_MINIMOCREDITOSINICIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_MINIMOCREDITOSFIN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CREDITOSACUMPLIRMAXIMO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspPractica_ListarXPeriodoXCarreraXEstado" Method="uspPractica_ListarXPeriodoXCarreraXEstado">
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ESTADO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspPractica_ListarXPeriodoXCarreraXEstadoResult">
+      <Column Name="PRACTICAPREPROFESIONALID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCarrera" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NUMERO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NOMBREINFORME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CREDITOSACUMPLIRINICIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREDITOSACUMPLIRFIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MINIMOCREDITOSINICIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MINIMOCREDITOSFIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREDITOSACUMPLIRMAXIMO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspPractica_Registrar" Method="uspPractica_Registrar">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_NUMERO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_NOMBRE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="_NOMBREINFORME" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="_CREDITOSACUMPLIRINICIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CREDITOSACUMPLIRFIN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_MINIMOCREDITOSINICIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_MINIMOCREDITOSFIN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CREDITOSACUMPLIRMAXIMO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspResultadoPrograma_ListarXCarreraXPeriodo" Method="uspResultadoPrograma_ListarXCarreraXPeriodo">
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_PERIODOID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspResultadoPrograma_ListarXCarreraXPeriodoResult">
+      <Column Name="RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OUTCOME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspResultadoPrograma_ListarXMallaEncuestaXCarrera" Method="uspResultadoPrograma_ListarXMallaEncuestaXCarrera">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspResultadoPrograma_ListarXMallaEncuestaXCarreraResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OUTCOME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXCompetenciaAbet_ActualizarXMallaEncuesta" Method="uspResultadoProgramaXCompetenciaAbet_ActualizarXMallaEncuesta">
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_COMPETENCIAABETID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ASIGNADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXCompetenciaAbet_CambiarEstados" Method="uspResultadoProgramaXCompetenciaAbet_CambiarEstados">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXCompetenciaAbet_ListarXMallaEncuesta" Method="uspResultadoProgramaXCompetenciaAbet_ListarXMallaEncuesta">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspResultadoProgramaXCompetenciaAbet_ListarXMallaEncuestaResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMPETENCIAABETID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERIODOID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FECHAREGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHAMODIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXCompetenciaAbet_RegistrarXMallaEncuesta" Method="uspResultadoProgramaXCompetenciaAbet_RegistrarXMallaEncuesta">
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_COMPETENCIAABETID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ASIGNADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXMallaEncuesta_ActualizarXMallaEncuesta" Method="uspResultadoProgramaXMallaEncuesta_ActualizarXMallaEncuesta">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ASIGNADO" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXMallaEncuesta_ListarXMallaEncuesta" Method="uspResultadoProgramaXMallaEncuesta_ListarXMallaEncuesta">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="uspResultadoProgramaXMallaEncuesta_ListarXMallaEncuestaResult">
+      <Column Name="MALLAENCUESTAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OUTCOME" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CARRERAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ASIGNADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GPPP.uspResultadoProgramaXMallaEncuesta_RegistrarXMallaEncuesta" Method="uspResultadoProgramaXMallaEncuesta_RegistrarXMallaEncuesta">
+    <Parameter Name="_MALLAENCUESTAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_RESULTADOPROGRAMAID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="_ASIGNADO" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="IFCDC.up_Editar_AccionMejora" Method="up_Editar_AccionMejora">
+    <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_Editar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Editar_AccionMejora_Previa" Method="up_Editar_AccionMejora_Previa">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="up_Editar_AccionMejora_PreviaResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Editar_Hallazgo" Method="up_Editar_Hallazgo">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Editar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Editar_InformeFinCiclo" Method="up_Editar_InformeFinCiclo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DesarrolloUnidades" Parameter="desarrolloUnidades" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Infraestructura" Parameter="infraestructura" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Alumnos" Parameter="alumnos" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Delegados" Parameter="delegados" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Encuesta" Parameter="encuesta" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_Editar_InformeFinCicloResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Eliminar_AccionMejora" Method="up_Eliminar_AccionMejora">
+    <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Eliminar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Eliminar_Hallazgo" Method="up_Eliminar_Hallazgo">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Eliminar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_AccionMejora_Previas" Method="up_Listar_AccionMejora_Previas">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_AccionMejora_PreviasResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_AccionMejora_x_InformeFinCiclo" Method="up_Listar_AccionMejora_x_InformeFinCiclo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_AccionMejora_x_InformeFinCicloResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Cursos" Method="up_Listar_Cursos">
+    <ElementType Name="up_Listar_CursosResult">
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Cursos_x_Profesor" Method="up_Listar_Cursos_x_Profesor">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Listar_Cursos_x_ProfesorResult">
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Hallazgos_x_InformeFinCiclo" Method="up_Listar_Hallazgos_x_InformeFinCiclo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_Hallazgos_x_InformeFinCicloResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Periodos" Method="up_Listar_Periodos">
+    <ElementType Name="up_Listar_PeriodosResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Reporte_AccionMejora" Method="up_Listar_Reporte_AccionMejora">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="up_Listar_Reporte_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoAccionMejora" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Reporte_Hallazgo" Method="up_Listar_Reporte_Hallazgo">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_Reporte_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Reporte_InformeFinCiclo" Method="up_Listar_Reporte_InformeFinCiclo">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="up_Listar_Reporte_InformeFinCicloResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="NombreProfesor" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+      <Column Name="FechaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_ResultadoPrograma_x_Curso" Method="up_Listar_ResultadoPrograma_x_Curso">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_ResultadoPrograma_x_CursoResult">
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outcome" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_InformeFinCiclo" Method="up_Obtener_InformeFinCiclo">
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_InformeFinCicloResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_InformeFinCiclo_x_Id" Method="up_Obtener_InformeFinCiclo_x_Id">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_InformeFinCiclo_x_IdResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_Logro_x_Curso" Method="up_Obtener_Logro_x_Curso">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Logro_x_CursoResult">
+      <Column Name="LogroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_PeriodoActual" Method="up_Obtener_PeriodoActual">
+    <ElementType Name="up_Obtener_PeriodoActualResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Registrar_Hallazgo" Method="up_Registrar_Hallazgo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Registrar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_Persona" Method="up_Obtener_Persona">
+    <Parameter Name="PersonaId" Parameter="personaId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Obtener_PersonaResult">
+      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="TipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -9,7 +9,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class LogroBC
     {
-        public up_IFCDC_Obtener_Logro_x_CursoResult obtenerLogroxCurso(int? cursoId)
+        public up_Obtener_Logro_x_CursoResult obtenerLogroxCurso(int? cursoId)
         {
             LogroDALC objLogroDALC;
 

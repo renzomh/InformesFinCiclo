@@ -96,5 +96,15 @@ namespace UPC.SSIA2013.DL.DataModel.Properties {
                 return ((string)(this["IFCDC_SSIA2013ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=SSIA2012-1;User ID=sa")]
+        public string SSIA2012_1ConnectionString3 {
+            get {
+                return ((string)(this["SSIA2012_1ConnectionString3"]));
+            }
+        }
     }
 }

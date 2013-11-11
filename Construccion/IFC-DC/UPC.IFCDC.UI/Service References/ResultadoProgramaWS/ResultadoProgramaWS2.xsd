@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" />
+  <xs:element name="WSListarResultadoProgramaxCurso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cursoId" type="xs:int" />
+        <xs:element minOccurs="0" name="periodoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WSListarResultadoProgramaxCursoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="WSListarResultadoProgramaxCursoResult" nillable="true" type="q1:ResultadoProgramaxCursoCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResultadoProgramaXCarreraXPeriodo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="objDC" nillable="true" type="q2:ResultadoProgramaXCarreraXPeriodoDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResultadoProgramaXCarreraXPeriodoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="ListarResultadoProgramaXCarreraXPeriodoResult" nillable="true" type="q3:ResultadoProgramaXCarreraXPeriodoCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResultadoProgramaXMallaEncuestaXCarrera">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="objDC" nillable="true" type="q4:ResultadoProgramaXMallaEncuestaXCarreraDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarResultadoProgramaXMallaEncuestaXCarreraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="ListarResultadoProgramaXMallaEncuestaXCarreraResult" nillable="true" type="q5:ResultadoProgramaXMallaEncuestaXCarreraCollectionDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarResultadoProgramaXMallaEncuesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="lstDC" nillable="true" type="q6:ArrayOfResultadoProgramaXMallaEncuestaDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarResultadoProgramaXMallaEncuestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarResultadoProgramaXMallaEncuestaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarResultadoProgramaXCompetenciaAbet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="lstDC" nillable="true" type="q7:ArrayOfResultadoProgramaXCompetenciaAbetDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarResultadoProgramaXCompetenciaAbetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarResultadoProgramaXCompetenciaAbetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResultadoProgramaxMallaEncuesta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="lstLR" nillable="true" type="q8:ArrayOfResultadoProgramaXMallaEncuestaDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResultadoProgramaxMallaEncuestaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarResultadoProgramaxMallaEncuestaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResultadoProgramaxCompetenciaAbet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" minOccurs="0" name="lstLR" nillable="true" type="q9:ArrayOfResultadoProgramaXCompetenciaAbetDC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarResultadoProgramaxCompetenciaAbetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarResultadoProgramaxCompetenciaAbetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

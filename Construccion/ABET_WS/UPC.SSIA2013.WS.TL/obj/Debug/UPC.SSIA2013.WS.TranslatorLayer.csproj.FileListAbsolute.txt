@@ -1,0 +1,74 @@
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.csprojResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.csprojResolveAssemblyReference.cache
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.csprojResolveAssemblyReference.cache
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.csprojResolveAssemblyReference.cache
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.DataModel.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.DataModel.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.csprojResolveAssemblyReference.cache

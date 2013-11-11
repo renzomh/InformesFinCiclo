@@ -6,11 +6,12 @@ using System.Runtime.Serialization;
 
 namespace UPC.SSIA2013.SI.DataContracts
 {
+    [DataContract]
     public class PersonaDC
     {
         private String _PersonaId;
 
-
+        [DataMember]
         public String PersonaId
         {
             get { return _PersonaId; }
@@ -19,7 +20,7 @@ namespace UPC.SSIA2013.SI.DataContracts
 
         private String _Nombres;
 
-
+        [DataMember]
         public String Nombres
         {
             get { return _Nombres; }
@@ -28,7 +29,7 @@ namespace UPC.SSIA2013.SI.DataContracts
 
         private String _Apellidos;
 
-
+        [DataMember]
         public String Apellidos
         {
             get { return _Apellidos; }
@@ -36,8 +37,8 @@ namespace UPC.SSIA2013.SI.DataContracts
         }
 
         private int _TipoPersona;
-
-
+     
+        [DataMember]    
         public int TipoPersona
         {
             get { return _TipoPersona; }

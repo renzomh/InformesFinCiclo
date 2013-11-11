@@ -40,14 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccionMejoraBC.cs" />
-    <Compile Include="CarreraBC.cs" />
     <Compile Include="CursoBC.cs" />
     <Compile Include="HallazgoBC.cs" />
     <Compile Include="InformeFinCicloBC.cs" />
     <Compile Include="LogroBC.cs" />
     <Compile Include="PeriodoBC.cs" />
     <Compile Include="PersonaBC.cs" />
-    <Compile Include="ProfesorBC.cs" />
     <Compile Include="ResultadoProgramaBC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

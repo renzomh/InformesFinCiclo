@@ -45,9 +45,9 @@ namespace UPC.SSIA2013.SI.DataContracts
             set { _Descripcion = value; }
         }
 
-        [DataMember]
         private int _PeriodoId;
 
+        [DataMember]
         public int PeriodoId
         {
             get { return _PeriodoId; }

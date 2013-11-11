@@ -9,7 +9,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class CursoBC
     {
-        public List<up_IFCDC_Listar_CursosResult> listarCursos()
+        public List<up_Listar_CursosResult> listarCursos()
         {
             CursoDALC objCursoDALC;
 
@@ -24,7 +24,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Listar_Cursos_x_ProfesorResult> listarCursosxProfesor(string profesorId)
+        public List<up_Listar_Cursos_x_ProfesorResult> listarCursosxProfesor(string profesorId)
         {
             CursoDALC objCursoDALC;
 

@@ -40,7 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SSIA2013ServiceContracts.cs" />
+    <Compile Include="IAccionMejora.cs" />
+    <Compile Include="ICurso.cs" />
+    <Compile Include="IHallazgo.cs" />
+    <Compile Include="IInformeFinCiclo.cs" />
+    <Compile Include="IPeriodo.cs" />
+    <Compile Include="IPersona.cs" />
+    <Compile Include="IResultadoPrograma.cs" />
+    <Compile Include="ILogro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

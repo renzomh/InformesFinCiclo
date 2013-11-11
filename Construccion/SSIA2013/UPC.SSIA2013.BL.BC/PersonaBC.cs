@@ -10,7 +10,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class PersonaBC
     {
-        public up_IFCDC_Obtener_PersonaResult obtenerPersona(String personaId)
+        public up_Obtener_PersonaResult obtenerPersona(String personaId)
         {
             PersonaDALC objPersonaDALC;
 

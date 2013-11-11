@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ResultadoPrograma" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4526/ResultadoProgramaWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IResultadoPrograma_WSListarResultadoProgramaxCurso_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarResultadoProgramaxCurso" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_WSListarResultadoProgramaxCurso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarResultadoProgramaxCursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ListarResultadoProgramaXCarreraXPeriodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResultadoProgramaXCarreraXPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ListarResultadoProgramaXCarreraXPeriodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResultadoProgramaXCarreraXPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ListarResultadoProgramaXMallaEncuestaXCarrera_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResultadoProgramaXMallaEncuestaXCarrera" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ListarResultadoProgramaXMallaEncuestaXCarrera_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarResultadoProgramaXMallaEncuestaXCarreraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_RegistrarResultadoProgramaXMallaEncuesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarResultadoProgramaXMallaEncuesta" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_RegistrarResultadoProgramaXMallaEncuesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarResultadoProgramaXMallaEncuestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_RegistrarResultadoProgramaXCompetenciaAbet_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarResultadoProgramaXCompetenciaAbet" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_RegistrarResultadoProgramaXCompetenciaAbet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarResultadoProgramaXCompetenciaAbetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ActualizarResultadoProgramaxMallaEncuesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResultadoProgramaxMallaEncuesta" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ActualizarResultadoProgramaxMallaEncuesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResultadoProgramaxMallaEncuestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ActualizarResultadoProgramaxCompetenciaAbet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResultadoProgramaxCompetenciaAbet" />
+  </wsdl:message>
+  <wsdl:message name="IResultadoPrograma_ActualizarResultadoProgramaxCompetenciaAbet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarResultadoProgramaxCompetenciaAbetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IResultadoPrograma">
+    <wsdl:operation name="WSListarResultadoProgramaxCurso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/WSListarResultadoProgramaxCurso" message="tns:IResultadoPrograma_WSListarResultadoProgramaxCurso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/WSListarResultadoProgramaxCursoResponse" message="tns:IResultadoPrograma_WSListarResultadoProgramaxCurso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarResultadoProgramaXCarreraXPeriodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/ListarResultadoProgramaXCarreraXPeriodo" message="tns:IResultadoPrograma_ListarResultadoProgramaXCarreraXPeriodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/ListarResultadoProgramaXCarreraXPeriodoResponse" message="tns:IResultadoPrograma_ListarResultadoProgramaXCarreraXPeriodo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarResultadoProgramaXMallaEncuestaXCarrera">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/ListarResultadoProgramaXMallaEncuestaXCarrera" message="tns:IResultadoPrograma_ListarResultadoProgramaXMallaEncuestaXCarrera_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/ListarResultadoProgramaXMallaEncuestaXCarreraResponse" message="tns:IResultadoPrograma_ListarResultadoProgramaXMallaEncuestaXCarrera_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarResultadoProgramaXMallaEncuesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/RegistrarResultadoProgramaXMallaEncuesta" message="tns:IResultadoPrograma_RegistrarResultadoProgramaXMallaEncuesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/RegistrarResultadoProgramaXMallaEncuestaResponse" message="tns:IResultadoPrograma_RegistrarResultadoProgramaXMallaEncuesta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarResultadoProgramaXCompetenciaAbet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/RegistrarResultadoProgramaXCompetenciaAbet" message="tns:IResultadoPrograma_RegistrarResultadoProgramaXCompetenciaAbet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/RegistrarResultadoProgramaXCompetenciaAbetResponse" message="tns:IResultadoPrograma_RegistrarResultadoProgramaXCompetenciaAbet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarResultadoProgramaxMallaEncuesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/ActualizarResultadoProgramaxMallaEncuesta" message="tns:IResultadoPrograma_ActualizarResultadoProgramaxMallaEncuesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/ActualizarResultadoProgramaxMallaEncuestaResponse" message="tns:IResultadoPrograma_ActualizarResultadoProgramaxMallaEncuesta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarResultadoProgramaxCompetenciaAbet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultadoPrograma/ActualizarResultadoProgramaxCompetenciaAbet" message="tns:IResultadoPrograma_ActualizarResultadoProgramaxCompetenciaAbet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultadoPrograma/ActualizarResultadoProgramaxCompetenciaAbetResponse" message="tns:IResultadoPrograma_ActualizarResultadoProgramaxCompetenciaAbet_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IResultadoPrograma" type="tns:IResultadoPrograma">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSListarResultadoProgramaxCurso">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/WSListarResultadoProgramaxCurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarResultadoProgramaXCarreraXPeriodo">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/ListarResultadoProgramaXCarreraXPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarResultadoProgramaXMallaEncuestaXCarrera">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/ListarResultadoProgramaXMallaEncuestaXCarrera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarResultadoProgramaXMallaEncuesta">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/RegistrarResultadoProgramaXMallaEncuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarResultadoProgramaXCompetenciaAbet">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/RegistrarResultadoProgramaXCompetenciaAbet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarResultadoProgramaxMallaEncuesta">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/ActualizarResultadoProgramaxMallaEncuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarResultadoProgramaxCompetenciaAbet">
+      <soap:operation soapAction="http://tempuri.org/IResultadoPrograma/ActualizarResultadoProgramaxCompetenciaAbet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResultadoPrograma">
+    <wsdl:port name="BasicHttpBinding_IResultadoPrograma" binding="tns:BasicHttpBinding_IResultadoPrograma">
+      <soap:address location="http://localhost:4526/ResultadoProgramaWS.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

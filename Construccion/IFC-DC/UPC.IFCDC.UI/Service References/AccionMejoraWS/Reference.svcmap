@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="35ad2aff-70e8-4abe-a67c-96356ea6dc52" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4526/AccionMejoraWS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AccionMejoraWS.disco" MetadataType="Disco" ID="e4576102-5497-4935-874b-432603c70541" SourceId="1" SourceUrl="http://localhost:4526/AccionMejoraWS.svc?disco" />
+    <MetadataFile FileName="AccionMejora.wsdl" MetadataType="Wsdl" ID="3605740a-45d1-404c-aed5-a4c54bc49168" SourceId="1" SourceUrl="http://localhost:4526/AccionMejoraWS.svc?wsdl" />
+    <MetadataFile FileName="AccionMejoraWS.xsd" MetadataType="Schema" ID="ab1cdd2f-4fa7-4c62-938f-9f5de983df50" SourceId="1" SourceUrl="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccionMejoraWS1.xsd" MetadataType="Schema" ID="c3623c2e-e3b6-407b-a671-9ba9854762c0" SourceId="1" SourceUrl="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccionMejoraWS2.xsd" MetadataType="Schema" ID="5e4cb022-873a-4f92-8d1e-9f8fb6704167" SourceId="1" SourceUrl="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

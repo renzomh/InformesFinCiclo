@@ -42,14 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccionMejoraDALC.cs" />
-    <Compile Include="CarreraDALC.cs" />
     <Compile Include="CursoDALC.cs" />
     <Compile Include="HallazgoDALC.cs" />
     <Compile Include="InformeFinCicloDALC.cs" />
     <Compile Include="LogroDALC.cs" />
     <Compile Include="PeriodoDALC.cs" />
     <Compile Include="PersonaDALC.cs" />
-    <Compile Include="ProfesorDALC.cs" />
     <Compile Include="ResultadoProgramaDALC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

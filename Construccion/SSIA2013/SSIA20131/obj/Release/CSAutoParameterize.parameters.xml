@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CSSSIA2013-Web.config Connection String" description="CSSSIA2013 Connection String used in web.config by the application to access the database." defaultvalue="Data Source=localhost;Initial Catalog=SSIA2012-1;User ID=sa;Password=password" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CSSSIA2013']/@connectionString" />
+  </parameter>
+</parameters>

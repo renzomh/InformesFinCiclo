@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ResultadoProgramaxCursoCollectionDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LstResultadoProgramaxCurso" nillable="true" type="tns:ArrayOfResultadoProgramaxCursoDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaxCursoCollectionDC" nillable="true" type="tns:ResultadoProgramaxCursoCollectionDC" />
+  <xs:complexType name="ArrayOfResultadoProgramaxCursoDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoProgramaxCursoDC" nillable="true" type="tns:ResultadoProgramaxCursoDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoProgramaxCursoDC" nillable="true" type="tns:ArrayOfResultadoProgramaxCursoDC" />
+  <xs:complexType name="ResultadoProgramaxCursoDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarreraId" type="xs:int" />
+      <xs:element minOccurs="0" name="CursoId" type="xs:int" />
+      <xs:element minOccurs="0" name="Descricpion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Outcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultadoProgramaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaxCursoDC" nillable="true" type="tns:ResultadoProgramaxCursoDC" />
+  <xs:complexType name="ResultadoProgramaXCarreraXPeriodoDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarreraId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MallaId" type="xs:int" />
+      <xs:element minOccurs="0" name="Outcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PeriodoId" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultadoProgramaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaXCarreraXPeriodoDC" nillable="true" type="tns:ResultadoProgramaXCarreraXPeriodoDC" />
+  <xs:complexType name="ResultadoProgramaXCarreraXPeriodoCollectionDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lstResultadoProgramaXCarreraXPeriodo" nillable="true" type="tns:ArrayOfResultadoProgramaXCarreraXPeriodoDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaXCarreraXPeriodoCollectionDC" nillable="true" type="tns:ResultadoProgramaXCarreraXPeriodoCollectionDC" />
+  <xs:complexType name="ArrayOfResultadoProgramaXCarreraXPeriodoDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoProgramaXCarreraXPeriodoDC" nillable="true" type="tns:ResultadoProgramaXCarreraXPeriodoDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoProgramaXCarreraXPeriodoDC" nillable="true" type="tns:ArrayOfResultadoProgramaXCarreraXPeriodoDC" />
+  <xs:complexType name="ResultadoProgramaXMallaEncuestaXCarreraDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asignado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CarreraId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MallaEncuestaId" type="xs:int" />
+      <xs:element minOccurs="0" name="Outcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultadoProgramaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaXMallaEncuestaXCarreraDC" nillable="true" type="tns:ResultadoProgramaXMallaEncuestaXCarreraDC" />
+  <xs:complexType name="ResultadoProgramaXMallaEncuestaXCarreraCollectionDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lstResultadoProgramaXMallaEncuestaXCarrera" nillable="true" type="tns:ArrayOfResultadoProgramaXMallaEncuestaXCarreraDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaXMallaEncuestaXCarreraCollectionDC" nillable="true" type="tns:ResultadoProgramaXMallaEncuestaXCarreraCollectionDC" />
+  <xs:complexType name="ArrayOfResultadoProgramaXMallaEncuestaXCarreraDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoProgramaXMallaEncuestaXCarreraDC" nillable="true" type="tns:ResultadoProgramaXMallaEncuestaXCarreraDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoProgramaXMallaEncuestaXCarreraDC" nillable="true" type="tns:ArrayOfResultadoProgramaXMallaEncuestaXCarreraDC" />
+  <xs:complexType name="ArrayOfResultadoProgramaXMallaEncuestaDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoProgramaXMallaEncuestaDC" nillable="true" type="tns:ResultadoProgramaXMallaEncuestaDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoProgramaXMallaEncuestaDC" nillable="true" type="tns:ArrayOfResultadoProgramaXMallaEncuestaDC" />
+  <xs:complexType name="ResultadoProgramaXMallaEncuestaDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asignado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CarreraId" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MallaEncuestaId" type="xs:int" />
+      <xs:element minOccurs="0" name="Outcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultadoProgramaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaXMallaEncuestaDC" nillable="true" type="tns:ResultadoProgramaXMallaEncuestaDC" />
+  <xs:complexType name="ArrayOfResultadoProgramaXCompetenciaAbetDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoProgramaXCompetenciaAbetDC" nillable="true" type="tns:ResultadoProgramaXCompetenciaAbetDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoProgramaXCompetenciaAbetDC" nillable="true" type="tns:ArrayOfResultadoProgramaXCompetenciaAbetDC" />
+  <xs:complexType name="ResultadoProgramaXCompetenciaAbetDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asignado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CarreraId" type="xs:int" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompetenciaAbetId" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaModificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MallaEncuestaId" type="xs:int" />
+      <xs:element minOccurs="0" name="PeriodoId" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultadoProgramaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoProgramaXCompetenciaAbetDC" nillable="true" type="tns:ResultadoProgramaXCompetenciaAbetDC" />
+</xs:schema>

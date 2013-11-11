@@ -1,0 +1,5 @@
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.DataModel\bin\Debug\UPC.SSIA2013.DataModel.dll.config
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.DataModel\bin\Debug\UPC.SSIA2013.DataModel.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.DataModel\bin\Debug\UPC.SSIA2013.DataModel.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\UPC.SSIA2013.DataModel.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\UPC.SSIA2013.DataModel.pdb

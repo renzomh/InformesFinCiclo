@@ -10,14 +10,14 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class InformeFinCicloDALC
     {
-        public up_IFCDC_Obtener_InformeFinCicloResult obtenerInformeFinCiclo(String coordinadorID, int cursoId, int periodoId)
+        public up_Obtener_InformeFinCicloResult obtenerInformeFinCiclo(String coordinadorID, int cursoId, int periodoId)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                up_IFCDC_Obtener_InformeFinCicloResult informeFinCiclo = dataContext.up_IFCDC_Obtener_InformeFinCiclo(coordinadorID, cursoId, periodoId).SingleOrDefault();
+                up_Obtener_InformeFinCicloResult informeFinCiclo = dataContext.up_Obtener_InformeFinCiclo(coordinadorID, cursoId, periodoId).SingleOrDefault();
 
                 return informeFinCiclo;
             }
@@ -36,14 +36,14 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public up_IFCDC_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
+        public up_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                up_IFCDC_Obtener_InformeFinCiclo_x_IdResult informeFinCiclo = dataContext.up_IFCDC_Obtener_InformeFinCiclo_x_Id(informeFinCicloId).SingleOrDefault();
+                up_Obtener_InformeFinCiclo_x_IdResult informeFinCiclo = dataContext.up_Obtener_InformeFinCiclo_x_Id(informeFinCicloId).SingleOrDefault();
 
                 return informeFinCiclo;
             }
@@ -62,71 +62,14 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        /*
-        public int registrarInformeFinCiclo(String profesorId, int cursoId, int periodoId, String comentarioInfraestructura,
-                                        String comentarioAlumnos, String comentarioDelegado, int calificacionDelegado)
-        {
-            SSIA2013DataContext dataContext = null;
-            try
-            {
-                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                InformeFinCiclo objinforme = new InformeFinCiclo();
-                objinforme.ProfesorId = profesorId;
-                objinforme.CursoId = cursoId;
-                objinforme.PeriodoId = 30;
-                dataContext.InformeFinCiclo.InsertOnSubmit(objinforme);
-                dataContext.SubmitChanges();
-                
-                return objinforme.InformeFinCicloId;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (dataContext != null)
-                {
-                    dataContext.Dispose();
-                }
-            }
-        }
-
-        public spObtenerInformeFinCicloResult obtenerInformeFinCicloxProfesorxCursoxPeriodo(int informeFinCicloId)
+        public List<up_Listar_Reporte_InformeFinCicloResult> listarReporteInformeInformeFinCiclo(int cursoId, int periodoId, String estado)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                spObtenerInformeFinCicloResult informeFinCiclo = dataContext.spObtenerInformeFinCiclo(informeFinCicloId).SingleOrDefault();
-
-                return informeFinCiclo;
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            finally
-            {
-                if (dataContext != null)
-                {
-                    dataContext.Dispose();
-                }
-            }
-        }
-        */
-
-        public List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> listarReporteInformeInformeFinCiclo(int cursoId, int periodoId, String estado)
-        {
-            SSIA2013DataContext dataContext = null;
-
-            try
-            {
-                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> lstInformes = dataContext.up_IFCDC_Listar_Reporte_InformeFinCiclo(cursoId, periodoId, estado).ToList();
+                List<up_Listar_Reporte_InformeFinCicloResult> lstInformes = dataContext.up_Listar_Reporte_InformeFinCiclo(cursoId, periodoId, estado).ToList();
 
                 return lstInformes;
             }
@@ -145,14 +88,14 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public up_IFCDC_Editar_InformFinCicloResult editarInformeFinCiclo(int informeFinCicloId, String estado, String unidades, String infraestructura, String alumnos, String delegados, String encuesta)
+        public up_Editar_InformeFinCicloResult editarInformeFinCiclo(int informeFinCicloId, String estado, String unidades, String infraestructura, String alumnos, String delegados, String encuesta)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                up_IFCDC_Editar_InformFinCicloResult informeFinCiclo = dataContext.up_IFCDC_Editar_InformFinCiclo(informeFinCicloId, estado, unidades, infraestructura, alumnos, delegados, encuesta).SingleOrDefault();
+                up_Editar_InformeFinCicloResult informeFinCiclo = dataContext.up_Editar_InformeFinCiclo(informeFinCicloId, estado, unidades, infraestructura, alumnos, delegados, encuesta).SingleOrDefault();
 
                 return informeFinCiclo;
             }

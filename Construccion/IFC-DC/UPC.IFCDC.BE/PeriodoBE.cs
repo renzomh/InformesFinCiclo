@@ -11,9 +11,9 @@ namespace UPC.IFCDC.BE
         private String _Descripcion;
         private String _FechaInicio;
         private String _FechaFin;
-        private bool _EsActual;
+        private int? _EsActual;
 
-        public bool EsActual
+        public int? EsActual
         {
             get { return _EsActual; }
             set { _EsActual = value; }

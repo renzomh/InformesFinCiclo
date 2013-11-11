@@ -9,12 +9,12 @@ using System.Collections.ObjectModel;
 
 namespace UPC.SSIA2013.SI.DataContracts
 {
-    
+    [DataContract]
     public class ResultadoProgramaxCursoDC
     {
         private Int32 _ResultadoProgramaId;
 
-        
+        [DataMember]
         public Int32 ResultadoProgramaId
         {
             get { return _ResultadoProgramaId; }
@@ -23,7 +23,7 @@ namespace UPC.SSIA2013.SI.DataContracts
 
         private Int32 _CarreraId;
 
-        
+        [DataMember]
         public Int32 CarreraId
         {
             get { return _CarreraId; }
@@ -32,7 +32,7 @@ namespace UPC.SSIA2013.SI.DataContracts
 
         private String _Outcome;
 
-        
+        [DataMember]
         public String Outcome
         {
             get { return _Outcome; }
@@ -41,7 +41,7 @@ namespace UPC.SSIA2013.SI.DataContracts
 
         private String _Descricpion;
 
-        
+        [DataMember]
         public String Descricpion
         {
             get { return _Descricpion; }
@@ -50,7 +50,7 @@ namespace UPC.SSIA2013.SI.DataContracts
 
         private Int32 _CursoId;
 
-        
+        [DataMember]
         public Int32 CursoId
         {
             get { return _CursoId; }

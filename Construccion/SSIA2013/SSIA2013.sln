@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSIA2013", "SSIA2013\SSIA2013.csproj", "{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC.SSIA2013.SI.ServiceImplementation", "UPC.SSIA2013.SI.ServiceImplementation\UPC.SSIA2013.SI.ServiceImplementation.csproj", "{A8F6A607-C45A-418C-92C4-962C1B89BF38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC.SSIA2013.SI.DataContracts", "UPC.SSIA2013.SI.DataContracts\UPC.SSIA2013.SI.DataContracts.csproj", "{BAC8D19B-F2A3-4D34-BA07-0DB54CF6018C}"
@@ -15,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC.SSIA2013.DL.DALC", "UPC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC.SSIA2013.DL.DataModel", "UPC.SSIA2013.DL.DataModel\UPC.SSIA2013.DL.DataModel.csproj", "{087DA609-D109-4E75-AFD5-BB6FEE6FE7C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSIA20131", "SSIA20131\SSIA20131.csproj", "{B814DA67-F848-42DC-97B6-1654A1349841}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,16 +25,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{67E5B412-B18F-4C2B-81DB-8DD7F4F0A5AD}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8F6A607-C45A-418C-92C4-962C1B89BF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8F6A607-C45A-418C-92C4-962C1B89BF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8F6A607-C45A-418C-92C4-962C1B89BF38}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -95,6 +85,16 @@ Global
 		{087DA609-D109-4E75-AFD5-BB6FEE6FE7C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{087DA609-D109-4E75-AFD5-BB6FEE6FE7C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{087DA609-D109-4E75-AFD5-BB6FEE6FE7C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B814DA67-F848-42DC-97B6-1654A1349841}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

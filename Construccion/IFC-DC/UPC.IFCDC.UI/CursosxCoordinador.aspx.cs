@@ -15,74 +15,97 @@ namespace UPC.IFCDC.UI
     {
         private String sPersonaId = null;
 
-        PeriodoBC objPeriodoBC = null;
-        PeriodoBE objPeriodoBE = null;
+        PeriodoWS.PeriodoClient periodoClient = null;
+        PeriodoWS.PeriodoDC objPeriodoDC = null;
 
-        CursoxProfesorBC objCursoxProfesorBC = null;
-        CursoxProfesorCollectionBE objCursoxProfesorCollectionBE = null;
+        CursoWS.CursoClient cursoClient = null;
+        CursoWS.CursoxProfesorCollectionDC objCursoCollectionDC = null;
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             sPersonaId = Session["PersonaId"].ToString();
 
-            if (sPersonaId != null)
+            try
             {
-                objPeriodoBC = new PeriodoBC();
-                objPeriodoBE = objPeriodoBC.obtenerPeriodoActual();
+                if (sPersonaId != null)
+                {
+                    periodoClient = new PeriodoWS.PeriodoClient();
+                    objPeriodoDC = periodoClient.WSObtenerPeriodoActual();
 
-                texto_PeriodoActual.Text = objPeriodoBE.Descripcion;
-                texto_FechaLimite.Text = objPeriodoBE.FechaFin;
+                    texto_PeriodoActual.Text = objPeriodoDC.Descripcion;
+                    texto_FechaLimite.Text = objPeriodoDC.FechaFin;
 
-                grdCursosDataBind();
+                    grdCursosDataBind();
+                }
             }
+            catch (Exception ex)
+            {
+                MostrarAlert(ex.Message);
+            }
+            finally
+            {
+                periodoClient = null;
+            }
+            
         }
 
         private void grdCursosDataBind()
         {
-            CursoxProfesorBE objCursoxProfesorBE = new CursoxProfesorBE();
-            objCursoxProfesorBE.ProfesorId = sPersonaId;
-            objCursoxProfesorBC = new CursoxProfesorBC();
-            objCursoxProfesorCollectionBE = objCursoxProfesorBC.listarCursosxProfesor(objCursoxProfesorBE);
+            try
+            {
+                cursoClient = new CursoWS.CursoClient();
+                objCursoCollectionDC = cursoClient.ListarCursosxProfesor(sPersonaId);
 
-            grdCursos.DataSource = objCursoxProfesorCollectionBE.LstCursosxProfesor;
-            grdCursos.DataBind();
+                grdCursos.DataSource = objCursoCollectionDC.LstCursosxProfesor;
+                grdCursos.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert(ex.Message);
+            }
+            finally
+            {
+                cursoClient = null;
+            }
         }
 
         public void grdCursos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            InformeFinCicloWS.InformeFinCicloClient informeClient = null;
+            InformeFinCicloWS.InformeFinCicloDC objInformeFinCicloDC = null;
+
             try
             {
                 if (e.CommandName.ToUpper().Equals("CMDINICIAR"))
                 {
-                    InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
-                    InformeFinCicloBE objInformeFinCicloBE = new InformeFinCicloBE();
-                    objInformeFinCicloBE.PeriodoId = objPeriodoBE.PeriodoId;
-                    objInformeFinCicloBE.CoordinadorId = sPersonaId;
-                    objInformeFinCicloBE.CursoId = Convert.ToInt32(e.CommandArgument.ToString());
+                    informeClient = new InformeFinCicloWS.InformeFinCicloClient();
+                    objInformeFinCicloDC = informeClient.WSObtenerInformeFinCiclo(sPersonaId, Convert.ToInt32(e.CommandArgument.ToString()), objPeriodoDC.PeriodoId);
 
-                    objInformeFinCicloBE = objInformeFinCicloBC.obtenerInformeFinCiclo(objInformeFinCicloBE);
-
-                    if (objInformeFinCicloBE != null)
+                    if (objInformeFinCicloDC != null)
                     {
-                        if (!objInformeFinCicloBE.Estado.Equals(Constantes.ESTADO_INFORME_FINALIZADO))
+                        if (!objInformeFinCicloDC.Estado.Equals(Constantes.ESTADO_INFORME_FINALIZADO))
                         {
-                            Session["Informe"] = objInformeFinCicloBE;
-                            Session["Periodo"] = objPeriodoBE;
-                            Session["CursoxProfesor"] = obtenerCurso(objInformeFinCicloBE.CursoId);
+                            Session["Informe"] = objInformeFinCicloDC;
+                            Session["Periodo"] = objPeriodoDC;
+                            Session["CursoxProfesor"] = obtenerCurso(objInformeFinCicloDC.CursoId);
 
                             Response.Redirect("Informe.aspx");
                         }
                     }
 
-                    //Context.Items.Add("Modo", "2");
-                    //Context.Items.Add("CodAlumno", e.CommandArgument);
-                    //Server.Transfer("Alumno.aspx");
                 }
             }
 
             catch (Exception ex)
             {
-                throw ex;
+                MostrarAlert(ex.Message);
+            }
+
+            finally
+            {
+                informeClient = null;
             }
         }
 
@@ -91,17 +114,22 @@ namespace UPC.IFCDC.UI
 
         }
 
-        private CursoxProfesorBE obtenerCurso(int cursoId)
+        private CursoWS.CursoxProfesorDC obtenerCurso(int cursoId)
         {
-            CursoxProfesorBE sRespuesta = null;
+            CursoWS.CursoxProfesorDC objCursoxProfesor = null;
 
-            for (int i = 0; i < objCursoxProfesorCollectionBE.LstCursosxProfesor.Count; i++)
+            for (int i = 0; i < objCursoCollectionDC.LstCursosxProfesor.Count(); i++)
             {
-                if (objCursoxProfesorCollectionBE.LstCursosxProfesor[i].CursoId == cursoId)
-                    sRespuesta = objCursoxProfesorCollectionBE.LstCursosxProfesor[i];
+                if (objCursoCollectionDC.LstCursosxProfesor[i].CursoId == cursoId)
+                    objCursoxProfesor = objCursoCollectionDC.LstCursosxProfesor[i];
             }
 
-            return sRespuesta;
+            return objCursoxProfesor;
+        }
+
+        private void MostrarAlert(String mensaje)
+        {
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "MensajeError", String.Format("alert('{0}');", mensaje), true);
         }
     }
 }

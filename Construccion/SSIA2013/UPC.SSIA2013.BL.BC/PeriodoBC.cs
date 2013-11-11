@@ -9,7 +9,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class PeriodoBC
     {
-        public List<up_IFCDC_Listar_PeriodosResult> listarPeriodos()
+        public List<up_Listar_PeriodosResult> listarPeriodos()
         {
             PeriodoDALC objPeriodoDALC;
             
@@ -24,7 +24,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public up_IFCDC_Obtener_PeriodoActualResult obtenerPeriodo()
+        public up_Obtener_PeriodoActualResult obtenerPeriodo()
         {
             PeriodoDALC objPeriodoDALC;
 

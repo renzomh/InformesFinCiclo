@@ -15,6 +15,7 @@ namespace UPC.IFCDC.UI
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        /*
         CursoCollectionBE objCursoCollectionBE = null;
         PeriodoCollectionBE objPeriodoCollectionBE = null;
         PeriodoCollectionBE listaPeriodosFiltrados = null;
@@ -24,26 +25,63 @@ namespace UPC.IFCDC.UI
 
         HallazgoReporteCollectionBE reporteHallazgosBE = null;
         AccionMejoraReporteCollectionBE reporteAccionesBE = null;
+        */
+
+        CursoWS.CursoCollectionDC objCursoCollectionDC = null;
+        PeriodoWS.PeriodoCollectionDC objPeriodoCollectionDC = null;
+        PeriodoCollectionBE listaPeriodosFiltrado = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!Page.IsPostBack)
             {
-                objCursoBC = new CursoBC();
-                objCursoCollectionBE = objCursoBC.listarCursos();
-                if (objCursoCollectionBE == null) objCursoCollectionBE = new CursoCollectionBE();
-
-                objPeriodoBC = new PeriodoBC();
-                objPeriodoCollectionBE = objPeriodoBC.listarPeriodos();
-                if (objPeriodoCollectionBE == null) objPeriodoCollectionBE = new PeriodoCollectionBE();
-
-                listaPeriodosFiltrados = obtenerPeriodosFiltrados(objPeriodoCollectionBE);
+                obtenerCurso();
+                obtenerPeriodos();
                 setearCombos(); 
             }
 
             reporteInformeFinCicloDataBind();
             reporteHallazgoDataBind();
             reporteAccionMejoraDataBind();
+        }
+
+        private void obtenerCurso()
+        {
+            CursoWS.CursoClient client = null;
+
+            try
+            {
+                client = new CursoWS.CursoClient();
+                objCursoCollectionDC = client.ListarCursos();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("OBTENER CURSOS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+        }
+
+        private void obtenerPeriodos()
+        {
+            PeriodoWS.PeriodoClient client = null;
+
+            try
+            {
+                client = new PeriodoWS.PeriodoClient();
+                objPeriodoCollectionDC = client.WSListarPeriodos();
+                listaPeriodosFiltrado = obtenerPeriodosFiltrados(objPeriodoCollectionDC);
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("OBTENER PERIODOS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         protected void btnBuscaInformesFinCiclo_Click(object sender, EventArgs e)
@@ -65,188 +103,241 @@ namespace UPC.IFCDC.UI
         {
             PDFGenerator pdf = new PDFGenerator();
 
-            //HALLAZGOS
-            DataTable tableHallazgos = new DataTable();
-            tableHallazgos.Columns.Add("Codigo");
-            tableHallazgos.Columns.Add("Descripcion");
-            tableHallazgos.Columns.Add("Curso");
+            HallazgoWS.HallazgoClient client = null;
+            HallazgoWS.HallazgoReporteCollectionDC hallazgos = null;
 
-            for (int i = 0; i < reporteHallazgosBE.LstHallazgoReporte.Count; i++)
+            try
             {
-                DataRow row = tableHallazgos.NewRow();
-                row[0] = reporteHallazgosBE.LstHallazgoReporte[i].CodigoHallazgo;
-                row[1] = reporteHallazgosBE.LstHallazgoReporte[i].Descripcion;
-                row[2] = reporteHallazgosBE.LstHallazgoReporte[i].NombreCurso;
-                tableHallazgos.Rows.Add(row);
-            }
+                client = new HallazgoWS.HallazgoClient();
+                hallazgos = client.WSListarHallazgoReporte(
+                        Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value), 
+                        Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value));
 
-            pdf.generearReporteHallazgos(combo_HallazgoCurso.SelectedItem.Text, combo_HallazgoCiclo.SelectedItem.Text, tableHallazgos);
+                //HALLAZGOS
+                DataTable tableHallazgos = new DataTable();
+                tableHallazgos.Columns.Add("Codigo");
+                tableHallazgos.Columns.Add("Descripcion");
+                tableHallazgos.Columns.Add("Curso");
+
+                for (int i = 0; i < hallazgos.LstHallazgoReporte.Count(); i++)
+                {
+                    DataRow row = tableHallazgos.NewRow();
+                    row[0] = hallazgos.LstHallazgoReporte[i].CodigoHallazgo;
+                    row[1] = hallazgos.LstHallazgoReporte[i].Descripcion;
+                    row[2] = hallazgos.LstHallazgoReporte[i].NombreCurso;
+                    tableHallazgos.Rows.Add(row);
+                }
+
+                String ruta = Server.MapPath("~/Reportes/Hallazgos.pdf");
+
+                pdf.generearReporteHallazgos(combo_HallazgoCurso.SelectedItem.Text, combo_HallazgoCiclo.SelectedItem.Text, tableHallazgos, ruta);
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("EXPORTAR HALLAZGOS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         protected void btnExportaAcciones_Click(object sender, EventArgs e)
         {
             PDFGenerator pdf = new PDFGenerator();
+            
+            AccionMejoraWS.AccionMejoraClient client = null;
+            AccionMejoraWS.AccionMejoraReporteCollectionDC acciones = null;
 
-            //ACCIONES
-            DataTable tableAcciones = new DataTable();
-            tableAcciones.Columns.Add("Codigo");
-            tableAcciones.Columns.Add("Hallazgo");
-            tableAcciones.Columns.Add("Descripcion");
-            tableAcciones.Columns.Add("Curso");
-            tableAcciones.Columns.Add("Estado");
+            String sEstado = null;
 
-            for (int i = 0; i < reporteAccionesBE.LstAccionMejoraReporte.Count; i++)
+            client = new AccionMejoraWS.AccionMejoraClient();
+
+            try
             {
-                DataRow row = tableAcciones.NewRow();
-                row[0] = reporteAccionesBE.LstAccionMejoraReporte[i].CodigoAccionMejora;
-                row[1] = reporteAccionesBE.LstAccionMejoraReporte[i].CodigoHallazgo;
-                row[2] = reporteAccionesBE.LstAccionMejoraReporte[i].Descripcion;
-                row[3] = reporteAccionesBE.LstAccionMejoraReporte[i].NombreCurso;
-                row[4] = reporteAccionesBE.LstAccionMejoraReporte[i].Estado;
-                tableAcciones.Rows.Add(row);
-            }
+                client = new AccionMejoraWS.AccionMejoraClient();
 
-            pdf.generearReporteAcciones(combo_AccionMejoraCurso.SelectedItem.Text, combo_AccionMejoraCiclo.SelectedItem.Text, combo_AccionMejoraEstado.SelectedItem.Text, tableAcciones);
+                if (combo_AccionMejoraEstado.SelectedItem.Value.Equals("TODOS"))
+                    sEstado = "";
+                else
+                    sEstado = combo_AccionMejoraEstado.SelectedItem.Value;
+
+                acciones = client.WSListarAccionMejoraReporte(
+                            Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value), 
+                            Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value), sEstado);
+
+                //ACCIONES
+                DataTable tableAcciones = new DataTable();
+                tableAcciones.Columns.Add("Codigo");
+                tableAcciones.Columns.Add("Hallazgo");
+                tableAcciones.Columns.Add("Descripcion");
+                tableAcciones.Columns.Add("Curso");
+                tableAcciones.Columns.Add("Estado");
+
+                for (int i = 0; i < acciones.LstAccionMejoraReporte.Count(); i++)
+                {
+                    DataRow row = tableAcciones.NewRow();
+                    row[0] = acciones.LstAccionMejoraReporte[i].CodigoAccionMejora;
+                    row[1] = acciones.LstAccionMejoraReporte[i].CodigoHallazgo;
+                    row[2] = acciones.LstAccionMejoraReporte[i].Descripcion;
+                    row[3] = acciones.LstAccionMejoraReporte[i].NombreCurso;
+                    row[4] = acciones.LstAccionMejoraReporte[i].Estado;
+                    tableAcciones.Rows.Add(row);
+                }
+
+                String ruta = Server.MapPath("~/Reportes/AccionesDeMejora.pdf");
+
+                pdf.generearReporteAcciones(combo_AccionMejoraCurso.SelectedItem.Text, combo_AccionMejoraCiclo.SelectedItem.Text, combo_AccionMejoraEstado.SelectedItem.Text, tableAcciones, ruta);
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("EXPORTAR ACCIONES: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         public void grdInformes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            InformeFinCicloWS.InformeFinCicloClient informeFinCicloClient = null;
+            ResultadoProgramaWS.ResultadoProgramaClient resultadoClient = null;
+            LogroWS.LogroClient logroClient = null;
+            HallazgoWS.HallazgoClient hallazgoClient = null;
+            AccionMejoraWS.AccionMejoraClient accionClient = null;
+            PersonaWS.PersonaClient personaClient = null;
+            CursoWS.CursoClient cursoClient = null;
+            PeriodoWS.PeriodoClient periodoClient = null;
+
             try
             {
+                informeFinCicloClient = new InformeFinCicloWS.InformeFinCicloClient();
+                resultadoClient = new ResultadoProgramaWS.ResultadoProgramaClient();
+                logroClient = new LogroWS.LogroClient();
+                hallazgoClient = new HallazgoWS.HallazgoClient();
+                accionClient = new AccionMejoraWS.AccionMejoraClient();
+                personaClient = new PersonaWS.PersonaClient();
+                cursoClient = new CursoWS.CursoClient();
+                periodoClient = new PeriodoWS.PeriodoClient();
+
                 if (e.CommandName.ToUpper().Equals("CMDINICIAR"))
                 {
-                    InformeFinCicloBE objInformeFinCicloBE = new InformeFinCicloBE();
-                    objInformeFinCicloBE.InformeFinCicloId = Convert.ToInt32(e.CommandArgument.ToString());
-                    objInformeFinCicloBE = new InformeFinCicloBC().obtenerInformeFinCicloxId(objInformeFinCicloBE);
+                    InformeFinCicloWS.InformeFinCicloDC informe = informeFinCicloClient.WSObtenerInformeFinCicloxId(Convert.ToInt32(e.CommandArgument.ToString()));
+                    ResultadoProgramaWS.ResultadoProgramaxCursoCollectionDC outcomes = resultadoClient.WSListarResultadoProgramaxCurso(informe.CursoId, informe.PeriodoId);
+                    LogroWS.LogroDC logro = logroClient.WSListarLogroxCurso(informe.CursoId);
+                    HallazgoWS.HallazgoCollectionDC hallazgos = hallazgoClient.WSListarHallazgosxInformeFinCiclo(informe.InformeFinCicloId);
+                    AccionMejoraWS.AccionMejoraCollectionDC accionesmejora = accionClient.WSListarAccionesMejoraxInformeFinCiclo(informe.InformeFinCicloId);
+                    AccionMejoraWS.AccionMejoraCollectionDC accionesprevias = accionClient.WSListarAccionesMejoraPrevias(informe.CursoId, informe.PeriodoId);
 
-                    AccionMejoraCollectionBE objAccionPreviasCollectionBE = null;
-                    InformeFinCicloBE objAccionPreviaBE = new InformeFinCicloBE();
-                    objAccionPreviaBE.CursoId = objInformeFinCicloBE.CursoId;
-                    objAccionPreviaBE.PeriodoId = objInformeFinCicloBE.PeriodoId;
-                    objAccionPreviasCollectionBE = new AccionMejoraBC().listarAccionesPrevias(objAccionPreviaBE);
+                    PersonaWS.PersonaDC persona = personaClient.WSObtenerPersona(informe.CoordinadorId);
+                   
+                    CursoWS.CursoCollectionDC cursos = cursoClient.ListarCursos();
+                    CursoWS.CursoDC curso = null;
 
-                    HallazgoCollectionBE objHallazgoCollectionBE = null;
-                    HallazgoBE objHallazgoBE = new HallazgoBE();
-                    objHallazgoBE.InformeFinCicloId = objInformeFinCicloBE.InformeFinCicloId;
-                    objHallazgoCollectionBE = new HallazgoBC().listarHallazgos(objHallazgoBE);
+                    for (int i = 0; i < cursos.Count(); i++)
+                        if (informe.CursoId == cursos[i].CursoId)
+                            curso = cursos[i];
 
-                    AccionMejoraCollectionBE objAccionMejoraCollectionBE = null;
-                    AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
-                    objAccionMejoraBE.InformeFinCicloId = objInformeFinCicloBE.InformeFinCicloId;
-                    objAccionMejoraCollectionBE = new AccionMejoraBC().listarAccionesMejora(objAccionMejoraBE);
+                    PeriodoWS.PeriodoCollectionDC periodos = periodoClient.WSListarPeriodos();
+                    PeriodoWS.PeriodoDC periodo = null;
 
-                    ResultadoProgramaxCursoCollectionBE objResultadoProgramaCollectionBE = null;
-                    ResultadoProgramaxCursoBE objResultadoPrograma = new ResultadoProgramaxCursoBE();
-                    objResultadoPrograma.CursoId = objInformeFinCicloBE.CursoId;
-                    objResultadoProgramaCollectionBE = new ResultadoProgramaxCursoBC().listarResultadoProgramaxCurso(objResultadoPrograma);
-
-                    LogroBE objLogroBE = new LogroBE();
-                    objLogroBE.CursoId = objInformeFinCicloBE.CursoId;
-                    objLogroBE = new LogroBC().obtenerLogroxCurso(objLogroBE);
-
+                    for (int i = 0; i < periodos.Count(); i++)
+                        if (informe.PeriodoId == periodos[i].PeriodoId)
+                            periodo = periodos[i];
                     //-------------------------------------------------------------------------------------------------------------------------
-
-                    //PERSONA
-                    PersonaBE objPersonaBE = new PersonaBE();
-                    objPersonaBE.PersonaId = objInformeFinCicloBE.CoordinadorId;
-                    objPersonaBE = new PersonaBC().obtenerPersona(objPersonaBE);
-
-                    //CURSO
-                    CursoCollectionBE objCursoCollectionBE = new CursoBC().listarCursos();
-                    CursoBE objCursoBE = null;
-
-                    for (int i = 0; i < objCursoCollectionBE.LstCursos.Count; i++)
-                    {
-                        if(objInformeFinCicloBE.CursoId == objCursoCollectionBE.LstCursos[i].CursoId)
-                            objCursoBE = objCursoCollectionBE.LstCursos[i];               
-                    }
-
-                    //PERIODO
-                    PeriodoCollectionBE objPeriodoCollectionBE = new PeriodoBC().listarPeriodos();
-                    PeriodoBE objPeriodoBE = null;
-
-                    for (int i = 0; i < objPeriodoCollectionBE.LstPeriodos.Count; i++)
-                    {
-                        if (objInformeFinCicloBE.PeriodoId == objPeriodoCollectionBE.LstPeriodos[i].PeriodoId)
-                            objPeriodoBE = objPeriodoCollectionBE.LstPeriodos[i];
-                    }
 
                     //ACCIONES PREVIAS
                     DataTable tableAccionesPrevias = new DataTable();
-                    tableAccionesPrevias.Columns.Add("Codigo");
-                    tableAccionesPrevias.Columns.Add("Descripcion");
+                    tableAccionesPrevias.Columns.Add("Código");
+                    tableAccionesPrevias.Columns.Add("Descripción");
                     tableAccionesPrevias.Columns.Add("Estado");
 
-                    for (int i = 0; i < objAccionPreviasCollectionBE.LstAccionesMejora.Count; i++)
+                    for (int i = 0; i < accionesprevias.LstAccionesMejora.Count(); i++)
                     {
                         DataRow rowAccionPrevias = tableAccionesPrevias.NewRow();
-                        rowAccionPrevias[0] = objAccionPreviasCollectionBE.LstAccionesMejora[i].Codigo;
-                        rowAccionPrevias[1] = objAccionPreviasCollectionBE.LstAccionesMejora[i].Descripcion;
-                        rowAccionPrevias[2] = objAccionPreviasCollectionBE.LstAccionesMejora[i].Estado;
+                        rowAccionPrevias[0] = accionesprevias.LstAccionesMejora[i].Codigo;
+                        rowAccionPrevias[1] = accionesprevias.LstAccionesMejora[i].Descripcion;
+                        rowAccionPrevias[2] = accionesprevias.LstAccionesMejora[i].Estado;
                         tableAccionesPrevias.Rows.Add(rowAccionPrevias);
                     }
 
                     //HALLAZGOS
                     DataTable tableHallazgos = new DataTable();
-                    tableHallazgos.Columns.Add("Codigo");
-                    tableHallazgos.Columns.Add("Descripcion del hallazgo");
+                    tableHallazgos.Columns.Add("Código");
+                    tableHallazgos.Columns.Add("Descripción");
 
-                    for (int i = 0; i < objHallazgoCollectionBE.LstHallazgos.Count; i++)
+                    for (int i = 0; i < hallazgos.LstHallazgos.Count(); i++)
                     {
                         DataRow rowHallazgo = tableHallazgos.NewRow();
-                        rowHallazgo[0] = objHallazgoCollectionBE.LstHallazgos[i].Codigo;
-                        rowHallazgo[1] = objHallazgoCollectionBE.LstHallazgos[i].Descripcion;
+                        rowHallazgo[0] = hallazgos.LstHallazgos[i].Codigo;
+                        rowHallazgo[1] = hallazgos.LstHallazgos[i].Descripcion;
                         tableHallazgos.Rows.Add(rowHallazgo);
                     }
 
                     //ACCIONES DE MEJORA
                     DataTable tableAccionMejora = new DataTable();
-                    tableAccionMejora.Columns.Add("Codigo");
-                    tableAccionMejora.Columns.Add("Descripción de la Acción a Realizar");
+                    tableAccionMejora.Columns.Add("Código");
+                    tableAccionMejora.Columns.Add("Descripción");
                     tableAccionMejora.Columns.Add("Hallazgo");
 
-                    for (int i = 0; i < objAccionMejoraCollectionBE.LstAccionesMejora.Count; i++)
+                    for (int i = 0; i < accionesmejora.LstAccionesMejora.Count(); i++)
                     {
                         DataRow rowAccionMejora = tableAccionMejora.NewRow();
-                        rowAccionMejora[0] = objAccionMejoraCollectionBE.LstAccionesMejora[i].Codigo;
-                        rowAccionMejora[1] = objAccionMejoraCollectionBE.LstAccionesMejora[i].Descripcion;
-                        rowAccionMejora[2] = objAccionMejoraCollectionBE.LstAccionesMejora[i].CodigoHallazgo;
+                        rowAccionMejora[0] = accionesmejora.LstAccionesMejora[i].Codigo;
+                        rowAccionMejora[1] = accionesmejora.LstAccionesMejora[i].Descripcion;
+                        rowAccionMejora[2] = accionesmejora.LstAccionesMejora[i].CodigoHallazgo;
                         tableAccionMejora.Rows.Add(rowAccionMejora);
                     }
-                    
+
                     //STUDENT OUTCUMES
                     DataTable tableOutcomes = new DataTable();
                     tableOutcomes.Columns.Add("Outcome");
                     tableOutcomes.Columns.Add("Descripción");
 
-                    for (int i = 0; i < objResultadoProgramaCollectionBE.LstResultadoProgramaxCurso.Count; i++)
+                    for (int i = 0; i < outcomes.LstResultadoProgramaxCurso.Count(); i++)
                     {
                         DataRow rowOutcome = tableOutcomes.NewRow();
-                        rowOutcome[0] = objResultadoProgramaCollectionBE.LstResultadoProgramaxCurso[i].Outcome;
-                        rowOutcome[1] = objResultadoProgramaCollectionBE.LstResultadoProgramaxCurso[i].Descricpion;
+                        rowOutcome[0] = outcomes.LstResultadoProgramaxCurso[i].Outcome;
+                        rowOutcome[1] = outcomes.LstResultadoProgramaxCurso[i].Descricpion;
                         tableOutcomes.Rows.Add(rowOutcome);
                     }
 
+                    String ruta = Server.MapPath("~/Reportes/" + periodo.Descripcion + "_" + curso.Codigo + "_InformeFinCiclo.pdf");
+
                     PDFGenerator objPDF = new PDFGenerator();
-                    objPDF.generarPdf(objPeriodoBE.Descripcion, objCursoBE.Codigo + " - " + objCursoBE.Nombre, objPersonaBE.Apellidos + ", " + objPersonaBE.Nombres, tableOutcomes, objLogroBE.Descripcion, tableAccionesPrevias, tableHallazgos, tableAccionMejora, objInformeFinCicloBE, "IFC_" + objPeriodoBE.Descripcion + "_" + objCursoBE.Codigo);
+                    objPDF.generarPdf(periodo.Descripcion, curso.Codigo + " - " + curso.Nombre, persona.Apellidos + ", " + persona.Nombres, tableOutcomes, logro.Descripcion, tableAccionesPrevias, tableHallazgos, tableAccionMejora,
+                        informe.DesarrolloUnidades, informe.ComentarioInfraestructura, informe.ComentarioAlumnos, informe.ComentarioDelegados, informe.ComentarioEncuesta,
+                        ruta);
                 }
             }
 
             catch (Exception ex)
             {
-                throw ex;
+                MostrarAlert("EXPORTAR INFORME: " + ex.Message);
+            }
+
+            finally
+            {
+                informeFinCicloClient = null;
+                resultadoClient = null;
+                logroClient = null;
+                hallazgoClient = null;
+                accionClient = null;
+                cursoClient = null;
+                periodoClient = null;
             }
         }
 
-        private PeriodoCollectionBE obtenerPeriodosFiltrados(PeriodoCollectionBE listaPeriodosTotal)
+        private PeriodoCollectionBE obtenerPeriodosFiltrados(PeriodoWS.PeriodoCollectionDC listaPeriodosTotal)
         {
             int posicionPeriodoActual = 0;
             PeriodoCollectionBE lista =  new PeriodoCollectionBE();
             lista.LstPeriodos = new System.Collections.ObjectModel.Collection<PeriodoBE>();
 
-            for (int i = 0; i < listaPeriodosTotal.LstPeriodos.Count; i++)
+            for (int i = 0; i < listaPeriodosTotal.Count(); i++)
             {
-                if (listaPeriodosTotal.LstPeriodos[i].EsActual == true)
+                if (listaPeriodosTotal[i].EsActual == 1)
                 {
                     posicionPeriodoActual = i;
                     break;
@@ -255,8 +346,17 @@ namespace UPC.IFCDC.UI
 
             for (int j = posicionPeriodoActual; j > posicionPeriodoActual - 3; j--)
             {
-                if(j>=0)
-                    lista.LstPeriodos.Add(listaPeriodosTotal.LstPeriodos[j]);
+                if (j >= 0)
+                {
+                    PeriodoBE periodo = new PeriodoBE();
+                    periodo.PeriodoId = listaPeriodosTotal[j].PeriodoId;
+                    periodo.Descripcion = listaPeriodosTotal[j].Descripcion;
+                    periodo.EsActual = listaPeriodosTotal[j].EsActual;
+                    periodo.FechaInicio = listaPeriodosTotal[j].FechaInicio;
+                    periodo.FechaFin = listaPeriodosTotal[j].FechaFin;
+
+                    lista.LstPeriodos.Add(periodo);
+                }
             }
                
             return lista;
@@ -264,6 +364,31 @@ namespace UPC.IFCDC.UI
 
         private void reporteInformeFinCicloDataBind()
         {
+            InformeFinCicloWS.InformeFinCicloClient client = null;
+            String sEstado = null;
+
+            try
+            {
+                client = new InformeFinCicloWS.InformeFinCicloClient();
+
+                if (combo_InformeFinCicloEstado.SelectedItem.Value.Equals("TODOS"))
+                    sEstado = "";
+                else
+                    sEstado = combo_InformeFinCicloEstado.SelectedItem.Value;
+
+                grdInformes.DataSource = client.WSListarInformeFinCicloReporte(Convert.ToInt32(combo_InformeFinCicloCurso.SelectedItem.Value), Convert.ToInt32(combo_InformeFinCicloCiclo.SelectedItem.Value), sEstado).LstInformeFinCicloReporte;
+                grdInformes.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND, REPORTE INFORMES: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+
+            /*
             InformeFinCicloBE informe = new InformeFinCicloBE();
             informe.CursoId = Convert.ToInt32(combo_InformeFinCicloCurso.SelectedItem.Value);
             informe.PeriodoId = Convert.ToInt32(combo_InformeFinCicloCiclo.SelectedItem.Value);
@@ -277,10 +402,29 @@ namespace UPC.IFCDC.UI
 
             grdInformes.DataSource = reporteBE.LstInformeFinCicloReporte;
             grdInformes.DataBind();
+            */
         }
 
         private void reporteHallazgoDataBind()
         {
+            HallazgoWS.HallazgoClient client = null;
+
+            try
+            {
+                client = new HallazgoWS.HallazgoClient();
+                grdHallazgos.DataSource = client.WSListarHallazgoReporte(Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value), Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value)).LstHallazgoReporte;
+                grdHallazgos.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND, REPORTE HALLAZGOS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+
+            /*
             InformeFinCicloBE informe = new InformeFinCicloBE();
             informe.CursoId = Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value);
             informe.PeriodoId = Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value);
@@ -290,10 +434,36 @@ namespace UPC.IFCDC.UI
 
             grdHallazgos.DataSource = reporteHallazgosBE.LstHallazgoReporte;
             grdHallazgos.DataBind();
+            */
         }
 
         private void reporteAccionMejoraDataBind()
         {
+            AccionMejoraWS.AccionMejoraClient client = null;
+            String sEstado = null;
+
+            try
+            {
+                client = new AccionMejoraWS.AccionMejoraClient();
+
+                if (combo_AccionMejoraEstado.SelectedItem.Value.Equals("TODOS"))
+                    sEstado = "";
+                else
+                    sEstado = combo_AccionMejoraEstado.SelectedItem.Value;
+
+                grdAccionesMejora.DataSource = client.WSListarAccionMejoraReporte(Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value), Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value), sEstado).LstAccionMejoraReporte;
+                grdAccionesMejora.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND, REPORTE ACCION MEJORA: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+
+            /*
             InformeFinCicloBE informe = new InformeFinCicloBE();
             informe.CursoId = Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value);
             informe.PeriodoId = Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value);
@@ -307,6 +477,7 @@ namespace UPC.IFCDC.UI
 
             grdAccionesMejora.DataSource = reporteAccionesBE.LstAccionMejoraReporte;
             grdAccionesMejora.DataBind();
+            */
         }
 
         private void setearCombos()
@@ -320,19 +491,24 @@ namespace UPC.IFCDC.UI
             combo_AccionMejoraCurso.Items.Add(new ListItem("TODOS", "0"));
             combo_AccionMejoraCiclo.Items.Add(new ListItem("TODOS", "0"));
 
-            for (int i = 0; i < objCursoCollectionBE.LstCursos.Count; i++)
+            for (int i = 0; i < objCursoCollectionDC.Count(); i++)
             {
-                combo_InformeFinCicloCurso.Items.Add(new ListItem(objCursoCollectionBE.LstCursos[i].Codigo + " - " + objCursoCollectionBE.LstCursos[i].Nombre, objCursoCollectionBE.LstCursos[i].CursoId.ToString()));
-                combo_HallazgoCurso.Items.Add(new ListItem(objCursoCollectionBE.LstCursos[i].Codigo + " - " + objCursoCollectionBE.LstCursos[i].Nombre, objCursoCollectionBE.LstCursos[i].CursoId.ToString()));
-                combo_AccionMejoraCurso.Items.Add(new ListItem(objCursoCollectionBE.LstCursos[i].Codigo + " - " + objCursoCollectionBE.LstCursos[i].Nombre, objCursoCollectionBE.LstCursos[i].CursoId.ToString()));
+                combo_InformeFinCicloCurso.Items.Add(new ListItem(objCursoCollectionDC[i].Codigo + " - " + objCursoCollectionDC[i].Nombre, objCursoCollectionDC[i].CursoId.ToString()));
+                combo_HallazgoCurso.Items.Add(new ListItem(objCursoCollectionDC[i].Codigo + " - " + objCursoCollectionDC[i].Nombre, objCursoCollectionDC[i].CursoId.ToString()));
+                combo_AccionMejoraCurso.Items.Add(new ListItem(objCursoCollectionDC[i].Codigo + " - " + objCursoCollectionDC[i].Nombre, objCursoCollectionDC[i].CursoId.ToString()));
             }
 
-            for (int i = 0; i < listaPeriodosFiltrados.LstPeriodos.Count; i++)
+            for (int i = 0; i < listaPeriodosFiltrado.LstPeriodos.Count; i++)
             {
-                combo_InformeFinCicloCiclo.Items.Add(new ListItem(listaPeriodosFiltrados.LstPeriodos[i].Descripcion, listaPeriodosFiltrados.LstPeriodos[i].PeriodoId.ToString()));
-                combo_HallazgoCiclo.Items.Add(new ListItem(listaPeriodosFiltrados.LstPeriodos[i].Descripcion, listaPeriodosFiltrados.LstPeriodos[i].PeriodoId.ToString()));
-                combo_AccionMejoraCiclo.Items.Add(new ListItem(listaPeriodosFiltrados.LstPeriodos[i].Descripcion, listaPeriodosFiltrados.LstPeriodos[i].PeriodoId.ToString()));
+                combo_InformeFinCicloCiclo.Items.Add(new ListItem(listaPeriodosFiltrado.LstPeriodos[i].Descripcion, listaPeriodosFiltrado.LstPeriodos[i].PeriodoId.ToString()));
+                combo_HallazgoCiclo.Items.Add(new ListItem(listaPeriodosFiltrado.LstPeriodos[i].Descripcion, listaPeriodosFiltrado.LstPeriodos[i].PeriodoId.ToString()));
+                combo_AccionMejoraCiclo.Items.Add(new ListItem(listaPeriodosFiltrado.LstPeriodos[i].Descripcion, listaPeriodosFiltrado.LstPeriodos[i].PeriodoId.ToString()));
             }
+        }
+
+        private void MostrarAlert(String mensaje)
+        {
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "MensajeError", String.Format("alert('{0}');", mensaje), true);
         }
     }
 }

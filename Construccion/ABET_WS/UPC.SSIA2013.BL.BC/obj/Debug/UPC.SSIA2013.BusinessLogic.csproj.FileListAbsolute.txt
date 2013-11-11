@@ -1,0 +1,76 @@
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\SSIA2013\Desktop\WebService\SIGERCOV_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+D:\TDP1\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+D:\TDP1\SIGERCOV_WS_Final v2\SIGERCOV_WS_Final\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\SSIA2013\Desktop\Proyectos En Uso\SIGERCOV_WS_Final_v3\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+D:\UPC\2013-02\TP2\GPPP.SIGERCOV\SIGERCOV_WS_Final_v4\SIGERCOV_WS_Final\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataModel.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataModel.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
+C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb

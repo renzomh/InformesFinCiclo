@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E854829-4EA0-44CB-8DF5-B224E2AB19A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UPC.SSIA2013.WS.DataContract</RootNamespace>
+    <AssemblyName>UPC.SSIA2013.WS.DataContract</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccionMejoraCollectionDC.cs" />
+    <Compile Include="AccionMejoraDC.cs" />
+    <Compile Include="AccionMejoraReporteCollectionDC.cs" />
+    <Compile Include="AccionMejoraReporteDC.cs" />
+    <Compile Include="AlumnoCollectionDC.cs" />
+    <Compile Include="AlumnoDC.cs" />
+    <Compile Include="CarreraCollectionDC.cs" />
+    <Compile Include="CarreraDC.cs" />
+    <Compile Include="CompetenciaAbetCollectionDC.cs" />
+    <Compile Include="CompetenciaAbetDC.cs" />
+    <Compile Include="CursoCollectionDC.cs" />
+    <Compile Include="CursoDC.cs" />
+    <Compile Include="CursoxProfesorCollectionDC.cs" />
+    <Compile Include="CursoxProfesorDC.cs" />
+    <Compile Include="EmpresaCollectionDC.cs" />
+    <Compile Include="EmpresaDC.cs" />
+    <Compile Include="EncuestaCollectionDC.cs" />
+    <Compile Include="EncuestaDC.cs" />
+    <Compile Include="HallazgoCollectionDC.cs" />
+    <Compile Include="HallazgoDC.cs" />
+    <Compile Include="HallazgoReporteCollectionDC.cs" />
+    <Compile Include="HallazgoReporteDC.cs" />
+    <Compile Include="InformeFinCicloDC.cs" />
+    <Compile Include="InformeFinCicloReporteCollectionDC.cs" />
+    <Compile Include="InformeFinCicloReporteDC.cs" />
+    <Compile Include="JefeDirectoCollectionDC.cs" />
+    <Compile Include="JefeDirectoDC.cs" />
+    <Compile Include="LogroDC.cs" />
+    <Compile Include="MallaEncuestaCollectionDC.cs" />
+    <Compile Include="MallaEncuestaDC.cs" />
+    <Compile Include="OutcomeCollectionDC.cs" />
+    <Compile Include="OutcomeDC.cs" />
+    <Compile Include="PeriodoCollectionDC.cs" />
+    <Compile Include="PeriodoDC.cs" />
+    <Compile Include="PersonaDC.cs" />
+    <Compile Include="PracticaPreProfesionalCollectionDC.cs" />
+    <Compile Include="PracticaPreProfesionalDC.cs" />
+    <Compile Include="ProfesorDC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoProgramaCollection.cs" />
+    <Compile Include="ResultadoProgramaDC.cs" />
+    <Compile Include="ResultadoProgramaxCursoCollectionDC.cs" />
+    <Compile Include="ResultadoProgramaxCursoDC.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

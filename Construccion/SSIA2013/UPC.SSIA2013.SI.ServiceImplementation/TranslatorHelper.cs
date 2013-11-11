@@ -20,7 +20,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         
         //ACCIONES DE MEJORA
 
-        public static AccionMejoraCollectionDC TranslateAccionesMejoraRegistrarLRToAccionMejoraCollection(List<up_IFCDC_Registrar_AccionMejoraResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraRegistrarLRToAccionMejoraCollection(List<up_Registrar_AccionMejoraResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -42,7 +42,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraDC TranslateAccionMejoraRegistrarLRToAccionMejoraDC(up_IFCDC_Registrar_AccionMejoraResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraRegistrarLRToAccionMejoraDC(up_Registrar_AccionMejoraResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -69,7 +69,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static AccionMejoraCollectionDC TranslateAccionesMejoraListarLRToAccionMejoraCollection(List<up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraListarLRToAccionMejoraCollection(List<up_Listar_AccionMejora_x_InformeFinCicloResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -91,7 +91,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraDC TranslateAccionMejoraListarLRToAccionMejoraDC(up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraListarLRToAccionMejoraDC(up_Listar_AccionMejora_x_InformeFinCicloResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -118,7 +118,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static AccionMejoraCollectionDC TranslateAccionesPreviasListarLRToAccionMejoraCollection(List<up_IFCDC_Listar_AccionMejora_PreviasResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesPreviasListarLRToAccionMejoraCollection(List<up_Listar_AccionMejora_PreviasResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -140,7 +140,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraDC TranslateAccionMejoraPreviaListarLRToAccionMejoraDC(up_IFCDC_Listar_AccionMejora_PreviasResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraPreviaListarLRToAccionMejoraDC(up_Listar_AccionMejora_PreviasResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -167,7 +167,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static AccionMejoraCollectionDC TranslateAccionesMejoraEditarLRToAccionMejoraCollection(List<up_IFCDC_Editar_AccionMejoraResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraEditarLRToAccionMejoraCollection(List<up_Editar_AccionMejoraResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -189,7 +189,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraDC TranslateAccionMejoraEditarLRToAccionMejoraDC(up_IFCDC_Editar_AccionMejoraResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraEditarLRToAccionMejoraDC(up_Editar_AccionMejoraResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -216,7 +216,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static AccionMejoraCollectionDC TranslateAccionesMejoraPreviaEditarLRToAccionMejoraCollection(List<up_IFCDC_Editar_AccionMejora_PreviaResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraPreviaEditarLRToAccionMejoraCollection(List<up_Editar_AccionMejora_PreviaResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -238,7 +238,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraDC TranslateAccionMejoraPreviaEditarLRToAccionMejoraDC(up_IFCDC_Editar_AccionMejora_PreviaResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraPreviaEditarLRToAccionMejoraDC(up_Editar_AccionMejora_PreviaResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -265,7 +265,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static AccionMejoraCollectionDC TranslateAccionesMejoraEliminarLRToAccionMejoraCollection(List<up_IFCDC_Eliminar_AccionMejoraResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraEliminarLRToAccionMejoraCollection(List<up_Eliminar_AccionMejoraResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -287,7 +287,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraDC TranslateAccionMejoraEliminarLRToAccionMejoraDC(up_IFCDC_Eliminar_AccionMejoraResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraEliminarLRToAccionMejoraDC(up_Eliminar_AccionMejoraResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -314,7 +314,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static AccionMejoraReporteCollectionDC TranslateAccionesMejoraReporteLRToAccionMejoraCollection(List<up_IFCDC_Listar_Reporte_AccionMejoraResult> lstLR)
+        public static AccionMejoraReporteCollectionDC TranslateAccionesMejoraReporteLRToAccionMejoraCollection(List<up_Listar_Reporte_AccionMejoraResult> lstLR)
         {
             AccionMejoraReporteCollectionDC collection;
 
@@ -336,7 +336,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static AccionMejoraReporteDC TranslateAccionMejoraReporteLRToAccionMejoraDC(up_IFCDC_Listar_Reporte_AccionMejoraResult objLR)
+        public static AccionMejoraReporteDC TranslateAccionMejoraReporteLRToAccionMejoraDC(up_Listar_Reporte_AccionMejoraResult objLR)
         {
             AccionMejoraReporteDC obj;
 
@@ -361,7 +361,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         }
 
         //RESULTADO_PROGRAMA_CURSO
-        public static ResultadoProgramaxCursoCollectionDC TranslateResultadoProgramasxCursoLRToResultadoProgramaCollection(List<up_IFCDC_Listar_ResultadoPrograma_x_CursoResult> lstLR)
+        public static ResultadoProgramaxCursoCollectionDC TranslateResultadoProgramasxCursoLRToResultadoProgramaCollection(List<up_Listar_ResultadoPrograma_x_CursoResult> lstLR)
         {
             ResultadoProgramaxCursoCollectionDC collection;
 
@@ -384,7 +384,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static ResultadoProgramaxCursoDC TranslateHallazgoxInformeFinCicloLRToHallazgoDC(up_IFCDC_Listar_ResultadoPrograma_x_CursoResult objLR)
+        public static ResultadoProgramaxCursoDC TranslateHallazgoxInformeFinCicloLRToHallazgoDC(up_Listar_ResultadoPrograma_x_CursoResult objLR)
         {
             ResultadoProgramaxCursoDC obj;
 
@@ -405,38 +405,9 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-
-        //PROFESOR
-        /*
-        public static ProfesorDC TranslateProfesorLRToProfesorDC(spObtenerProfesorResult objLR)
-        {
-            ProfesorDC objProfesorDC;
-
-            try
-            {
-                objProfesorDC = new ProfesorDC();
-
-                if (objLR != null)
-                {
-                    objProfesorDC.ProfesorId = objLR.ProfesorId;
-                    objProfesorDC.Codigo = objLR.Codigo;
-                    objProfesorDC.Nombres = objLR.Nombres;
-                    objProfesorDC.Apellidos = objLR.Apellidos;
-                    objProfesorDC.EsTC = Boolean.Parse(objLR.EsTC.ToString());
-                }  
-
-                return objProfesorDC;
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        */
          
         //PERSONA
-        public static PersonaDC TranslatePersonaLRToPersonaDC(up_IFCDC_Obtener_PersonaResult objLR)
+        public static PersonaDC TranslatePersonaLRToPersonaDC(up_Obtener_PersonaResult objLR)
         {
             PersonaDC objPersonaDC;
 
@@ -461,7 +432,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         }
 
         //CURSO
-        public static CursoCollectionDC TranslateListarCursosLRToCursoCollectionDC(List<up_IFCDC_Listar_CursosResult> lstLR)
+        public static CursoCollectionDC TranslateListarCursosLRToCursoCollectionDC(List<up_Listar_CursosResult> lstLR)
         {
             CursoCollectionDC collection;
 
@@ -483,7 +454,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static CursoDC TranslateListarCursosLRToCursoDC(up_IFCDC_Listar_CursosResult objLR)
+        public static CursoDC TranslateListarCursosLRToCursoDC(up_Listar_CursosResult objLR)
         {
             CursoDC objCursoDC;
 
@@ -506,7 +477,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
 
         //PERIODO
 
-        public static PeriodoCollectionDC TranslateListarPeriodosLRToPeriodoCollectionDC(List<up_IFCDC_Listar_PeriodosResult> lstLR)
+        public static PeriodoCollectionDC TranslateListarPeriodosLRToPeriodoCollectionDC(List<up_Listar_PeriodosResult> lstLR)
         {
             PeriodoCollectionDC collection;
 
@@ -528,7 +499,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static PeriodoDC TranslateListarPeriodosLRToPeriodoDC(up_IFCDC_Listar_PeriodosResult objLR)
+        public static PeriodoDC TranslateListarPeriodosLRToPeriodoDC(up_Listar_PeriodosResult objLR)
         {
             PeriodoDC objPerdiodoDC;
 
@@ -551,7 +522,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static PeriodoDC TranslatePeriodoLRToPeriodoDC(up_IFCDC_Obtener_PeriodoActualResult objLR)
+        public static PeriodoDC TranslatePeriodoLRToPeriodoDC(up_Obtener_PeriodoActualResult objLR)
         {
             PeriodoDC objPerdiodoDC;
 
@@ -576,7 +547,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
 
         //INFORME FIN CICLO
 
-        public static InformeFinCicloDC TranslateInformeFinCicloxIdLRToInformeFinCicloDC(up_IFCDC_Obtener_InformeFinCiclo_x_IdResult objLR)
+        public static InformeFinCicloDC TranslateInformeFinCicloxIdLRToInformeFinCicloDC(up_Obtener_InformeFinCiclo_x_IdResult objLR)
         {
             InformeFinCicloDC objInformeFinCiclo;
 
@@ -608,7 +579,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
     
-        public static InformeFinCicloDC TranslateInformeFinCicloLRToInformeFinCicloDC(up_IFCDC_Obtener_InformeFinCicloResult objLR)
+        public static InformeFinCicloDC TranslateInformeFinCicloLRToInformeFinCicloDC(up_Obtener_InformeFinCicloResult objLR)
         {
             InformeFinCicloDC objInformeFinCiclo;
 
@@ -640,7 +611,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static InformeFinCicloDC TranslateEditarInformeFinCicloLRToInformeFinCicloDC(up_IFCDC_Editar_InformFinCicloResult objLR)
+        public static InformeFinCicloDC TranslateEditarInformeFinCicloLRToInformeFinCicloDC(up_Editar_InformeFinCicloResult objLR)
         {
             InformeFinCicloDC objInformeFinCiclo;
 
@@ -672,7 +643,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static InformeFinCicloReporteCollectionDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteCollection(List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> lstLR)
+        public static InformeFinCicloReporteCollectionDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteCollection(List<up_Listar_Reporte_InformeFinCicloResult> lstLR)
         {
             InformeFinCicloReporteCollectionDC collection;
 
@@ -694,7 +665,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static InformeFinCicloReporteDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteDC(up_IFCDC_Listar_Reporte_InformeFinCicloResult objLR)
+        public static InformeFinCicloReporteDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteDC(up_Listar_Reporte_InformeFinCicloResult objLR)
         {
             InformeFinCicloReporteDC obj;
 
@@ -720,7 +691,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         }
 
         //LOGRO
-        public static LogroDC TranslateLogroLRToLogroDC(up_IFCDC_Obtener_Logro_x_CursoResult objLR)
+        public static LogroDC TranslateLogroLRToLogroDC(up_Obtener_Logro_x_CursoResult objLR)
         {
             LogroDC objLogroDC;
 
@@ -746,7 +717,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         }
 
         //CURSO_PROFESOR
-        public static CursoxProfesorCollectionDC TranslateCursosxProfesorLRToCursosxProfesorCollection(List<up_IFCDC_Listar_Cursos_x_ProfesorResult> lstLR)
+        public static CursoxProfesorCollectionDC TranslateCursosxProfesorLRToCursosxProfesorCollection(List<up_Listar_Cursos_x_ProfesorResult> lstLR)
         {
             CursoxProfesorCollectionDC collection;
 
@@ -769,7 +740,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static CursoxProfesorDC TranslateCursoxProfesorLRToCursoxProfesorDC(up_IFCDC_Listar_Cursos_x_ProfesorResult objLR)
+        public static CursoxProfesorDC TranslateCursoxProfesorLRToCursoxProfesorDC(up_Listar_Cursos_x_ProfesorResult objLR)
         {
             CursoxProfesorDC objCursoxProfesorDC;
 
@@ -793,7 +764,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
 
         //HALLAZGO
 
-        public static HallazgoCollectionDC TranslateHallazgosRegistrarLRToHallazgosCollection(List<up_IFCDC_Registrar_HallazgoResult> lstLR)
+        public static HallazgoCollectionDC TranslateHallazgosRegistrarLRToHallazgosCollection(List<up_Registrar_HallazgoResult> lstLR)
         {
             HallazgoCollectionDC collection;
 
@@ -815,7 +786,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static HallazgoDC TranslateHallazgoRegistrarLRToHallazgoDC(up_IFCDC_Registrar_HallazgoResult objLR)
+        public static HallazgoDC TranslateHallazgoRegistrarLRToHallazgoDC(up_Registrar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
 
@@ -837,7 +808,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static HallazgoCollectionDC TranslateHallazgosListarLRToHallazgosCollection(List<up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult> lstLR)
+        public static HallazgoCollectionDC TranslateHallazgosListarLRToHallazgosCollection(List<up_Listar_Hallazgos_x_InformeFinCicloResult> lstLR)
         {
             HallazgoCollectionDC collection;
 
@@ -859,7 +830,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static HallazgoDC TranslateHallazgoListarLRToHallazgoDC(up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult objLR)
+        public static HallazgoDC TranslateHallazgoListarLRToHallazgoDC(up_Listar_Hallazgos_x_InformeFinCicloResult objLR)
         {
             HallazgoDC objHallazgoDC;
 
@@ -881,7 +852,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static HallazgoCollectionDC TranslateHallazgosEditarLRToHallazgosCollection(List<up_IFCDC_Editar_HallazgoResult> lstLR)
+        public static HallazgoCollectionDC TranslateHallazgosEditarLRToHallazgosCollection(List<up_Editar_HallazgoResult> lstLR)
         {
             HallazgoCollectionDC collection;
 
@@ -903,7 +874,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static HallazgoDC TranslateHallazgoEditarLRToHallazgoDC(up_IFCDC_Editar_HallazgoResult objLR)
+        public static HallazgoDC TranslateHallazgoEditarLRToHallazgoDC(up_Editar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
 
@@ -925,7 +896,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static HallazgoCollectionDC TranslateHallazgosEliminarLRToHallazgosCollection(List<up_IFCDC_Eliminar_HallazgoResult> lstLR)
+        public static HallazgoCollectionDC TranslateHallazgosEliminarLRToHallazgosCollection(List<up_Eliminar_HallazgoResult> lstLR)
         {
             HallazgoCollectionDC collection;
 
@@ -947,7 +918,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static HallazgoDC TranslateHallazgoEliminarLRToHallazgoDC(up_IFCDC_Eliminar_HallazgoResult objLR)
+        public static HallazgoDC TranslateHallazgoEliminarLRToHallazgoDC(up_Eliminar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
 
@@ -969,7 +940,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static HallazgoReporteCollectionDC TranslateHallazgoReporteLRToHallazgoReporteCollection(List<up_IFCDC_Listar_Reporte_HallazgoResult> lstLR)
+        public static HallazgoReporteCollectionDC TranslateHallazgoReporteLRToHallazgoReporteCollection(List<up_Listar_Reporte_HallazgoResult> lstLR)
         {
             HallazgoReporteCollectionDC collection;
 
@@ -991,7 +962,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        public static HallazgoReporteDC TranslateHallazgoReporteLRToHallazgoReporteDC(up_IFCDC_Listar_Reporte_HallazgoResult objLR)
+        public static HallazgoReporteDC TranslateHallazgoReporteLRToHallazgoReporteDC(up_Listar_Reporte_HallazgoResult objLR)
         {
             HallazgoReporteDC obj;
 

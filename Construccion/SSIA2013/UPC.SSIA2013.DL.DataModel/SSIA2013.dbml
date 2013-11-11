@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IFCDC-SSIA2013" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=IFCDC-SSIA2013;User ID=IFCDCadmin" SettingsObjectName="UPC.SSIA2013.DL.DataModel.Properties.Settings" SettingsPropertyName="IFCDC_SSIA2013ConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.[up.IFCDC_Editar_AccionMejora]" Method="up_IFCDC_Editar_AccionMejora">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SSIA2012-1" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=SSIA2012-1;User ID=sa" SettingsObjectName="UPC.SSIA2013.DL.DataModel.Properties.Settings" SettingsPropertyName="SSIA2012_1ConnectionString3" Provider="System.Data.SqlClient" />
+  <Function Name="IFCDC.up_Editar_AccionMejora" Method="up_Editar_AccionMejora">
     <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
     <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
-    <ElementType Name="up_IFCDC_Editar_AccionMejoraResult">
+    <ElementType Name="up_Editar_AccionMejoraResult">
       <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -18,11 +18,11 @@
       <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Registrar_Hallazgo]" Method="up_IFCDC_Registrar_Hallazgo">
+  <Function Name="IFCDC.up_Registrar_Hallazgo" Method="up_Registrar_Hallazgo">
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
     <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Registrar_HallazgoResult">
+    <ElementType Name="up_Registrar_HallazgoResult">
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
@@ -31,12 +31,12 @@
       <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Editar_AccionMejora_Previa]" Method="up_IFCDC_Editar_AccionMejora_Previa">
+  <Function Name="IFCDC.up_Editar_AccionMejora_Previa" Method="up_Editar_AccionMejora_Previa">
     <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="up_IFCDC_Editar_AccionMejora_PreviaResult">
+    <ElementType Name="up_Editar_AccionMejora_PreviaResult">
       <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -49,11 +49,11 @@
       <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Editar_Hallazgo]" Method="up_IFCDC_Editar_Hallazgo">
+  <Function Name="IFCDC.up_Editar_Hallazgo" Method="up_Editar_Hallazgo">
     <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Editar_HallazgoResult">
+    <ElementType Name="up_Editar_HallazgoResult">
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
@@ -62,7 +62,7 @@
       <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Editar_InformFinCiclo]" Method="up_IFCDC_Editar_InformFinCiclo">
+  <Function Name="IFCDC.up_Editar_InformeFinCiclo" Method="up_Editar_InformeFinCiclo">
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="DesarrolloUnidades" Parameter="desarrolloUnidades" Type="System.String" DbType="VarChar(500)" />
@@ -70,7 +70,7 @@
     <Parameter Name="Alumnos" Parameter="alumnos" Type="System.String" DbType="VarChar(500)" />
     <Parameter Name="Delegados" Parameter="delegados" Type="System.String" DbType="VarChar(500)" />
     <Parameter Name="Encuesta" Parameter="encuesta" Type="System.String" DbType="VarChar(500)" />
-    <ElementType Name="up_IFCDC_Editar_InformFinCicloResult">
+    <ElementType Name="up_Editar_InformeFinCicloResult">
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -84,10 +84,10 @@
       <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Eliminar_AccionMejora]" Method="up_IFCDC_Eliminar_AccionMejora">
+  <Function Name="IFCDC.up_Eliminar_AccionMejora" Method="up_Eliminar_AccionMejora">
     <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Eliminar_AccionMejoraResult">
+    <ElementType Name="up_Eliminar_AccionMejoraResult">
       <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -100,10 +100,22 @@
       <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_AccionMejora_Previas]" Method="up_IFCDC_Listar_AccionMejora_Previas">
+  <Function Name="IFCDC.up_Eliminar_Hallazgo" Method="up_Eliminar_Hallazgo">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Eliminar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_AccionMejora_Previas" Method="up_Listar_AccionMejora_Previas">
     <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Listar_AccionMejora_PreviasResult">
+    <ElementType Name="up_Listar_AccionMejora_PreviasResult">
       <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -116,9 +128,9 @@
       <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_AccionMejora_x_InformeFinCiclo]" Method="up_IFCDC_Listar_AccionMejora_x_InformeFinCiclo">
+  <Function Name="IFCDC.up_Listar_AccionMejora_x_InformeFinCiclo" Method="up_Listar_AccionMejora_x_InformeFinCiclo">
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult">
+    <ElementType Name="up_Listar_AccionMejora_x_InformeFinCicloResult">
       <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -131,18 +143,25 @@
       <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Cursos_x_Profesor]" Method="up_IFCDC_Listar_Cursos_x_Profesor">
+  <Function Name="IFCDC.up_Listar_Cursos" Method="up_Listar_Cursos">
+    <ElementType Name="up_Listar_CursosResult">
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Cursos_x_Profesor" Method="up_Listar_Cursos_x_Profesor">
     <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="up_IFCDC_Listar_Cursos_x_ProfesorResult">
+    <ElementType Name="up_Listar_Cursos_x_ProfesorResult">
       <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Hallazgos_x_InformeFinCiclo]" Method="up_IFCDC_Listar_Hallazgos_x_InformeFinCiclo">
+  <Function Name="IFCDC.up_Listar_Hallazgos_x_InformeFinCiclo" Method="up_Listar_Hallazgos_x_InformeFinCiclo">
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult">
+    <ElementType Name="up_Listar_Hallazgos_x_InformeFinCicloResult">
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
@@ -151,87 +170,8 @@
       <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_ResultadoPrograma_x_Curso]" Method="up_IFCDC_Listar_ResultadoPrograma_x_Curso">
-    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Listar_ResultadoPrograma_x_CursoResult">
-      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Outcome" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_InformeFinCiclo]" Method="up_IFCDC_Obtener_InformeFinCiclo">
-    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Obtener_InformeFinCicloResult">
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_InformeFinCiclo_x_Id]" Method="up_IFCDC_Obtener_InformeFinCiclo_x_Id">
-    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Obtener_InformeFinCiclo_x_IdResult">
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_Logro_x_Curso]" Method="up_IFCDC_Obtener_Logro_x_Curso">
-    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Obtener_Logro_x_CursoResult">
-      <Column Name="LogroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_Persona]" Method="up_IFCDC_Obtener_Persona">
-    <Parameter Name="PersonaId" Parameter="personaId" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="up_IFCDC_Obtener_PersonaResult">
-      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
-      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
-      <Column Name="TipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Registrar_AccionMejora]" Method="up_IFCDC_Registrar_AccionMejora">
-    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
-    <ElementType Name="up_IFCDC_Registrar_AccionMejoraResult">
-      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Periodos]" Method="up_IFCDC_Listar_Periodos">
-    <ElementType Name="up_IFCDC_Listar_PeriodosResult">
+  <Function Name="IFCDC.up_Listar_Periodos" Method="up_Listar_Periodos">
+    <ElementType Name="up_Listar_PeriodosResult">
       <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
@@ -240,20 +180,34 @@
       <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_PeriodoActual]" Method="up_IFCDC_Obtener_PeriodoActual">
-    <ElementType Name="up_IFCDC_Obtener_PeriodoActualResult">
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FechaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Reporte_InformeFinCiclo]" Method="up_IFCDC_Listar_Reporte_InformeFinCiclo">
+  <Function Name="IFCDC.up_Listar_Reporte_AccionMejora" Method="up_Listar_Reporte_AccionMejora">
     <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="up_IFCDC_Listar_Reporte_InformeFinCicloResult">
+    <ElementType Name="up_Listar_Reporte_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoAccionMejora" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Reporte_Hallazgo" Method="up_Listar_Reporte_Hallazgo">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_Reporte_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Listar_Reporte_InformeFinCiclo" Method="up_Listar_Reporte_InformeFinCiclo">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="up_Listar_Reporte_InformeFinCicloResult">
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CodigoCurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
@@ -263,46 +217,93 @@
       <Column Name="Periodo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Reporte_Hallazgo]" Method="up_IFCDC_Listar_Reporte_Hallazgo">
+  <Function Name="IFCDC.up_Listar_ResultadoPrograma_x_Curso" Method="up_Listar_ResultadoPrograma_x_Curso">
     <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Listar_Reporte_HallazgoResult">
-      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    <ElementType Name="up_Listar_ResultadoPrograma_x_CursoResult">
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outcome" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Cursos]" Method="up_IFCDC_Listar_Cursos">
-    <ElementType Name="up_IFCDC_Listar_CursosResult">
+  <Function Name="IFCDC.up_Obtener_InformeFinCiclo" Method="up_Obtener_InformeFinCiclo">
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_InformeFinCicloResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_Reporte_AccionMejora]" Method="up_IFCDC_Listar_Reporte_AccionMejora">
-    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
-    <ElementType Name="up_IFCDC_Listar_Reporte_AccionMejoraResult">
-      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoAccionMejora" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Eliminar_Hallazgo]" Method="up_IFCDC_Eliminar_Hallazgo">
+  <Function Name="IFCDC.up_Obtener_InformeFinCiclo_x_Id" Method="up_Obtener_InformeFinCiclo_x_Id">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_InformeFinCiclo_x_IdResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_Logro_x_Curso" Method="up_Obtener_Logro_x_Curso">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Logro_x_CursoResult">
+      <Column Name="LogroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_PeriodoActual" Method="up_Obtener_PeriodoActual">
+    <ElementType Name="up_Obtener_PeriodoActualResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Obtener_Persona" Method="up_Obtener_Persona">
+    <Parameter Name="PersonaId" Parameter="personaId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Obtener_PersonaResult">
+      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="TipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Registrar_AccionMejora" Method="up_Registrar_AccionMejora">
     <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Eliminar_HallazgoResult">
+    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_Registrar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

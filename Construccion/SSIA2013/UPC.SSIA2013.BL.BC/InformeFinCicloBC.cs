@@ -9,7 +9,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class InformeFinCicloBC
     {
-        public up_IFCDC_Obtener_InformeFinCicloResult obtenerInformeFinCiclo(String coordinadorId, int cursoId, int periodoId)
+        public up_Obtener_InformeFinCicloResult obtenerInformeFinCiclo(String coordinadorId, int cursoId, int periodoId)
         {
             InformeFinCicloDALC objInformeFinCicloDALC;
 
@@ -24,7 +24,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public up_IFCDC_Editar_InformFinCicloResult editarInformeFinCiclo(int informeFinCicloId, String estado, String unidades, String infraestructura, String alumnos, String delegados, String encuesta)
+        public up_Editar_InformeFinCicloResult editarInformeFinCiclo(int informeFinCicloId, String estado, String unidades, String infraestructura, String alumnos, String delegados, String encuesta)
         {
             InformeFinCicloDALC objInformeFinCicloDALC;
 
@@ -39,7 +39,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public up_IFCDC_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
+        public up_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
         {
             InformeFinCicloDALC objInformeFinCicloDALC;
 
@@ -54,7 +54,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> listarReporteInformeFinCiclo(int cursoId, int periodoId, String estado)
+        public List<up_Listar_Reporte_InformeFinCicloResult> listarReporteInformeFinCiclo(int cursoId, int periodoId, String estado)
         {
             InformeFinCicloDALC objInformeFinCicloDALC;
 

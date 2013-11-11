@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{334543BC-EA60-47DF-B341-4DB82A64FC79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UPC.SSIA2013.WS.ServiceLibrary</RootNamespace>
+    <AssemblyName>UPC.SSIA2013.WS.ServiceLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccionMejora.cs" />
+    <Compile Include="Alumno.cs" />
+    <Compile Include="Carrera.cs" />
+    <Compile Include="CompetenciaAbet.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Encuesta.cs" />
+    <Compile Include="Hallazgo.cs" />
+    <Compile Include="InformeFinCiclo.cs" />
+    <Compile Include="JefeDirecto.cs" />
+    <Compile Include="Logro.cs" />
+    <Compile Include="MallaEncuesta.cs" />
+    <Compile Include="Outcome.cs" />
+    <Compile Include="Periodo.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="PracticaPreProfesional.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoPrograma.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPC.SSIA2013.BL.BC\UPC.SSIA2013.BusinessLogic.csproj">
+      <Project>{72FB9973-3BFD-41A6-815E-1D78F41BF489}</Project>
+      <Name>UPC.SSIA2013.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.BL.BE\UPC.SSIA2013.BusinessEntity.csproj">
+      <Project>{492E6801-A575-4E0F-B936-8CA68C436C58}</Project>
+      <Name>UPC.SSIA2013.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.DataModel\UPC.SSIA2013.DataModel.csproj">
+      <Project>{B4B46596-B56E-4242-8806-5A7C3B8F3673}</Project>
+      <Name>UPC.SSIA2013.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.WS.DC\UPC.SSIA2013.WS.DataContract.csproj">
+      <Project>{1E854829-4EA0-44CB-8DF5-B224E2AB19A2}</Project>
+      <Name>UPC.SSIA2013.WS.DataContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.WS.SC\UPC.SSIA2013.WS.ServiceContract.csproj">
+      <Project>{25CF2CE0-4929-49DB-A993-CA09CD3A6A7C}</Project>
+      <Name>UPC.SSIA2013.WS.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.WS.TL\UPC.SSIA2013.WS.TranslatorLayer.csproj">
+      <Project>{1FB4C112-004A-4DE4-85AF-8EFF828D868F}</Project>
+      <Name>UPC.SSIA2013.WS.TranslatorLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

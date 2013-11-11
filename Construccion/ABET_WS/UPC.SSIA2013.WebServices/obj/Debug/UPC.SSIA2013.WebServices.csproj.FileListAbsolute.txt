@@ -1,0 +1,5 @@
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WebServices\bin\UPC.SSIA2013.WebServices.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WebServices\bin\UPC.SSIA2013.WebServices.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebServices.dll
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebServices.pdb
+C:\SIGERCOV_WS\SIGERCOV_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebServices.csprojResolveAssemblyReference.cache

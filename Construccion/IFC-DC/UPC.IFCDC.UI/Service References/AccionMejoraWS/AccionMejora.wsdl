@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccionMejora" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4526/AccionMejoraWS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UPC.SSIA2013.WS.DataContract" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccionMejora_WSRegistrarAccionMejora_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSRegistrarAccionMejora" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSRegistrarAccionMejora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSRegistrarAccionMejoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSListarAccionesMejoraxInformeFinCiclo_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarAccionesMejoraxInformeFinCiclo" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSListarAccionesMejoraxInformeFinCiclo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarAccionesMejoraxInformeFinCicloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSListarAccionesMejoraPrevias_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarAccionesMejoraPrevias" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSListarAccionesMejoraPrevias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarAccionesMejoraPreviasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSEditarAccionMejora_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSEditarAccionMejora" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSEditarAccionMejora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSEditarAccionMejoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSEditarAccionMejoraPrevia_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSEditarAccionMejoraPrevia" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSEditarAccionMejoraPrevia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSEditarAccionMejoraPreviaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSEliminarAccionMejora_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSEliminarAccionMejora" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSEliminarAccionMejora_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSEliminarAccionMejoraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSListarAccionMejoraReporte_InputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarAccionMejoraReporte" />
+  </wsdl:message>
+  <wsdl:message name="IAccionMejora_WSListarAccionMejoraReporte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WSListarAccionMejoraReporteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccionMejora">
+    <wsdl:operation name="WSRegistrarAccionMejora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSRegistrarAccionMejora" message="tns:IAccionMejora_WSRegistrarAccionMejora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSRegistrarAccionMejoraResponse" message="tns:IAccionMejora_WSRegistrarAccionMejora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WSListarAccionesMejoraxInformeFinCiclo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSListarAccionesMejoraxInformeFinCiclo" message="tns:IAccionMejora_WSListarAccionesMejoraxInformeFinCiclo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSListarAccionesMejoraxInformeFinCicloResponse" message="tns:IAccionMejora_WSListarAccionesMejoraxInformeFinCiclo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WSListarAccionesMejoraPrevias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSListarAccionesMejoraPrevias" message="tns:IAccionMejora_WSListarAccionesMejoraPrevias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSListarAccionesMejoraPreviasResponse" message="tns:IAccionMejora_WSListarAccionesMejoraPrevias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WSEditarAccionMejora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSEditarAccionMejora" message="tns:IAccionMejora_WSEditarAccionMejora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSEditarAccionMejoraResponse" message="tns:IAccionMejora_WSEditarAccionMejora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WSEditarAccionMejoraPrevia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSEditarAccionMejoraPrevia" message="tns:IAccionMejora_WSEditarAccionMejoraPrevia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSEditarAccionMejoraPreviaResponse" message="tns:IAccionMejora_WSEditarAccionMejoraPrevia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WSEliminarAccionMejora">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSEliminarAccionMejora" message="tns:IAccionMejora_WSEliminarAccionMejora_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSEliminarAccionMejoraResponse" message="tns:IAccionMejora_WSEliminarAccionMejora_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WSListarAccionMejoraReporte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccionMejora/WSListarAccionMejoraReporte" message="tns:IAccionMejora_WSListarAccionMejoraReporte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccionMejora/WSListarAccionMejoraReporteResponse" message="tns:IAccionMejora_WSListarAccionMejoraReporte_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAccionMejora" type="tns:IAccionMejora">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSRegistrarAccionMejora">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSRegistrarAccionMejora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSListarAccionesMejoraxInformeFinCiclo">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSListarAccionesMejoraxInformeFinCiclo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSListarAccionesMejoraPrevias">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSListarAccionesMejoraPrevias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSEditarAccionMejora">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSEditarAccionMejora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSEditarAccionMejoraPrevia">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSEditarAccionMejoraPrevia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSEliminarAccionMejora">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSEliminarAccionMejora" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSListarAccionMejoraReporte">
+      <soap:operation soapAction="http://tempuri.org/IAccionMejora/WSListarAccionMejoraReporte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccionMejora">
+    <wsdl:port name="BasicHttpBinding_IAccionMejora" binding="tns:BasicHttpBinding_IAccionMejora">
+      <soap:address location="http://localhost:4526/AccionMejoraWS.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -5,58 +5,51 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Collections.ObjectModel;
+
 using UPC.IFCDC.BE;
 using UPC.IFCDC.BC;
 using UPC.IFCDC.Utilitarios;
+using System.Text;
 
 namespace UPC.IFCDC.UI
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        PeriodoBE objPeriodoBE = null;
-        InformeFinCicloBE objInformeBE = null;
-        CursoxProfesorBE objCursoxProfesorBE = null;
+        PeriodoWS.PeriodoDC objPeriodoDC = null;
+        InformeFinCicloWS.InformeFinCicloDC objInformeDC = null;
+        CursoWS.CursoxProfesorDC objCursoxProfesorDC = null;
 
-        LogroBE objLogroBE = null;
-        ResultadoProgramaxCursoCollectionBE objResultadoProgramaxCursoCollectionBE = null;
-        HallazgoCollectionBE objHallazgoCollectionBE = null;
-        AccionMejoraCollectionBE objAccionesMejoraCollectionBE = null;
-        AccionMejoraCollectionBE objAccionesPreviasCollectionBE = null;
-
-        PeriodoCollectionBE listaPeriodosTotal = null;
+        PeriodoWS.PeriodoCollectionDC listaPeriodosTotal = null;
         PeriodoCollectionBE listaPeriodosFiltrada = null;
+
+        AccionMejoraWS.AccionMejoraCollectionDC listaAccionesPrevias = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            objPeriodoBE = (PeriodoBE)Session["Periodo"];
-            objInformeBE = (InformeFinCicloBE)Session["Informe"];
-            objCursoxProfesorBE = (CursoxProfesorBE)Session["CursoxProfesor"];
+            objPeriodoDC = (PeriodoWS.PeriodoDC)Session["Periodo"];
+            objInformeDC = (InformeFinCicloWS.InformeFinCicloDC)Session["Informe"];
+            objCursoxProfesorDC = (CursoWS.CursoxProfesorDC)Session["CursoxProfesor"];
 
             if (!Page.IsPostBack)
             {
-                texto_PeriodoActual.Text = objPeriodoBE.Descripcion;
-                texto_FechaLimite.Text = objPeriodoBE.FechaFin;
-                texto_DescripcionCurso.Text = objCursoxProfesorBE.Codigo + " - " + objCursoxProfesorBE.Nombre;
+                texto_PeriodoActual.Text = objPeriodoDC.Descripcion;
+                texto_FechaLimite.Text = objPeriodoDC.FechaFin;
+                texto_DescripcionCurso.Text = objCursoxProfesorDC.Codigo + " - " + objCursoxProfesorDC.Nombre;
 
                 //SETEANDO DATOS DE INFORME DE FIN DE CICLO
-                txt_DesarrolloAprendizaje.Text = objInformeBE.DesarrolloUnidades;
-                txt_Infraestructura.Text = objInformeBE.ComentarioInfraestructura;
-                txt_Alumnos.Text = objInformeBE.ComentarioAlumnos;
-                txt_Delegados.Text = objInformeBE.ComentarioDelegados;
-                txt_EncuestaAcademica.Text = objInformeBE.ComentarioEncuesta;
+                txt_DesarrolloAprendizaje.Text = objInformeDC.DesarrolloUnidades;
+                txt_Infraestructura.Text = objInformeDC.ComentarioInfraestructura;
+                txt_Alumnos.Text = objInformeDC.ComentarioAlumnos;
+                txt_Delegados.Text = objInformeDC.ComentarioDelegados;
+                txt_EncuestaAcademica.Text = objInformeDC.ComentarioEncuesta;
 
                 //OBTENIENDO PERIODOS
-                listaPeriodosTotal = new PeriodoBC().listarPeriodos();
-                listaPeriodosFiltrada = obtenerPeriodosFiltrados(listaPeriodosTotal);
-                setearCombosPeriodos();
+                setearPeriodos();
             }
 
                 //OBTENIENDO LOGRO TERMINAL
-                objLogroBE = new LogroBE();
-                objLogroBE.CursoId = objCursoxProfesorBE.CursoId;
-                objLogroBE = new LogroBC().obtenerLogroxCurso(objLogroBE);
-
-                texto_LogroTerminal.Text = objLogroBE.Descripcion;
+                setearLogros();
 
                 //OBTENIENDO STUDENT OUTCOMES
                 grdOutcomesDataBind();
@@ -69,50 +62,129 @@ namespace UPC.IFCDC.UI
 
                 //OBTENER ACCIONES PREVIAS
                 grdAccionesPreviasDataBind();
-            
+        }
+
+        private void setearPeriodos()
+        {
+            PeriodoWS.PeriodoClient client = null;
+
+            try
+            {
+                client = new PeriodoWS.PeriodoClient();
+                listaPeriodosTotal = client.WSListarPeriodos();
+                listaPeriodosFiltrada = obtenerPeriodosFiltrados(listaPeriodosTotal);
+                setearCombosPeriodos();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("SETEAR PERIODOS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+        }
+
+        private void setearLogros()
+        {
+            LogroWS.LogroClient client = null;
+
+            try
+            {
+                client = new LogroWS.LogroClient();
+                texto_LogroTerminal.Text = client.WSListarLogroxCurso(objInformeDC.CursoId).Descripcion;
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("SETEAR LOGROS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         //DATA BINDS
 
         private void grdHallazgosDataBind()
         {
-            HallazgoBE objHallazgoBE = new HallazgoBE();
-            objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            
-            objHallazgoCollectionBE = new HallazgoBC().listarHallazgos(objHallazgoBE);
-            grdHallazgos.DataSource = objHallazgoCollectionBE.LstHallazgos;
-            grdHallazgos.DataBind();
+            HallazgoWS.HallazgoClient hallazgoClient = null;
+
+            try
+            {
+                hallazgoClient = new HallazgoWS.HallazgoClient();
+                grdHallazgos.DataSource = hallazgoClient.WSListarHallazgosxInformeFinCiclo(objInformeDC.InformeFinCicloId).LstHallazgos;
+                grdHallazgos.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND HALLAZGOS: " + ex.Message);
+            }
+            finally
+            {
+                hallazgoClient = null;
+            }
         }
 
         private void grdOutcomesDataBind()
         {
-            ResultadoProgramaxCursoBE objResultadoProgramaBE = new ResultadoProgramaxCursoBE();
-            objResultadoProgramaBE.CursoId = objCursoxProfesorBE.CursoId;
+            ResultadoProgramaWS.ResultadoProgramaClient resultadoProgramaClient = null;
             
-            objResultadoProgramaxCursoCollectionBE = new ResultadoProgramaxCursoBC().listarResultadoProgramaxCurso(objResultadoProgramaBE);
-            grdOutcomes.DataSource = objResultadoProgramaxCursoCollectionBE.LstResultadoProgramaxCurso;
-            grdOutcomes.DataBind();
+            try
+            {
+                resultadoProgramaClient = new ResultadoProgramaWS.ResultadoProgramaClient();
+                grdOutcomes.DataSource = resultadoProgramaClient.WSListarResultadoProgramaxCurso(objInformeDC.CursoId, objInformeDC.PeriodoId).LstResultadoProgramaxCurso;
+                grdOutcomes.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND OUTCOMES: " + ex.Message);
+            }
+            finally
+            {
+                resultadoProgramaClient = null;
+            }
         }
 
         private void grdAccionesMejoraDataBind()
         {
-            AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
-            objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            
-            objAccionesMejoraCollectionBE = new AccionMejoraBC().listarAccionesMejora(objAccionMejoraBE);
-            grdAccionesdeMejora.DataSource = objAccionesMejoraCollectionBE.LstAccionesMejora;
-            grdAccionesdeMejora.DataBind();
+            AccionMejoraWS.AccionMejoraClient accionMejoraClient = null;
+
+            try
+            {
+                accionMejoraClient = new AccionMejoraWS.AccionMejoraClient();
+                grdAccionesdeMejora.DataSource = accionMejoraClient.WSListarAccionesMejoraxInformeFinCiclo(objInformeDC.InformeFinCicloId).LstAccionesMejora;
+                grdAccionesdeMejora.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND ACCIONES MEJORA: " + ex.Message);
+            }
+            finally
+            {
+                accionMejoraClient = null;
+            }
         }
 
         private void grdAccionesPreviasDataBind()
         {
-            InformeFinCicloBE objInformeAccionPreviaBE = new InformeFinCicloBE();
-            objInformeAccionPreviaBE.CursoId = objCursoxProfesorBE.CursoId;
-            objInformeAccionPreviaBE.PeriodoId = objPeriodoBE.PeriodoId;
+            AccionMejoraWS.AccionMejoraClient accionPreviaClient = null;
 
-            objAccionesPreviasCollectionBE = new AccionMejoraBC().listarAccionesPrevias(objInformeAccionPreviaBE);
-            grdAccionesPrevias.DataSource = objAccionesPreviasCollectionBE.LstAccionesMejora;
-            grdAccionesPrevias.DataBind();
+            try
+            {
+                accionPreviaClient = new AccionMejoraWS.AccionMejoraClient();
+                listaAccionesPrevias = accionPreviaClient.WSListarAccionesMejoraPrevias(objInformeDC.CursoId, objInformeDC.PeriodoId);
+                grdAccionesPrevias.DataSource = listaAccionesPrevias.LstAccionesMejora;
+                grdAccionesPrevias.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND ACCIONES PREVIAS: " + ex.Message);
+            }
+            finally
+            {
+                accionPreviaClient = null;
+            }
         }
 
 
@@ -120,172 +192,256 @@ namespace UPC.IFCDC.UI
         
         protected void popup_buttonRegistrarHallazgo_Click(object sender, EventArgs e)
         {
-            HallazgoBE objHallazgoBE = new HallazgoBE();
-            objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            objHallazgoBE.Descripcion = popup_textoDescripcionHallazgoRegistrar.Text;
-            objHallazgoBE.PeriodoId = objPeriodoBE.PeriodoId;
-            objHallazgoCollectionBE = new HallazgoBC().resgistrarHallazgo(objHallazgoBE);
-            grdHallazgosDataBind();
+            HallazgoWS.HallazgoClient client = null;
+
+            try
+            {
+                client = new HallazgoWS.HallazgoClient();
+                client.WSRegistrarHallazgo(objInformeDC.InformeFinCicloId, popup_textoDescripcionHallazgoRegistrar.Text.ToString().Trim(), objInformeDC.PeriodoId);
+                grdHallazgosDataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("NUEVO HALLAZGO: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         protected void popup_buttonEditarHallazgo_Click(object sender, EventArgs e)
         {
-            HallazgoBE objHallazgoBE = new HallazgoBE();
-            objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            objHallazgoBE.Descripcion = popup_textoDescripcionHallazgoEditar.Text;
-            objHallazgoBE.HallazgoId = Convert.ToInt32(hiddenAE2.Value);
+            HallazgoWS.HallazgoClient client = null;
 
-            objHallazgoCollectionBE = new HallazgoBC().editarHallazgo(objHallazgoBE);
-            grdHallazgosDataBind();
+            try
+            {
+                client = new HallazgoWS.HallazgoClient();
+                client.WSEditarHallazgo(Convert.ToInt32(hiddenAE2.Value), objInformeDC.InformeFinCicloId, popup_textoDescripcionHallazgoEditar.Text.ToString().Trim());
+                grdHallazgosDataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("EDITAR HALLAZGO: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         protected void popup_buttonRegistrarAccioMejora_Click(object sender, EventArgs e)
         {
-            AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
-            objAccionMejoraBE.HallazgoId = Convert.ToInt32(hiddenAC2.Value);
-            objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            objAccionMejoraBE.CicloEjecucionId = Convert.ToInt32(combo_AccionMejoraRegistrar.SelectedValue);
-            objAccionMejoraBE.Descripcion = popup_textoDescripcionAccionMejoraRegistrar.Text;
+            AccionMejoraWS.AccionMejoraClient client = null;
 
-            objAccionesMejoraCollectionBE = new AccionMejoraBC().registrarAccionesMejora(objAccionMejoraBE);
-            grdAccionesMejoraDataBind();
+            try
+            {
+                client = new AccionMejoraWS.AccionMejoraClient();
+                client.WSRegistrarAccionMejora(Convert.ToInt32(hiddenAC2.Value), objInformeDC.InformeFinCicloId, Convert.ToInt32(combo_AccionMejoraRegistrar.SelectedValue), popup_textoDescripcionAccionMejoraRegistrar.Text.ToString().Trim());
+                grdAccionesMejoraDataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("NUEVA ACCION MEJORA: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         protected void popup_buttonEditarAccioMejora_Click(object sender, EventArgs e)
         {
-            AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
-            objAccionMejoraBE.AccionMejoraId = Convert.ToInt32(hiddenEAC2.Value);
-            objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            objAccionMejoraBE.CicloEjecucionId = Convert.ToInt32(combo_AccionMejoraEditar.SelectedValue);
+            AccionMejoraWS.AccionMejoraClient client = null;
 
-            objAccionMejoraBE.Descripcion = popup_textoDescripcionAccionMejoraEditar.Text;
-            objAccionesMejoraCollectionBE = new AccionMejoraBC().editarAccionesMejora(objAccionMejoraBE);
-
-            grdAccionesMejoraDataBind();
+            try
+            {
+                client = new AccionMejoraWS.AccionMejoraClient();
+                client.WSEditarAccionMejora(Convert.ToInt32(hiddenEAC2.Value), objInformeDC.InformeFinCicloId, Convert.ToInt32(combo_AccionMejoraEditar.SelectedValue), popup_textoDescripcionAccionMejoraEditar.Text.ToString().Trim());
+                grdAccionesMejoraDataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("EDITAR ACCION MEJORA: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         //ROW COMMANDS
 
         public void grdHallazgos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            HallazgoWS.HallazgoClient client = null;
+
             try
             {
                 if (e.CommandName.ToUpper().Equals("CMDELIMINARHALLAZGO"))
                 {
-                    HallazgoBE objHallazgoBE = new HallazgoBE();
-                    objHallazgoBE.HallazgoId = Convert.ToInt32(e.CommandArgument.ToString());
-                    objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-                    objHallazgoCollectionBE = new HallazgoBC().eliminarHallazgo(objHallazgoBE);
+                    client = new HallazgoWS.HallazgoClient();
+                    client.WSEliminarHallazgo(Convert.ToInt32(e.CommandArgument.ToString()), objInformeDC.InformeFinCicloId);
                     grdHallazgosDataBind();
                     grdAccionesMejoraDataBind();
                 }
-
-                if (e.CommandName.ToUpper().Equals("CMDAGREGARACCIONMEJORA"))
-                {
-                }
-
-                if (e.CommandName.ToUpper().Equals("CMDEDITARHALLAZGO"))
-                {
-                }
             }
-
             catch (Exception ex)
             {
-                throw ex;
+                MostrarAlert("ELIMINAR HALLAZGO: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
             }
         }
 
         public void grdAccionesMejora_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            AccionMejoraWS.AccionMejoraClient client = null;
+
             try
             {
                 if (e.CommandName.ToUpper().Equals("CMDELIMINARACCIONMEJORA"))
                 {
-                    AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
-                    objAccionMejoraBE.AccionMejoraId = Convert.ToInt32(e.CommandArgument.ToString());
-                    objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-                    //objAccionesMejoraCollectionBE = objAccionMejoraBC.eliminarAccionMejora(objAccionMejoraBE);
-
-                    objAccionesMejoraCollectionBE = new AccionMejoraBC().eliminarAccionMejora(objAccionMejoraBE);
+                    client = new AccionMejoraWS.AccionMejoraClient();
+                    client.WSEliminarAccionMejora(Convert.ToInt32(e.CommandArgument.ToString()), objInformeDC.InformeFinCicloId);
                     grdAccionesMejoraDataBind();
                 }
             }
 
             catch (Exception ex)
             {
-                throw ex;
+                MostrarAlert("ELIMINAR ACCION MEJORA: " + ex.Message);
             }
+            finally
+            {
+                client = null;
+            }
+        }
+
+        /*
+        public void  grdHallazgos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            AccionMejoraWS.AccionMejoraClient client = null;
+
+            try
+            {
+                if (e.CommandName.ToUpper().Equals("CMDEDITARACCIONPREVIA"))
+                {
+                    client = new AccionMejoraWS.AccionMejoraClient();
+                    client.WSEditarAccionMejoraPrevia(objInformeDC.CursoId, objInformeDC.PeriodoId, Convert.ToInt32(e.CommandArgument.ToString()), e.CommandArgument);
+                    grdAccionesMejoraDataBind();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MostrarAlert("ELIMINAR ACCION MEJORA: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+        }*/
+
+        protected void gvAccionesPrevias_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridViewRow row = grdAccionesPrevias.Rows[e.NewEditIndex];
+
+            DropDownList ddl = row.FindControl("dpdListEstatus") as DropDownList;
+            String value = ddl.SelectedValue;
         }
 
         protected void grdvAccionesPrevias_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            int indexEstado = 0;
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if(listaAccionesPrevias.LstAccionesMejora[e.Row.RowIndex].Estado == "NO REALIZADO")
+                {
+                    indexEstado = 0;
+                }
+                else if(listaAccionesPrevias.LstAccionesMejora[e.Row.RowIndex].Estado == "EN PROCESO")
+                {
+                    indexEstado = 1;
+                }
+                else
+                {
+                    indexEstado = 2;
+                }
+                
+                ((DropDownList)e.Row.FindControl("dpdListEstatus")).SelectedIndex = indexEstado;
+            }
         }
 
         protected void dpdListEstatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-        }
-        /*
-        public void selectedItem( CommandEventArgs e)
-        {
-            for (int i = 0; i < objAccionesPreviasCollectionBE.LstAccionesMejora.Count; i++)
-            {
-                if (int.Parse(e.CommandName) == objAccionesPreviasCollectionBE.LstAccionesMejora[i].AccionMejoraId)
-                {
-                    if (objAccionesPreviasCollectionBE.LstAccionesMejora[i].Estado == "EN PROCESO")
-                    { 
-                        //seteo el index en EN PROCESO
-                        grdAccionesPrevias.
-                        dpdListEstatus.SelectedIndex = 0;
-                    }
-                    if (objAccionesPreviasCollectionBE.LstAccionesMejora[i].Estado == "NO REALIZADO")
-                    {
-                        //seteo el index en EN PROCESO
-                        dpdListEstatus.SelectedIndex = 1;
-                    }
-                    if (objAccionesPreviasCollectionBE.LstAccionesMejora[i].Estado == "IMPLEMENTADO")
-                    {
-                        //seteo el index en EN PROCESO
-                        dpdListEstatus.SelectedIndex = 2;
-                    }
-                }
-            }
-        }*/
-        public void OnConfirm(object sender, EventArgs e)
-        {   
-            InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
-            InformeFinCicloBE objInformeFinCicloBE = new InformeFinCicloBE();
+            DropDownList ddl = (DropDownList)sender;
 
-            objInformeFinCicloBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            objInformeFinCicloBE.DesarrolloUnidades = txt_DesarrolloAprendizaje.Text;
-            objInformeFinCicloBE.ComentarioInfraestructura = txt_Infraestructura.Text;
-            objInformeFinCicloBE.ComentarioAlumnos = txt_Alumnos.Text;
-            objInformeFinCicloBE.ComentarioDelegados = txt_Delegados.Text;
-            objInformeFinCicloBE.ComentarioEncuesta = txt_EncuestaAcademica.Text;
-            objInformeFinCicloBE.Estado = "EN PROCESO";
-
-            //string confirmValue = Request.Form["confirm_value"];
-            //if (confirmValue == "YES")
+            //upLblDescripcion.Triggers.Add(new AsyncPostBackTrigger()
             //{
-                if (!existenCamposVacios() && objHallazgoCollectionBE.LstHallazgos.Count > 0)
-                {
-                    objInformeFinCicloBE.Estado = "FINALIZADO";
-                    objInformeBE = objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloBE);
-                    //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usted ha finalizado el Informe de Fin de Ciclo satisfactorimente.')", true);
-                }
+            //    ControlID = (ddl).UniqueID,
+            //    EventName = "SelectedIndexChanged",
+            //});
 
+            String valor = ddl.SelectedValue;
+        }
+
+        public void OnConfirm(object sender, EventArgs e)
+        {
+            InformeFinCicloWS.InformeFinCicloClient client = null;
+            HallazgoWS.HallazgoClient hallazgoClient = null;
+
+            HallazgoWS.HallazgoCollectionDC objHallazgoCollection = null;
+
+            String sEstado = "EN PROCESO";
+            int informeID = objInformeDC.InformeFinCicloId;
+            String sUnidades = txt_DesarrolloAprendizaje.Text.ToString().Trim();
+            String sInfraestructura = txt_Infraestructura.Text.ToString().Trim();
+            String sAlumnos = txt_Alumnos.Text.ToString().Trim();
+            String sDelegados = txt_Delegados.Text.ToString().Trim();
+            String sEncuesta = txt_EncuestaAcademica.Text.ToString().Trim();
+
+            try
+            {
+                client = new InformeFinCicloWS.InformeFinCicloClient();
+                hallazgoClient = new HallazgoWS.HallazgoClient();
+                objHallazgoCollection = hallazgoClient.WSListarHallazgosxInformeFinCiclo(informeID);
+    
+                string confirmValue = Request.Form["confirm_value"];
+                if (confirmValue == "YES")
+                {
+                    if (!existenCamposVacios() && objHallazgoCollection.LstHallazgos.Count() > 0)
+                    {
+                        sEstado = "FINALIZADO";
+                        objInformeDC = client.WSEditarInformeFinCiclo(informeID, sEstado, sUnidades, sInfraestructura, sAlumnos, sDelegados, sEncuesta);
+                        this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usted ha finalizado el Informe de Fin de Ciclo satisfactorimente.')", true);
+                    }
+
+                    else
+                    {
+                        objInformeDC = client.WSEditarInformeFinCiclo(informeID, sEstado, sUnidades, sInfraestructura, sAlumnos, sDelegados, sEncuesta);
+                        this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usted debe llenar todos los campos para completar el Informe de Fin de Ciclo.')", true);
+                    }
+
+                }
                 else
                 {
-                    objInformeBE = objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloBE);
-                    //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usted debe llenar todos los campos para completar el Informe de Fin de Ciclo.')", true);
+                    objInformeDC = client.WSEditarInformeFinCiclo(informeID, sEstado, sUnidades, sInfraestructura, sAlumnos, sDelegados, sEncuesta);
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('La información ha sido almacenada. Para finalizar el Informe de Fin de Ciclo, debe enviar el Informe.')", true);
                 }
-     
-            //}
-            //else
-            //{
-            //    objInformeBE = objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloBE);
-            //    //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('La información ha sido almacenada. Para finalizar el Informe de Fin de Ciclo, debe enviar el Informe.')", true);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("GUARDAR INFORME: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+
         }
 
         public void OnCancel(object sender, EventArgs e)
@@ -304,22 +460,22 @@ namespace UPC.IFCDC.UI
 
         private void setearCombosPeriodos()
         {
-            for (int i = 0; i < listaPeriodosFiltrada.LstPeriodos.Count; i++)
+            for (int i = 0; i < listaPeriodosFiltrada.LstPeriodos.Count(); i++)
             {
                 combo_AccionMejoraRegistrar.Items.Add(new ListItem(listaPeriodosFiltrada.LstPeriodos[i].Descripcion, listaPeriodosFiltrada.LstPeriodos[i].PeriodoId.ToString()));
                 combo_AccionMejoraEditar.Items.Add(new ListItem(listaPeriodosFiltrada.LstPeriodos[i].Descripcion, listaPeriodosFiltrada.LstPeriodos[i].PeriodoId.ToString()));
             }
         }
 
-        private PeriodoCollectionBE obtenerPeriodosFiltrados(PeriodoCollectionBE listaPeriodosTotal)
+        private PeriodoCollectionBE obtenerPeriodosFiltrados(PeriodoWS.PeriodoCollectionDC listaPeriodosTotal)
         {
             int posicionPeriodoActual = 0;
             PeriodoCollectionBE lista = new PeriodoCollectionBE();
             lista.LstPeriodos = new System.Collections.ObjectModel.Collection<PeriodoBE>();
 
-            for (int i = 0; i < listaPeriodosTotal.LstPeriodos.Count; i++)
+            for (int i = 0; i < listaPeriodosTotal.Count(); i++)
             {
-                if (listaPeriodosTotal.LstPeriodos[i].EsActual == true)
+                if (listaPeriodosTotal[i].EsActual == 1)
                 {
                     posicionPeriodoActual = i;
                     break;
@@ -329,10 +485,24 @@ namespace UPC.IFCDC.UI
             for (int j = posicionPeriodoActual + 1; j > posicionPeriodoActual - 1; j--)
             {
                 if (j >= 0)
-                    lista.LstPeriodos.Add(listaPeriodosTotal.LstPeriodos[j]);
+                {
+                    PeriodoBE periodo = new PeriodoBE();
+                    periodo.PeriodoId = listaPeriodosTotal[j].PeriodoId;
+                    periodo.Descripcion = listaPeriodosTotal[j].Descripcion;
+                    periodo.EsActual = listaPeriodosTotal[j].EsActual;
+                    periodo.FechaInicio = listaPeriodosTotal[j].FechaInicio;
+                    periodo.FechaFin = listaPeriodosTotal[j].FechaFin;
+
+                    lista.LstPeriodos.Add(periodo);
+                }
             }
 
             return lista;
+        }
+
+        private void MostrarAlert(String mensaje)
+        {
+            ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "MensajeError", String.Format("alert('{0}');", mensaje), true);
         }
     }
 }

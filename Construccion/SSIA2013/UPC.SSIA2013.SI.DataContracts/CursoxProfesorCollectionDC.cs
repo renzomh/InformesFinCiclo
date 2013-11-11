@@ -9,12 +9,12 @@ using System.Collections.ObjectModel;
 
 namespace UPC.SSIA2013.SI.DataContracts
 {
-    
+    [DataContract]
     public class CursoxProfesorCollectionDC
     {
         private Collection<CursoxProfesorDC> _lstCursosxProfesor;
 
-        
+        [DataMember]       
         public Collection<CursoxProfesorDC> LstCursosxProfesor
         {
             get { return _lstCursosxProfesor; }

@@ -11,14 +11,14 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class PeriodoDALC
     {
-        public List<up_IFCDC_Listar_PeriodosResult> listarPeriodos()
+        public List<up_Listar_PeriodosResult> listarPeriodos()
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<up_IFCDC_Listar_PeriodosResult> lstPeriodos = dataContext.up_IFCDC_Listar_Periodos().ToList();
+                List<up_Listar_PeriodosResult> lstPeriodos = dataContext.up_Listar_Periodos().ToList();
 
                 return lstPeriodos;
             }
@@ -37,14 +37,14 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public up_IFCDC_Obtener_PeriodoActualResult obtenerPeriodoActual()
+        public up_Obtener_PeriodoActualResult obtenerPeriodoActual()
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                up_IFCDC_Obtener_PeriodoActualResult periodo = dataContext.up_IFCDC_Obtener_PeriodoActual().SingleOrDefault();
+                up_Obtener_PeriodoActualResult periodo = dataContext.up_Obtener_PeriodoActual().SingleOrDefault();
 
                 return periodo;
             }

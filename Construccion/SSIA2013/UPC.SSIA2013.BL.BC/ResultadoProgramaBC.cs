@@ -9,14 +9,14 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class ResultadoProgramaBC
     {
-        public List<up_IFCDC_Listar_ResultadoPrograma_x_CursoResult> listarResultadoProgramaxCurso(int cursoId)
+        public List<up_Listar_ResultadoPrograma_x_CursoResult> listarResultadoProgramaxCurso(int cursoId, int periodoId)
         {
             ResultadoProgramaDALC objResultadoProgramaDALC;
 
             try
             {
                 objResultadoProgramaDALC = new ResultadoProgramaDALC();
-                return objResultadoProgramaDALC.listarResultadoProgramaxCurso(cursoId);
+                return objResultadoProgramaDALC.listarResultadoProgramaxCurso(cursoId, periodoId);
             }
             catch (Exception ex)
             {

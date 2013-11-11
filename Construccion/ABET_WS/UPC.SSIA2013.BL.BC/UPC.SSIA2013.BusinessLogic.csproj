@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72FB9973-3BFD-41A6-815E-1D78F41BF489}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UPC.SSIA2013.BusinessLogic</RootNamespace>
+    <AssemblyName>UPC.SSIA2013.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccionMejoraLogic.cs" />
+    <Compile Include="AlumnoLogic.cs" />
+    <Compile Include="CarreraLogic.cs" />
+    <Compile Include="CompetenciaAbetLogic.cs" />
+    <Compile Include="CursoLogic.cs" />
+    <Compile Include="EmpresaLogic.cs" />
+    <Compile Include="EncuestaLogic.cs" />
+    <Compile Include="HallazgoLogic.cs" />
+    <Compile Include="InformeFinCicloLogic.cs" />
+    <Compile Include="JefeDirectoLogic.cs" />
+    <Compile Include="LogroLogic.cs" />
+    <Compile Include="MallaEncuestaLogic.cs" />
+    <Compile Include="OutcomeLogic.cs" />
+    <Compile Include="PeriodoLogic.cs" />
+    <Compile Include="PersonaLogic.cs" />
+    <Compile Include="PracticaPreProfesionalLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoProgramaLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPC.SSIA2013.BL.BE\UPC.SSIA2013.BusinessEntity.csproj">
+      <Project>{492E6801-A575-4E0F-B936-8CA68C436C58}</Project>
+      <Name>UPC.SSIA2013.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.DataModel\UPC.SSIA2013.DataModel.csproj">
+      <Project>{B4B46596-B56E-4242-8806-5A7C3B8F3673}</Project>
+      <Name>UPC.SSIA2013.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.DL.DALC\UPC.SSIA2013.DataAccess.csproj">
+      <Project>{EF3522B1-C770-4A2D-A7D3-146DADCBB1D8}</Project>
+      <Name>UPC.SSIA2013.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.SSIA2013.WS.DC\UPC.SSIA2013.WS.DataContract.csproj">
+      <Project>{1E854829-4EA0-44CB-8DF5-B224E2AB19A2}</Project>
+      <Name>UPC.SSIA2013.WS.DataContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
