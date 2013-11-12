@@ -4,6 +4,29 @@ var actual2 = "#informesFinCiclo";
 //$('document').ready(function () {
 //    setDefaultComboBox();
 //});
+function setearposPestanias1(pestania) {
+// #logros #accionesPrevias #hallazgos #accionesMejora #comentario
+    localStorage.pestania1 = pestania;
+}
+function setearposPestanias2(pestania) {
+    // #informesFinCiclo #hallazgos_ad #accionesMejora_ad
+    localStorage.pestania2 = pestania;
+}
+function cargarUltimaPestania1() {
+    if (!localStorage.pestania1) {
+        localStorage.pestania1 = '#logros';
+    }
+    change_view(localStorage.pestania1);
+}
+function cargarUltimaPestania2() {
+    if (!localStorage.pestania2) {
+        localStorage.pestania2 = '#informesFinCiclo';
+    }
+    change_view2(localStorage.pestania2);
+}
+function limpiarPestanias() {
+    localStorage.clear();
+}
 
 function llamarpopupNuevaAcciondeMejora(idLlamar, codigo, id) {
     popup(idLlamar);
@@ -35,6 +58,7 @@ function change_view(show) {
         $(show).fadeIn(300);    
         actual = show;
     }
+    setearposPestanias1(show);
 }
 //--------------------------
 function change_view2(show) {
@@ -43,6 +67,7 @@ function change_view2(show) {
         $(show).fadeIn(300);
         actual2 = show;
     }
+    setearposPestanias2(show);
 }
 //--------------------------
 function popup(idpopup) {

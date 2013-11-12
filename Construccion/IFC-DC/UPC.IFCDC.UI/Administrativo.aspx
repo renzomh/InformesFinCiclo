@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Administrativo.aspx.cs" Inherits="UPC.IFCDC.UI.WebForm4" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
+<script type="text/javascript">
+    $(document).ready(function () {
+        cargarUltimaPestania2();
+    });
+</script>
+
 <ul class="tabs">
     <li onclick="change_view2('#informesFinCiclo');" >Informes de Fin de Ciclo</li><li onclick="change_view2('#hallazgos_ad');" >Hallazgos</li><li onclick="change_view2('#accionesMejora_ad');" >Acciones de Mejora</li>
  </ul>

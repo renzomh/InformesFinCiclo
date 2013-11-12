@@ -1,5 +1,1748 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SSIA2013" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=SSIA2013;User ID=sa" SettingsObjectName="UPC.SSIA2013.DataModel.Properties.Settings" SettingsPropertyName="SSIA2013ConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-DC9EFL1PK9L;Initial Catalog=SSIA2013;User ID=sa" SettingsObjectName="UPC.SSIA2013.DataModel.Properties.Settings" SettingsPropertyName="SSIA2013ConnectionString2" Provider="System.Data.SqlClient" />
+  <Function Name="GCD.up_Actualizar_Acta" Method="up_Actualizar_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="UnidadAcademicaId" Parameter="unidadAcademicaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Semana" Parameter="semana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Lugar" Parameter="lugar" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="HoraInicio" Parameter="horaInicio" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="HoraFin" Parameter="horaFin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="FechaModificacion" Parameter="fechaModificacion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FotoReunion" Parameter="fotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="DocumentoEnviado" Parameter="documentoEnviado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="up_Actualizar_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Registrar_Hallazgo" Method="up_Registrar_Hallazgo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Registrar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Acuerdo" Method="up_Actualizar_Acuerdo">
+    <Parameter Name="AcuerdoActaId" Parameter="acuerdoActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorResponsableId" Parameter="profesorResponsableId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaEntrega" Parameter="fechaEntrega" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="FechaAtencion" Parameter="fechaAtencion" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Actualizar_AcuerdoResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Acuerdo_x_Acta" Method="up_Actualizar_Acuerdo_x_Acta">
+    <Parameter Name="AcuerdoActaId" Parameter="acuerdoActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TemaActaId" Parameter="temaActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Numero" Parameter="numero" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="TipoAcuerdoId" Parameter="tipoAcuerdoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorResponsableId" Parameter="profesorResponsableId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaEntrega" Parameter="fechaEntrega" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="FechaAtencion" Parameter="fechaAtencion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Comentarios" Parameter="comentarios" Type="System.String" DbType="VarChar(3000)" />
+    <Parameter Name="AccionAcuerdoId" Parameter="accionAcuerdoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ResultadoProgramaId" Parameter="resultadoProgramaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocumentoAdjuntado" Parameter="documentoAdjuntado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="MotivoAnulacion" Parameter="motivoAnulacion" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Actualizar_Acuerdo_x_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Agenda_x_Acta" Method="up_Actualizar_Agenda_x_Acta">
+    <Parameter Name="AgendaActaId" Parameter="agendaActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Orden" Parameter="orden" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Actualizar_Agenda_x_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Area" Method="up_Actualizar_Area">
+    <Parameter Name="AreaID" Parameter="areaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Actualizar_AreaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Notificacion" Method="up_Actualizar_Notificacion">
+    <Parameter Name="NotificacionId" Parameter="notificacionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DiasEnvio" Parameter="diasEnvio" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="EnvioPrevio" Parameter="envioPrevio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AsuntoEmail" Parameter="asuntoEmail" Type="System.String" DbType="VarChar(256)" />
+    <Parameter Name="FormatoEmail" Parameter="formatoEmail" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Actualizar_NotificacionResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_NotificacionxPerfil" Method="up_Actualizar_NotificacionxPerfil">
+    <Parameter Name="NotificacionId" Parameter="notificacionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodigoPerfil" Parameter="codigoPerfil" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Actualizar_NotificacionxPerfilResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Participante_Acta" Method="up_Actualizar_Participante_Acta">
+    <Parameter Name="ParticipanteActaId" Parameter="participanteActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Via" Parameter="via" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Asistio" Parameter="asistio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Firmo" Parameter="firmo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TipoParticipante" Parameter="tipoParticipante" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="Notificado" Parameter="notificado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Actualizar_Participante_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Perfil" Method="up_Actualizar_Perfil">
+    <Parameter Name="PerfilId" Parameter="perfilId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Actualizar_PerfilResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_PlanificacionPrimerNivel" Method="up_Actualizar_PlanificacionPrimerNivel">
+    <Parameter Name="PlanificacionPrimerNivelId" Parameter="planificacionPrimerNivelId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubAreaId" Parameter="subAreaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SemanaReunion" Parameter="semanaReunion" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionDesde" Parameter="fechaReunionDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionHasta" Parameter="fechaReunionHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="up_Actualizar_PlanificacionPrimerNivelResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_PlanificacionSegundoNivel" Method="up_Actualizar_PlanificacionSegundoNivel">
+    <Parameter Name="PlanificacionSegundoNivelId" Parameter="planificacionSegundoNivelId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubAreaId" Parameter="subAreaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SemanaReunion" Parameter="semanaReunion" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionDesde" Parameter="fechaReunionDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionHasta" Parameter="fechaReunionHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="up_Actualizar_PlanificacionSegundoNivelResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_PlanificacionTercerNivel" Method="up_Actualizar_PlanificacionTercerNivel">
+    <Parameter Name="PlanificacionTercerNivelId" Parameter="planificacionTercerNivelId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SemanaReunion" Parameter="semanaReunion" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionDesde" Parameter="fechaReunionDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionHasta" Parameter="fechaReunionHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="up_Actualizar_PlanificacionTercerNivelResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Profesor" Method="up_Actualizar_Profesor">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Firma" Parameter="firma" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="up_Actualizar_ProfesorResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Reunion" Method="up_Actualizar_Reunion">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Lugar" Parameter="lugar" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HoraInicio" Parameter="horaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HoraFin" Parameter="horaFin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Actualizar_ReunionResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_SubArea" Method="up_Actualizar_SubArea">
+    <Parameter Name="SubAreaID" Parameter="subAreaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Actualizar_SubAreaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Tema_x_Acta" Method="up_Actualizar_Tema_x_Acta">
+    <Parameter Name="TemaActaId" Parameter="temaActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Orden" Parameter="orden" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(160)" />
+    <ElementType Name="up_Actualizar_Tema_x_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Actualizar_Tipo_Acuerdo" Method="up_Actualizar_Tipo_Acuerdo">
+    <Parameter Name="TipoAcuerdoId" Parameter="tipoAcuerdoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Actualizar_Tipo_AcuerdoResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Agendas_X_Acta_Guid" Method="up_Agendas_X_Acta_Guid">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Agendas_X_Acta_GuidResult">
+      <Column Name="Orden" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Anular_Acuerdo" Method="up_Anular_Acuerdo">
+    <Parameter Name="AcuerdoActaId" Parameter="acuerdoActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MotivoAnulacion" Parameter="motivoAnulacion" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Anular_AcuerdoResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_ActasTerminadas" Method="up_Buscar_ActasTerminadas">
+    <Parameter Name="ProfesorCreacionId" Parameter="profesorCreacionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="FechaCreacionDesde" Parameter="fechaCreacionDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaCreacionHasta" Parameter="fechaCreacionHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Buscar_ActasTerminadasResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="ProfesorCreacionId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="DocumentoEnviado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_ActasTerminadas_Paginacion" Method="up_Buscar_ActasTerminadas_Paginacion">
+    <Parameter Name="ProfesorCreacionId" Parameter="profesorCreacionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="FechaCreacionDesde" Parameter="fechaCreacionDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaCreacionHasta" Parameter="fechaCreacionHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pagina" Parameter="pagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegistrosxPagina" Parameter="registrosxPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Buscar_ActasTerminadas_PaginacionResult">
+      <Column Name="Fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorCreacionId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_Acuerdos" Method="up_Buscar_Acuerdos">
+    <Parameter Name="idPeriodo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSubArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCurso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idResponsableAcuerdo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idResponsableActa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idTipoAcuerdo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoAcuerdo" Parameter="estadoAcuerdo" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="fechaActaDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaActaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaAcuerdoDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaAcuerdoHasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Buscar_AcuerdosResult">
+      <Column Name="NombreNivel" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArea" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreSubArea" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NombreTipoAcuerdo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="NombresProfesor" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ApellidosProfesor" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_Acuerdos_Paginacion" Method="up_Buscar_Acuerdos_Paginacion">
+    <Parameter Name="idPeriodo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSubArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCurso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idResponsableAcuerdo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idResponsableActa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idTipoAcuerdo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoAcuerdo" Parameter="estadoAcuerdo" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="fechaActaDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaActaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaAcuerdoDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaAcuerdoHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Pagina" Parameter="pagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegistrosxPagina" Parameter="registrosxPagina" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Buscar_Acuerdos_PaginacionResult">
+      <Column Name="Fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NombreNivel" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreArea" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreSubArea" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCurso" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NombreTipoAcuerdo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="NombresProfesor" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ApellidosProfesor" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_Area" Method="up_Buscar_Area">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Buscar_AreaResult">
+      <Column Name="AreaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_Horas" Method="up_Buscar_Horas">
+    <Parameter Name="CodigoDocente" Parameter="codigoDocente" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCiclo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Buscar_HorasResult">
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Perfil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Via" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_Horas_Paginacion" Method="up_Buscar_Horas_Paginacion">
+    <Parameter Name="CodigoDocente" Parameter="codigoDocente" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCiclo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Pagina" Parameter="pagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegistrosxPagina" Parameter="registrosxPagina" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Buscar_Horas_PaginacionResult">
+      <Column Name="Fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Perfil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Via" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParticipanteActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_Perfil" Method="up_Buscar_Perfil">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Buscar_PerfilResult">
+      <Column Name="PerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Buscar_SubArea" Method="up_Buscar_SubArea">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Buscar_SubAreaResult">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreArea" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Eliminar_ActaNoTerminada" Method="up_Eliminar_ActaNoTerminada">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Eliminar_ActaNoTerminadaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Eliminar_Agendas_X_Acta_Guid" Method="up_Eliminar_Agendas_X_Acta_Guid">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Eliminar_Participantes_Acta" Method="up_Eliminar_Participantes_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Eliminar_Perfiles_Profesor" Method="up_Eliminar_Perfiles_Profesor">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Eliminar_PlanificacionPrimerNivel" Method="up_Eliminar_PlanificacionPrimerNivel">
+    <Parameter Name="PlanificacionPrimerNivelId" Parameter="planificacionPrimerNivelId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Eliminar_PlanificacionSegundoNivel" Method="up_Eliminar_PlanificacionSegundoNivel">
+    <Parameter Name="PlanificacionSegundoNivelId" Parameter="planificacionSegundoNivelId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Eliminar_PlanificacionTercerNivel" Method="up_Eliminar_PlanificacionTercerNivel">
+    <Parameter Name="PlanificacionTercerNivelId" Parameter="planificacionTercerNivelId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Insertar_Acta" Method="up_Insertar_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="UnidadAcademicaId" Parameter="unidadAcademicaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Semana" Parameter="semana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Lugar" Parameter="lugar" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="HoraInicio" Parameter="horaInicio" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="HoraFin" Parameter="horaFin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="ProfesorCreacionId" Parameter="profesorCreacionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaCreacion" Parameter="fechaCreacion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaModificacion" Parameter="fechaModificacion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DocumentoEnviado" Parameter="documentoEnviado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="FotoReunion" Parameter="fotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Char" DbType="Char(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GCD.up_Insertar_Acuerdo_X_Acta" Method="up_Insertar_Acuerdo_X_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TemaActaId" Parameter="temaActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Numero" Parameter="numero" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="TipoAcuerdoId" Parameter="tipoAcuerdoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorResponsableId" Parameter="profesorResponsableId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaEntrega" Parameter="fechaEntrega" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="FechaAtencion" Parameter="fechaAtencion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Comentarios" Parameter="comentarios" Type="System.String" DbType="VarChar(3000)" />
+    <Parameter Name="AccionAcuerdoId" Parameter="accionAcuerdoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ResultadoProgramaId" Parameter="resultadoProgramaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocumentoAdjuntado" Parameter="documentoAdjuntado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="MotivoAnulacion" Parameter="motivoAnulacion" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Insertar_Acuerdo_X_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Agendas_X_Acta" Method="up_Insertar_Agendas_X_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Orden" Parameter="orden" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Insertar_Agendas_X_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Area" Method="up_Insertar_Area">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Insertar_AreaResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Notificacion" Method="up_Insertar_Notificacion">
+    <Parameter Name="DiasEnvio" Parameter="diasEnvio" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="EnvioPrevio" Parameter="envioPrevio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AsuntoEmail" Parameter="asuntoEmail" Type="System.String" DbType="VarChar(256)" />
+    <Parameter Name="FormatoEmail" Parameter="formatoEmail" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Insertar_NotificacionResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_NotificacionxPerfil" Method="up_Insertar_NotificacionxPerfil">
+    <Parameter Name="NotificacionId" Parameter="notificacionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodigoPerfil" Parameter="codigoPerfil" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="Activo" Parameter="activo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Insertar_NotificacionxPerfilResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Participante_Acta" Method="up_Insertar_Participante_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Asistio" Parameter="asistio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Via" Parameter="via" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Firmo" Parameter="firmo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TipoParticipante" Parameter="tipoParticipante" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="Notificado" Parameter="notificado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Insertar_Participante_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Perfil" Method="up_Insertar_Perfil">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Insertar_PerfilResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_PlanificacionPrimerNivel" Method="up_Insertar_PlanificacionPrimerNivel">
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubAreaId" Parameter="subAreaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SemanaReunion" Parameter="semanaReunion" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionDesde" Parameter="fechaReunionDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionHasta" Parameter="fechaReunionHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="up_Insertar_PlanificacionPrimerNivelResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_PlanificacionSegundoNivel" Method="up_Insertar_PlanificacionSegundoNivel">
+    <Parameter Name="SubAreaId" Parameter="subAreaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SemanaReunion" Parameter="semanaReunion" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionDesde" Parameter="fechaReunionDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionHasta" Parameter="fechaReunionHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="up_Insertar_PlanificacionSegundoNivelResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_PlanificacionTercerNivel" Method="up_Insertar_PlanificacionTercerNivel">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SemanaReunion" Parameter="semanaReunion" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionDesde" Parameter="fechaReunionDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaReunionHasta" Parameter="fechaReunionHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="up_Insertar_PlanificacionTercerNivelResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Profesor" Method="up_Insertar_Profesor">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CorreoElectronico" Parameter="correoElectronico" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="up_Insertar_ProfesorResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Profesor_X_Perfil" Method="up_Insertar_Profesor_X_Perfil">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PerfilId" Parameter="perfilId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Insertar_Profesor_X_PerfilResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Reunion" Method="up_Insertar_Reunion">
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Lugar" Parameter="lugar" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HoraInicio" Parameter="horaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HoraFin" Parameter="horaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ProfesorCreacionId" Parameter="profesorCreacionId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Insertar_ReunionResult">
+      <Column Name="" Member="Column1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_SubArea" Method="up_Insertar_SubArea">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Insertar_SubAreaResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Tema_X_Acta" Method="up_Insertar_Tema_X_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Orden" Parameter="orden" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(160)" />
+    <ElementType Name="up_Insertar_Tema_X_ActaResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Insertar_Tipo_Acuerdo" Method="up_Insertar_Tipo_Acuerdo">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="up_Insertar_Tipo_AcuerdoResult">
+      <Column Name="" Member="Column1" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Acuerdos" Method="up_Listar_Acuerdos">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NivelReunionid" Parameter="nivelReunionid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UnidadAcademicaId" Parameter="unidadAcademicaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaEntregaDesde" Parameter="fechaEntregaDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaEntregaHasta" Parameter="fechaEntregaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="ResponsableAcuerdoId" Parameter="responsableAcuerdoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CreadorActa" Parameter="creadorActa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estados" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Listar_AcuerdosResult">
+      <Column Name="AccionAcuerdoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AcuerdoActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comentarios" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FechaAtencion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MotivoAnulacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorResponsableId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TemaActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Acuerdos_Paginado" Method="up_Listar_Acuerdos_Paginado">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NivelReunionid" Parameter="nivelReunionid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UnidadAcademicaId" Parameter="unidadAcademicaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaEntregaDesde" Parameter="fechaEntregaDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaEntregaHasta" Parameter="fechaEntregaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="ResponsableAcuerdoId" Parameter="responsableAcuerdoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CreadorActa" Parameter="creadorActa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estados" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="Pagina" Parameter="pagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegistrosxPagina" Parameter="registrosxPagina" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_Acuerdos_PaginadoResult">
+      <Column Name="Fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AccionAcuerdoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AcuerdoActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comentarios" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FechaAtencion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MotivoAnulacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorResponsableId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TemaActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="TipoAcuerdoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Acuerdos_Tema_Acta" Method="up_Listar_Acuerdos_Tema_Acta">
+    <Parameter Name="TemaActaId" Parameter="temaActaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Listar_Acuerdos_Tema_ActaResult">
+      <Column Name="AcuerdoActaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="TemaActaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorResponsableId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FechaAtencion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Comentarios" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" />
+      <Column Name="AccionAcuerdoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentoAdjuntado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="MotivoAnulacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_AgendaActa" Method="up_Listar_AgendaActa">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Listar_AgendaActaResult">
+      <Column Name="AgendaActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Orden" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Areas" Method="up_Listar_Areas">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_AreasResult">
+      <Column Name="AreaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Areas_Usuario" Method="up_Listar_Areas_Usuario">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Listar_Areas_UsuarioResult">
+      <Column Name="AreaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Niveles" Method="up_Listar_Niveles">
+    <ElementType Name="up_Listar_NivelesResult">
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Notificaciones" Method="up_Listar_Notificaciones">
+    <ElementType Name="up_Listar_NotificacionesResult">
+      <Column Name="NotificacionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nivel" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiasEnvio" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="EnvioPrevio" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AsuntoEmail" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="FormatoEmail" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_NotificacionesxPerfil" Method="up_Listar_NotificacionesxPerfil">
+    <Parameter Name="NotificacionId" Parameter="notificacionId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_NotificacionesxPerfilResult">
+      <Column Name="NotificacionPerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NotificacionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPerfil" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_PerfilesDocentes" Method="up_Listar_PerfilesDocentes">
+    <ElementType Name="up_Listar_PerfilesDocentesResult">
+      <Column Name="PerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Periodo" Method="up_Listar_Periodo">
+    <ElementType Name="up_Listar_PeriodoResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_PlanificacionPrimerNivel" Method="up_Listar_PlanificacionPrimerNivel">
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_PlanificacionPrimerNivelResult">
+      <Column Name="PlanificacionPrimerNivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SemanaReunion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionDesde" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionHasta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_PlanificacionSegundoNivel" Method="up_Listar_PlanificacionSegundoNivel">
+    <Parameter Name="SubAreaId" Parameter="subAreaId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_PlanificacionSegundoNivelResult">
+      <Column Name="PlanificacionSegundoNivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SemanaReunion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionDesde" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionHasta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_PlanificacionTercerNivel" Method="up_Listar_PlanificacionTercerNivel">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_PlanificacionTercerNivelResult">
+      <Column Name="PlanificacionTercerNivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SemanaReunion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionDesde" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionHasta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Profesores_Administradores" Method="up_Listar_Profesores_Administradores">
+    <ElementType Name="up_Listar_Profesores_AdministradoresResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Profesores_x_Curso" Method="up_Listar_Profesores_x_Curso">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_Profesores_x_CursoResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_SubArea" Method="up_Listar_SubArea">
+    <ElementType Name="up_Listar_SubAreaResult">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreArea" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_SubAreas_Usuario" Method="up_Listar_SubAreas_Usuario">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Listar_SubAreas_UsuarioResult">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreArea" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Tema_Acta" Method="up_Listar_Tema_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Listar_Tema_ActaResult">
+      <Column Name="TemaActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_TipoAcuerdo" Method="up_Listar_TipoAcuerdo">
+    <ElementType Name="up_Listar_TipoAcuerdoResult">
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Listar_Usuarios_Acuerdos_Pendientes" Method="up_Listar_Usuarios_Acuerdos_Pendientes">
+    <Parameter Name="Dias" Parameter="dias" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Listar_Usuarios_Acuerdos_PendientesResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Acta" Method="up_Obtener_Acta">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Obtener_ActaResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="ProfesorCreacionId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="DocumentoEnviado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_ActasNoTerminadas_Paginacion" Method="up_Obtener_ActasNoTerminadas_Paginacion">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PerfilId" Parameter="perfilId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pagina" Parameter="pagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegistrosxPagina" Parameter="registrosxPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_ActasNoTerminadas_PaginacionResult">
+      <Column Name="Fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorCreacionId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_ActasTerminadasCoordinado" Method="up_Obtener_ActasTerminadasCoordinado">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="FechaCreacionDesde" Parameter="fechaCreacionDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaCreacionHasta" Parameter="fechaCreacionHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_ActasTerminadasCoordinadoResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorCreacionId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_ActasTerminadasCoordinado_Paginacion" Method="up_Obtener_ActasTerminadasCoordinado_Paginacion">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="FechaCreacionDesde" Parameter="fechaCreacionDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaCreacionHasta" Parameter="fechaCreacionHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pagina" Parameter="pagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RegistrosxPagina" Parameter="registrosxPagina" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_ActasTerminadasCoordinado_PaginacionResult">
+      <Column Name="Fila" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorCreacionId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NivelReunion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Acuerdo" Method="up_Obtener_Acuerdo">
+    <Parameter Name="AcuerdoActaId" Parameter="acuerdoActaId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_AcuerdoResult">
+      <Column Name="AcuerdoActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TemaActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Numero" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorResponsableId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FechaAtencion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Comentarios" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" />
+      <Column Name="AccionAcuerdoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentoAdjuntado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="MotivoAnulacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Acuerdos_x_Administrador" Method="up_Obtener_Acuerdos_x_Administrador">
+    <Parameter Name="Dias" Parameter="dias" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Acuerdos_x_AdministradorResult">
+      <Column Name="NombresResponsable" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ApellidosResponsable" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="DescripcionTema" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="DescripcionAcuerdo" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="NombresCreador" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ApellidosCreador" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Acuerdos_x_Definir_x_Usuario" Method="up_Obtener_Acuerdos_x_Definir_x_Usuario">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Obtener_Acuerdos_x_Definir_x_UsuarioResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AcuerdoActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TemaActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Numero" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ProfesorResponsableId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FechaAtencion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Acuerdos_x_Tema" Method="up_Obtener_Acuerdos_x_Tema">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TemaActaId" Parameter="temaActaId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Acuerdos_x_TemaResult">
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Numero" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorResponsableId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Acuerdos_x_Usuario" Method="up_Obtener_Acuerdos_x_Usuario">
+    <Parameter Name="Dias" Parameter="dias" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Obtener_Acuerdos_x_UsuarioResult">
+      <Column Name="NombresResponsable" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ApellidosResponsable" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="DescripcionTema" Type="System.String" DbType="VarChar(160)" CanBeNull="true" />
+      <Column Name="DescripcionAcuerdo" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="NombresCreador" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ApellidosCreador" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Area" Method="up_Obtener_Area">
+    <Parameter Name="AreaID" Parameter="areaID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_AreaResult">
+      <Column Name="AreaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Areas_x_Coordinador" Method="up_Obtener_Areas_x_Coordinador">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Areas_x_CoordinadorResult">
+      <Column Name="AreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Coordinador_x_Curso" Method="up_Obtener_Coordinador_x_Curso">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Coordinador_x_CursoResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Cursos_x_Coordinador" Method="up_Obtener_Cursos_x_Coordinador">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_Cursos_x_CoordinadorResult">
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Notificacion" Method="up_Obtener_Notificacion">
+    <Parameter Name="NotificacionId" Parameter="notificacionId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_NotificacionResult">
+      <Column Name="NotificacionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nivel" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiasEnvio" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="EnvioPrevio" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AsuntoEmail" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="FormatoEmail" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_NotificacionxPerfil" Method="up_Obtener_NotificacionxPerfil">
+    <Parameter Name="NotificacionId" Parameter="notificacionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodigoPerfil" Parameter="codigoPerfil" Type="System.String" DbType="VarChar(2)" />
+    <ElementType Name="up_Obtener_NotificacionxPerfilResult">
+      <Column Name="NotificacionPerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NotificacionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPerfil" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_NumeroActasNoTerminadas" Method="up_Obtener_NumeroActasNoTerminadas">
+    <Parameter Name="Profesorid" Parameter="profesorid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Perfilid" Parameter="perfilid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_NumeroActasNoTerminadasResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_NumeroAcuerdos" Method="up_Obtener_NumeroAcuerdos">
+    <Parameter Name="idPeriodo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idSubArea" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCurso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idResponsableAcuerdo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idResponsableActa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idTipoAcuerdo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoAcuerdo" Parameter="estadoAcuerdo" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="fechaActaDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaActaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaAcuerdoDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaAcuerdoHasta" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Obtener_NumeroAcuerdosResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_NumeroHoras" Method="up_Obtener_NumeroHoras">
+    <Parameter Name="CodigoDocente" Parameter="codigoDocente" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Anio" Parameter="anio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCiclo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Obtener_NumeroHorasResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_PDFActa" Method="up_Obtener_PDFActa">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Obtener_PDFActaResult">
+      <Column Name="DocumentoEnviado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Perfil" Method="up_Obtener_Perfil">
+    <Parameter Name="PerfilId" Parameter="perfilId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_PerfilResult">
+      <Column Name="PerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_Periodo" Method="up_Obtener_Periodo">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_PeriodoResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_PlanificacionPrimerNivel" Method="up_Obtener_PlanificacionPrimerNivel">
+    <Parameter Name="PlanificacionPrimerNivelId" Parameter="planificacionPrimerNivelId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_PlanificacionPrimerNivelResult">
+      <Column Name="AreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SemanaReunion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionDesde" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionHasta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PlanificacionPrimerNivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_PlanificacionSegundoNivel" Method="up_Obtener_PlanificacionSegundoNivel">
+    <Parameter Name="PlanificacionSegundoNivelId" Parameter="planificacionSegundoNivelId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_PlanificacionSegundoNivelResult">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SemanaReunion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionDesde" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionHasta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PlanificacionSegundoNivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_PlanificacionTercerNivel" Method="up_Obtener_PlanificacionTercerNivel">
+    <Parameter Name="PlanificacionTercerNivelId" Parameter="planificacionTercerNivelId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_PlanificacionTercerNivelResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SemanaReunion" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionDesde" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaReunionHasta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PlanificacionTercerNivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_SubArea" Method="up_Obtener_SubArea">
+    <Parameter Name="SubAreaID" Parameter="subAreaID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_SubAreaResult">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreArea" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PeriodoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_SubAreas_x_Coordinador" Method="up_Obtener_SubAreas_x_Coordinador">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_SubAreas_x_CoordinadorResult">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_TipoAcuerdo" Method="up_Obtener_TipoAcuerdo">
+    <Parameter Name="TipoAcuerdoId" Parameter="tipoAcuerdoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_TipoAcuerdoResult">
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_TotalActasTerminadas" Method="up_Obtener_TotalActasTerminadas">
+    <Parameter Name="ProfesorCreacionId" Parameter="profesorCreacionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="FechaCreacionDesde" Parameter="fechaCreacionDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaCreacionHasta" Parameter="fechaCreacionHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_TotalActasTerminadasResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_TotalActasTerminadasCoordinado" Method="up_Obtener_TotalActasTerminadasCoordinado">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="FechaCreacionDesde" Parameter="fechaCreacionDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaCreacionHasta" Parameter="fechaCreacionHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Obtener_TotalActasTerminadasCoordinadoResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_TotalAcuerdos" Method="up_Obtener_TotalAcuerdos">
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NivelReunionid" Parameter="nivelReunionid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UnidadAcademicaId" Parameter="unidadAcademicaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaEntregaDesde" Parameter="fechaEntregaDesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaEntregaHasta" Parameter="fechaEntregaHasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CodigoActa" Parameter="codigoActa" Type="System.String" DbType="Char(16)" />
+    <Parameter Name="ResponsableAcuerdoId" Parameter="responsableAcuerdoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CreadorActa" Parameter="creadorActa" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estados" Type="System.String" DbType="VarChar(1000)" />
+    <ElementType Name="up_Obtener_TotalAcuerdosResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Obtener_TotalHoras" Method="up_Obtener_TotalHoras">
+    <Parameter Name="CodigoDocente" Parameter="codigoDocente" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="idNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idCiclo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="up_Obtener_TotalHorasResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_ObtenerActual_Periodo" Method="up_ObtenerActual_Periodo">
+    <ElementType Name="up_ObtenerActual_PeriodoResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Participante_X_Acta_Guid_X_Tipo" Method="up_Participante_X_Acta_Guid_X_Tipo">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TipoParticipante" Parameter="tipoParticipante" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="up_Participante_X_Acta_Guid_X_TipoResult">
+      <Column Name="ParticipanteActaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Asistio" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Via" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Firmo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Notificado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Perfiles_Parametros_Grilla" Method="up_Perfiles_Parametros_Grilla">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NivelReunionId" Parameter="nivelReunionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="minUsuarios" Type="System.Int32" DbType="Int" />
+    <Parameter Name="maxUsuarios" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Perfiles_Parametros_GrillaResult">
+      <Column Name="PerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NumUsuarios" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Perfiles_Todos_Grilla" Method="up_Perfiles_Todos_Grilla">
+    <ElementType Name="up_Perfiles_Todos_GrillaResult">
+      <Column Name="PerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NumUsuarios" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Perfiles_x_Profesor_Id" Method="up_Perfiles_x_Profesor_Id">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Perfiles_x_Profesor_IdResult">
+      <Column Name="PerfilId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NivelReunionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Profesor_Buscar_Nombres" Method="up_Profesor_Buscar_Nombres">
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(300)" />
+    <ElementType Name="up_Profesor_Buscar_NombresResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="[Nombre Completo]" Member="Nombre_Completo" Type="System.String" DbType="VarChar(601)" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Profesor_Parametros_Grilla" Method="up_Profesor_Parametros_Grilla">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nombres" Parameter="nombres" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_Profesor_Parametros_GrillaResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Profesor_x_Profesor_Id" Method="up_Profesor_x_Profesor_Id">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Profesor_x_Profesor_IdResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="NroDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Telefono1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefono2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EsTC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Firma" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Profesores_Todos_Grilla" Method="up_Profesores_Todos_Grilla">
+    <ElementType Name="up_Profesores_Todos_GrillaResult">
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Reunion_Acta_Grilla_Parametros" Method="up_Reunion_Acta_Grilla_Parametros">
+    <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HoraInicio" Parameter="horaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Lugar" Parameter="lugar" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="up_Reunion_Acta_Grilla_ParametrosResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Reunion_Acta_Grilla_Todos" Method="up_Reunion_Acta_Grilla_Todos">
+    <ElementType Name="up_Reunion_Acta_Grilla_TodosResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoActa" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Reunion_Acta_X_Acta_Guid" Method="up_Reunion_Acta_X_Acta_Guid">
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Reunion_Acta_X_Acta_GuidResult">
+      <Column Name="UnidadAcademicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lugar" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReunion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="FotoReunion" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="DocumentoEnviado" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Reunion_Fecha_Profesor_Id_Actualizar" Method="up_Reunion_Fecha_Profesor_Id_Actualizar">
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Reunion_Fecha_Profesor_Id_ActualizarResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Reunion_X_Fecha_Profesor_Id" Method="up_Reunion_X_Fecha_Profesor_Id">
+    <Parameter Name="FechaReunion" Parameter="fechaReunion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Reunion_X_Fecha_Profesor_IdResult">
+      <Column Name="ActaGuid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Tipo_Acuerdo_Acta_x_Nombre" Method="up_Tipo_Acuerdo_Acta_x_Nombre">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="up_Tipo_Acuerdo_Acta_x_NombreResult">
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_TipoAcuerdo_Parametros_Grilla" Method="up_TipoAcuerdo_Parametros_Grilla">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="up_TipoAcuerdo_Parametros_GrillaResult">
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_TipoAcuerdo_Todos_Grilla" Method="up_TipoAcuerdo_Todos_Grilla">
+    <ElementType Name="up_TipoAcuerdo_Todos_GrillaResult">
+      <Column Name="TipoAcuerdoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Verificar_CreadorActa_PorAcuerdo" Method="up_Verificar_CreadorActa_PorAcuerdo">
+    <Parameter Name="ProfesorCreacionId" Parameter="profesorCreacionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AcuerdoActaId" Parameter="acuerdoActaId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_Verificar_CreadorActa_PorAcuerdoResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Verificar_Firma" Method="up_Verificar_Firma">
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ActaGuid" Parameter="actaGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="up_Verificar_FirmaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GCD.up_Verificar_UnidadAcademica_Perfil" Method="up_Verificar_UnidadAcademica_Perfil">
+    <Parameter Name="PerfilId" Parameter="perfilId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_Verificar_UnidadAcademica_PerfilResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.COUNT_INDICADOR_XCURSO" Method="COUNT_INDICADOR_XCURSO">
+    <Parameter Name="CodCurso" Parameter="codCurso" Type="System.Int32" DbType="Int" />
+    <ElementType Name="COUNT_INDICADOR_XCURSOResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.ES_COORDINADOR" Method="ES_COORDINADOR">
+    <Parameter Name="CoordinadorId" Parameter="coordinadorId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="ES_COORDINADORResult">
+      <Column Name="CarreraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.INFORME_ACTAS_AREA" Method="INFORME_ACTAS_AREA">
+    <ElementType Name="INFORME_ACTAS_AREAResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RPlanificado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RRealizado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.INSERTAR_INDICADOR_XPROFESOR" Method="INSERTAR_INDICADOR_XPROFESOR">
+    <Parameter Name="IndicadorxProfesorId" Parameter="indicadorxProfesorId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfesorId" Parameter="profesorId" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="IndicadorId" Parameter="indicadorId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ObservacionId" Parameter="observacionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Semana" Parameter="semana" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EstadoId" Parameter="estadoId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GIS.LISTAR_AUDITORIA" Method="LISTAR_AUDITORIA">
+    <ElementType Name="LISTAR_AUDITORIAResult">
+      <Column Name="CarreraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carrera" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="NoAuditado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Auditado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_CUMPLIMIENTO_XINDICADOR" Method="LISTAR_CUMPLIMIENTO_XINDICADOR">
+    <Parameter Name="CodIndicador" Parameter="codIndicador" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LISTAR_CUMPLIMIENTO_XINDICADORResult">
+      <Column Name="semana" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_CURSOS_XCARRERA" Method="LISTAR_CURSOS_XCARRERA">
+    <Parameter Name="iCodigo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LISTAR_CURSOS_XCARRERAResult">
+      <Column Name="value" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_ESTADOS" Method="LISTAR_ESTADOS">
+    <ElementType Name="LISTAR_ESTADOSResult">
+      <Column Name="value" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_INDICADORES" Method="LISTAR_INDICADORES">
+    <ElementType Name="LISTAR_INDICADORESResult">
+      <Column Name="value" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_INDICADORES_XCARRERA" Method="LISTAR_INDICADORES_XCARRERA">
+    <Parameter Name="CodCarrera" Parameter="codCarrera" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodCurso" Parameter="codCurso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodProfesor" Parameter="codProfesor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodIndicador" Parameter="codIndicador" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LISTAR_INDICADORES_XCARRERAResult">
+      <Column Name="Indicadorxprofesorid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IndicadorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ObservacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Semana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProfesorDesc" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+      <Column Name="IndicadorDesc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ObservacionDesc" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoDesc" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EstadoDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_INFORME_COORDINADORES" Method="LISTAR_INFORME_COORDINADORES">
+    <Parameter Name="CodIndicador" Parameter="codIndicador" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LISTAR_INFORME_COORDINADORESResult">
+      <Column Name="nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="entrego" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="noentrego" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_OBS_XPROFESOR" Method="LISTAR_OBS_XPROFESOR">
+    <Parameter Name="CodIndicador" Parameter="codIndicador" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LISTAR_OBS_XPROFESORResult">
+      <Column Name="Profesor" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_OBSERVACIONES" Method="LISTAR_OBSERVACIONES">
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="LISTAR_OBSERVACIONESResult">
+      <Column Name="value" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_REP_ATTRITION" Method="LISTAR_REP_ATTRITION" />
+  <Function Name="GIS.LISTAR_REP_ATTRITION_XTIPO" Method="LISTAR_REP_ATTRITION_XTIPO">
+    <Parameter Name="iCodAttrition" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LISTAR_REP_ATTRITION_XTIPOResult">
+      <Column Name="Semestre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="c1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="c10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_REP_GRADUADOS" Method="LISTAR_REP_GRADUADOS">
+    <ElementType Name="LISTAR_REP_GRADUADOSResult">
+      <Column Name="AnioIngreso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200601" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200602" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200701" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200702" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200801" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200802" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200901" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A200902" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A201001" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A201002" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A201101" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A201102" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ratio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_REP_PROFESORES" Method="LISTAR_REP_PROFESORES">
+    <ElementType Name="LISTAR_REP_PROFESORESResult">
+      <Column Name="TotalDocentes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalDocentesTar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalMinutosTar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.LISTAR_REP_PROFESORES_DETALLE" Method="LISTAR_REP_PROFESORES_DETALLE">
+    <ElementType Name="LISTAR_REP_PROFESORES_DETALLEResult">
+      <Column Name="COD_PROFESOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOM_PROFESOR" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+      <Column Name="Minutos_Tardanza" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sesiones_Inasistidas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sesiones_Recuperadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Encuesta" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.MANTENIMIENTO_OBSERVACION" Method="MANTENIMIENTO_OBSERVACION">
+    <Parameter Name="CodObservacion" Parameter="codObservacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="UsuMod" Parameter="usuMod" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GIS.OBTENER_COORDINADORXCURSO" Method="OBTENER_COORDINADORXCURSO">
+    <Parameter Name="CodCarrera" Parameter="codCarrera" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodCurso" Parameter="codCurso" Type="System.Int32" DbType="Int" />
+    <ElementType Name="OBTENER_COORDINADORXCURSOResult">
+      <Column Name="value" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="text" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.OBTENER_INFO_USUARIO" Method="OBTENER_INFO_USUARIO">
+    <Parameter Name="CodPersona" Parameter="codPersona" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="OBTENER_INFO_USUARIOResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GIS.RANKING_PROFESORES" Method="RANKING_PROFESORES">
+    <ElementType Name="RANKING_PROFESORESResult">
+      <Column Name="Profesor" Type="System.String" DbType="VarChar(602)" CanBeNull="true" />
+      <Column Name="Tardanza" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClasesNoRecuperadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Encuesta" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="GPPP.uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado" Method="uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado">
     <Parameter Name="_ALUMNOID" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="_CARRERAID" Type="System.Int32" DbType="Int" />
@@ -18,24 +1761,6 @@
       <Column Name="PPPNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="CREDITOSAPROBADOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CREDITOSPPPCUMPLIDOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="IFCDC.up_Registrar_AccionMejora" Method="up_Registrar_AccionMejora">
-    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
-    <ElementType Name="up_Registrar_AccionMejoraResult">
-      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="GPPP.uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado_SinMatricula" Method="uspAlumno_ListarXAlumnoXCarreraXPeriodoXPPPXEstado_SinMatricula">
@@ -799,19 +2524,6 @@
       <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="IFCDC.up_Registrar_Hallazgo" Method="up_Registrar_Hallazgo">
-    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
-    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_Registrar_HallazgoResult">
-      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="IFCDC.up_Obtener_Persona" Method="up_Obtener_Persona">
     <Parameter Name="PersonaId" Parameter="personaId" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="up_Obtener_PersonaResult">
@@ -819,6 +2531,24 @@
       <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="TipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="IFCDC.up_Registrar_AccionMejora" Method="up_Registrar_AccionMejora">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_Registrar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

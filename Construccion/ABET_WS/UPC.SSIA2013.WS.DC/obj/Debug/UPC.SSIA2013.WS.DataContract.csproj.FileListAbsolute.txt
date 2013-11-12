@@ -33,3 +33,8 @@ C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.DC\bin\Debug\UPC.SSIA2013.WS.Data
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.DC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.DC\obj\Debug\UPC.SSIA2013.WS.DataContract.dll
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.DC\obj\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.DC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.DC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.DC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.DC\obj\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.DC\obj\Debug\UPC.SSIA2013.WS.DataContract.pdb

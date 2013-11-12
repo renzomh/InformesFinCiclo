@@ -72,3 +72,14 @@ C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.Data
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.csprojResolveAssemblyReference.cache
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.DataModel.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.DataModel.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.dll
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.TL\obj\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
