@@ -69,3 +69,14 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\obj\Debug\UPC.SSIA2013.DataAccess.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\obj\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.DataAccess.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.DataModel.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.DataModel.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\obj\Debug\UPC.SSIA2013.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\obj\Debug\UPC.SSIA2013.DataAccess.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DL.DALC\obj\Debug\UPC.SSIA2013.DataAccess.pdb

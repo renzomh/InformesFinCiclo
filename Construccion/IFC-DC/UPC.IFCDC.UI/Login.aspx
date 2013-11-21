@@ -17,6 +17,9 @@
     <form id="formularioLogin" class="textoLogin" runat="server" style="margin:0 auto">
             <div class="right-box">Usuario: <asp:TextBox ID="texto_usuario" runat="server" />  </div>
             <div class="right-box">Password: <asp:TextBox TextMode="Password" ID="texto_password" runat="server" />  </div>
+            <p> Ciclo: 
+                <asp:DropDownList ID="combo_LoginCiclo"  runat ="server"></asp:DropDownList>
+            </p>
             <br />
             <asp:Button ID="ingresar" CssClass="btn-ingresar" runat="server" 
                 onclick="ingresar_Click"  />

@@ -11,6 +11,7 @@ using UPC.IFCDC.BE;
 using UPC.IFCDC.BC;
 using UPC.IFCDC.Utilitarios;
 using System.Text;
+using System.Data;
 
 namespace UPC.IFCDC.UI
 {
@@ -62,6 +63,9 @@ namespace UPC.IFCDC.UI
 
                 //OBTENER ACCIONES PREVIAS
                 grdAccionesPreviasDataBind();
+
+                //OBTENER ANTECEDENTES
+                reporteInformeFinCicloDataBind();
         }
 
         private void setearPeriodos()
@@ -105,6 +109,28 @@ namespace UPC.IFCDC.UI
         }
 
         //DATA BINDS
+
+        private void reporteInformeFinCicloDataBind()
+        {
+            InformeFinCicloWS.InformeFinCicloClient client = null;
+            String sEstado = "";
+
+            try
+            {
+                client = new InformeFinCicloWS.InformeFinCicloClient();
+
+                grdInformes.DataSource = client.WSListarInformeFinCicloReporte(objCursoxProfesorDC.CursoId, 0, sEstado).LstInformeFinCicloReporte;
+                grdInformes.DataBind();
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("DATA BIND, REPORTE INFORMES: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
+        }
 
         private void grdHallazgosDataBind()
         {
@@ -503,6 +529,136 @@ namespace UPC.IFCDC.UI
         private void MostrarAlert(String mensaje)
         {
             ScriptManager.RegisterClientScriptBlock(Page, typeof(Page), "MensajeError", String.Format("alert('{0}');", mensaje), true);
+        }
+
+        public void grdInformes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            InformeFinCicloWS.InformeFinCicloClient informeFinCicloClient = null;
+            ResultadoProgramaWS.ResultadoProgramaClient resultadoClient = null;
+            LogroWS.LogroClient logroClient = null;
+            HallazgoWS.HallazgoClient hallazgoClient = null;
+            AccionMejoraWS.AccionMejoraClient accionClient = null;
+            PersonaWS.PersonaClient personaClient = null;
+            CursoWS.CursoClient cursoClient = null;
+            PeriodoWS.PeriodoClient periodoClient = null;
+
+            try
+            {
+                informeFinCicloClient = new InformeFinCicloWS.InformeFinCicloClient();
+                resultadoClient = new ResultadoProgramaWS.ResultadoProgramaClient();
+                logroClient = new LogroWS.LogroClient();
+                hallazgoClient = new HallazgoWS.HallazgoClient();
+                accionClient = new AccionMejoraWS.AccionMejoraClient();
+                personaClient = new PersonaWS.PersonaClient();
+                cursoClient = new CursoWS.CursoClient();
+                periodoClient = new PeriodoWS.PeriodoClient();
+
+                if (e.CommandName.ToUpper().Equals("CMDINICIAR"))
+                {
+                    InformeFinCicloWS.InformeFinCicloDC informe = informeFinCicloClient.WSObtenerInformeFinCicloxId(Convert.ToInt32(e.CommandArgument.ToString()));
+                    ResultadoProgramaWS.ResultadoProgramaxCursoCollectionDC outcomes = resultadoClient.WSListarResultadoProgramaxCurso(informe.CursoId, informe.PeriodoId);
+                    LogroWS.LogroDC logro = logroClient.WSListarLogroxCurso(informe.CursoId);
+                    HallazgoWS.HallazgoCollectionDC hallazgos = hallazgoClient.WSListarHallazgosxInformeFinCiclo(informe.InformeFinCicloId);
+                    AccionMejoraWS.AccionMejoraCollectionDC accionesmejora = accionClient.WSListarAccionesMejoraxInformeFinCiclo(informe.InformeFinCicloId);
+                    AccionMejoraWS.AccionMejoraCollectionDC accionesprevias = accionClient.WSListarAccionesMejoraPrevias(informe.CursoId, informe.PeriodoId);
+
+                    PersonaWS.PersonaDC persona = personaClient.WSObtenerPersona(informe.CoordinadorId);
+
+                    CursoWS.CursoCollectionDC cursos = cursoClient.ListarCursos();
+                    CursoWS.CursoDC curso = null;
+
+                    for (int i = 0; i < cursos.Count(); i++)
+                        if (informe.CursoId == cursos[i].CursoId)
+                            curso = cursos[i];
+
+                    PeriodoWS.PeriodoCollectionDC periodos = periodoClient.WSListarPeriodos();
+                    PeriodoWS.PeriodoDC periodo = null;
+
+                    for (int i = 0; i < periodos.Count(); i++)
+                        if (informe.PeriodoId == periodos[i].PeriodoId)
+                            periodo = periodos[i];
+                    //-------------------------------------------------------------------------------------------------------------------------
+
+                    //ACCIONES PREVIAS
+                    DataTable tableAccionesPrevias = new DataTable();
+                    tableAccionesPrevias.Columns.Add("Código");
+                    tableAccionesPrevias.Columns.Add("Descripción");
+                    tableAccionesPrevias.Columns.Add("Estado");
+
+                    for (int i = 0; i < accionesprevias.LstAccionesMejora.Count(); i++)
+                    {
+                        DataRow rowAccionPrevias = tableAccionesPrevias.NewRow();
+                        rowAccionPrevias[0] = accionesprevias.LstAccionesMejora[i].Codigo;
+                        rowAccionPrevias[1] = accionesprevias.LstAccionesMejora[i].Descripcion;
+                        rowAccionPrevias[2] = accionesprevias.LstAccionesMejora[i].Estado;
+                        tableAccionesPrevias.Rows.Add(rowAccionPrevias);
+                    }
+
+                    //HALLAZGOS
+                    DataTable tableHallazgos = new DataTable();
+                    tableHallazgos.Columns.Add("Código");
+                    tableHallazgos.Columns.Add("Descripción");
+
+                    for (int i = 0; i < hallazgos.LstHallazgos.Count(); i++)
+                    {
+                        DataRow rowHallazgo = tableHallazgos.NewRow();
+                        rowHallazgo[0] = hallazgos.LstHallazgos[i].Codigo;
+                        rowHallazgo[1] = hallazgos.LstHallazgos[i].Descripcion;
+                        tableHallazgos.Rows.Add(rowHallazgo);
+                    }
+
+                    //ACCIONES DE MEJORA
+                    DataTable tableAccionMejora = new DataTable();
+                    tableAccionMejora.Columns.Add("Código");
+                    tableAccionMejora.Columns.Add("Descripción");
+                    tableAccionMejora.Columns.Add("Hallazgo");
+
+                    for (int i = 0; i < accionesmejora.LstAccionesMejora.Count(); i++)
+                    {
+                        DataRow rowAccionMejora = tableAccionMejora.NewRow();
+                        rowAccionMejora[0] = accionesmejora.LstAccionesMejora[i].Codigo;
+                        rowAccionMejora[1] = accionesmejora.LstAccionesMejora[i].Descripcion;
+                        rowAccionMejora[2] = accionesmejora.LstAccionesMejora[i].CodigoHallazgo;
+                        tableAccionMejora.Rows.Add(rowAccionMejora);
+                    }
+
+                    //STUDENT OUTCUMES
+                    DataTable tableOutcomes = new DataTable();
+                    tableOutcomes.Columns.Add("Outcome");
+                    tableOutcomes.Columns.Add("Descripción");
+
+                    for (int i = 0; i < outcomes.LstResultadoProgramaxCurso.Count(); i++)
+                    {
+                        DataRow rowOutcome = tableOutcomes.NewRow();
+                        rowOutcome[0] = outcomes.LstResultadoProgramaxCurso[i].Outcome;
+                        rowOutcome[1] = outcomes.LstResultadoProgramaxCurso[i].Descricpion;
+                        tableOutcomes.Rows.Add(rowOutcome);
+                    }
+
+                    String ruta = Server.MapPath("~/Reportes/" + periodo.Descripcion + "_" + curso.Codigo + "_InformeFinCiclo.pdf");
+
+                    PDFGenerator objPDF = new PDFGenerator();
+                    objPDF.generarPdf(periodo.Descripcion, curso.Codigo + " - " + curso.Nombre, persona.Apellidos + ", " + persona.Nombres, tableOutcomes, logro.Descripcion, tableAccionesPrevias, tableHallazgos, tableAccionMejora,
+                        informe.DesarrolloUnidades, informe.ComentarioInfraestructura, informe.ComentarioAlumnos, informe.ComentarioDelegados, informe.ComentarioEncuesta,
+                        ruta);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MostrarAlert("EXPORTAR INFORME: " + ex.Message);
+            }
+
+            finally
+            {
+                informeFinCicloClient = null;
+                resultadoClient = null;
+                logroClient = null;
+                hallazgoClient = null;
+                accionClient = null;
+                cursoClient = null;
+                periodoClient = null;
+            }
         }
     }
 }

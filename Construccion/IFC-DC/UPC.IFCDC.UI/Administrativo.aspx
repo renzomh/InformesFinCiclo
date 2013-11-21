@@ -94,7 +94,7 @@
     </tr>
     </tbody>
     </table>
-    <asp:Button CssClass="btn-exporta-excel"  runat="server" ID="btnExportaHallazgo" OnClick="btnExportaHallazgo_Click"/>
+    <asp:Button runat="server" ID="btnExportaHallazgo" Text="Exportar a PDF" OnClick="btnExportaHallazgo_Click"/>
  </div>
  
  <div id="accionesMejora_ad" class="box-central">
@@ -138,7 +138,7 @@
         </tr>
     </tbody>
     </table>
-    <asp:Button CssClass="btn-exporta-excel" runat="server" ID="btnExportaAcciones" OnClick="btnExportaAcciones_Click"/>
+    <asp:Button runat="server" ID="btnExportaAcciones" Text="Exportar a PDF" OnClick="btnExportaAcciones_Click"/>
  </div>
  
 </asp:Content>

@@ -15,7 +15,7 @@ namespace UPC.IFCDC.UI
     {
         private String sPersonaId = null;
 
-        PeriodoWS.PeriodoClient periodoClient = null;
+        //PeriodoWS.PeriodoClient periodoClient = null;
         PeriodoWS.PeriodoDC objPeriodoDC = null;
 
         CursoWS.CursoClient cursoClient = null;
@@ -31,8 +31,9 @@ namespace UPC.IFCDC.UI
             {
                 if (sPersonaId != null)
                 {
-                    periodoClient = new PeriodoWS.PeriodoClient();
-                    objPeriodoDC = periodoClient.WSObtenerPeriodoActual();
+                    //periodoClient = new PeriodoWS.PeriodoClient();
+                    //objPeriodoDC = periodoClient.WSObtenerPeriodoActual();
+                    objPeriodoDC = (PeriodoWS.PeriodoDC) Session["Periodo"];
 
                     texto_PeriodoActual.Text = objPeriodoDC.Descripcion;
                     texto_FechaLimite.Text = objPeriodoDC.FechaFin;
@@ -46,7 +47,7 @@ namespace UPC.IFCDC.UI
             }
             finally
             {
-                periodoClient = null;
+                //periodoClient = null;
             }
             
         }

@@ -54,6 +54,7 @@
     <li onclick="change_view('#hallazgos');" >Hallazgos</li>
     <li onclick="change_view('#accionesMejora');" >Acciones de Mejora</li>
     <li onclick="change_view('#comentario');" >Comentarios</li>
+    <li onclick="change_view('#antecedentes');">Antecedentes</li>
  </ul>
 
 <!--ZONA DE LOGROS-->
@@ -153,7 +154,8 @@
                     <asp:TemplateField HeaderText="Eliminar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEliminarHallazgo" runat="server" CommandName="cmdEliminarHallazgo" CommandArgument='<%#Eval("HallazgoId")%>'>
-                                <img src="Imagenes/delete.png" width="16" height="16" alt="deletehallazgo" border="0"/>
+                                <img src="Imagenes/delete.png" width="16" height="16" alt="deletehallazgo" border="0"
+                                    onclick="if(confirm('Si elimina el Hallazgos, tambíen se eliminarán las Acciones de Mejora correspondientes. ¿Está Ud. seguro que desea eliminar estes regitro?')){return true;} else{return false;}"/>
                             </asp:LinkButton>                        
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -197,7 +199,8 @@
                     <asp:TemplateField HeaderText="Eliminar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEliminarAccionMejora" runat="server" CommandName="cmdEliminarAccionMejora" CommandArgument='<%#Eval("AccionMejoraId")%>'>
-                                <img src="Imagenes/delete.png" width="16" height="16" alt="deleteaccion" border="0"/>
+                                <img src="Imagenes/delete.png" width="16" height="16" alt="deleteaccion" border="0"
+                                    onclick="if(confirm('¿Está Ud. seguro que desea eliminar la Acción de Mejora?')){return true;} else{return false;}"/>
                             </asp:LinkButton>                        
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -242,6 +245,42 @@
     <br />
 </div>
 
+<!--ZONA DE ANTECEDENTES-->
+ <div id="antecedentes" class="box-central">
+    <table class="TablaNested">
+    <tbody>
+        <tr>
+        <td colspan="2" align="center" >
+            <asp:GridView ID="grdInformes" OnRowCommand="grdInformes_RowCommand" runat="server" Width="100%"
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
+                <RowStyle CssClass="grdFilas"/>
+                <HeaderStyle CssClass="grdCabecera"/>
+                <AlternatingRowStyle CssClass="grdFilasAlternas"/>
+             
+                <Columns>                    
+                    <asp:BoundField HeaderText="Codigo" DataField="CodigoCurso" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
+                    <asp:BoundField HeaderText="Curso" DataField="NombreCurso" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="30%"/> 
+                    <asp:BoundField HeaderText="Profesor" DataField="NombreProfesor" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="30%"/>
+                    <asp:BoundField HeaderText="Ciclo" DataField="Periodo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
+                
+                    <asp:TemplateField HeaderText="Exportar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkInforme" runat="server" CommandName="cmdIniciar" CommandArgument='<%#Eval("InformeFinCicloId")%>'>
+                                <img src="Imagenes/icono/icono-editar.png" width="16" height="16" alt="iniciar" border="0"/>
+                            </asp:LinkButton>                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                
+                </Columns>
+             
+            </asp:GridView>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+ </div>
+
+
 <br />
 <br />
 
@@ -269,8 +308,8 @@
             <br />
             <asp:TextBox ID="popup_textoDescripcionAccionMejoraRegistrar" Width="400px" Height="200px" runat="server" TextMode="MultiLine"></asp:TextBox>
             <br />
-            <asp:Button ID="popup_buttonRegistrarAccionMejora" runat="server" CssClass="btn-agregar" OnClick="popup_buttonRegistrarAccioMejora_Click"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejoraRegistrar');"></button>
+            <asp:Button ID="popup_buttonRegistrarAccionMejora" runat="server" Text="Registrar" OnClick="popup_buttonRegistrarAccioMejora_Click"/>
+            <button type="button" onclick="close_popup('#pAccionesMejoraRegistrar');">Cancelar</button>
         </div>
     </div>
     
@@ -291,8 +330,8 @@
             <br />
             <asp:TextBox ID="popup_textoDescripcionAccionMejoraEditar" Width="400px" Height="200px" runat="server" TextMode="MultiLine"></asp:TextBox>
             <br />
-            <asp:Button ID="popup_buttonEditarAccionMejora" runat="server" CssClass="btn-agregar" OnClick="popup_buttonEditarAccioMejora_Click"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejoraEditar');"></button>
+            <asp:Button ID="popup_buttonEditarAccionMejora" runat="server" Text="Editar" OnClick="popup_buttonEditarAccioMejora_Click"/>
+            <button type="button" onclick="close_popup('#pAccionesMejoraEditar');">Cancelar</button>
         </div>
     </div>
 
@@ -304,8 +343,8 @@
             <asp:TextBox ID="popup_textoDescripcionHallazgoRegistrar" Width="400px" Height="100px" runat="server" CssClass="CajaTextoNormal" TextMode="MultiLine"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="popup_buttonRegistrarHallazgo" runat="server" CssClass="btn-agregar" OnClick="popup_buttonRegistrarHallazgo_Click"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgoRegistrar');"></button>
+            <asp:Button ID="popup_buttonRegistrarHallazgo" runat="server" Text="Registrar" OnClick="popup_buttonRegistrarHallazgo_Click"/>
+            <button type="button" onclick="close_popup('#pHallazgoRegistrar');">Cancelar</button>
         </div>
     </div>
 
@@ -321,8 +360,8 @@
             <br />
             
             <br />
-            <asp:Button ID="popup_buttonEditarHallazgo" runat="server" CssClass="btn-agregar" OnClick="popup_buttonEditarHallazgo_Click"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgoEditar');"></button>
+            <asp:Button ID="popup_buttonEditarHallazgo" runat="server" Text="Editar" OnClick="popup_buttonEditarHallazgo_Click"/>
+            <button type="button" onclick="close_popup('#pHallazgoEditar');">Cancelar</button>
         </div>
     </div>
 

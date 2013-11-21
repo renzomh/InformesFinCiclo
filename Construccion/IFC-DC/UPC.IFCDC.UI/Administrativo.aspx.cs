@@ -31,6 +31,9 @@ namespace UPC.IFCDC.UI
         PeriodoWS.PeriodoCollectionDC objPeriodoCollectionDC = null;
         PeriodoCollectionBE listaPeriodosFiltrado = null;
 
+        HallazgoWS.HallazgoReporteCollectionDC listaHallazgos = null;
+        AccionMejoraWS.AccionMejoraReporteCollectionDC listaAcciones = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!Page.IsPostBack)
@@ -101,102 +104,119 @@ namespace UPC.IFCDC.UI
 
         protected void btnExportaHallazgo_Click(object sender, EventArgs e)
         {
-            PDFGenerator pdf = new PDFGenerator();
-
-            HallazgoWS.HallazgoClient client = null;
-            HallazgoWS.HallazgoReporteCollectionDC hallazgos = null;
-
-            try
+            if (listaHallazgos.LstHallazgoReporte.Count() <= 0)
             {
-                client = new HallazgoWS.HallazgoClient();
-                hallazgos = client.WSListarHallazgoReporte(
-                        Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value), 
-                        Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value));
+                MostrarAlert("No existen hallazgos en la bandeja.");
+            }
+            else
+            {
+                PDFGenerator pdf = new PDFGenerator();
 
-                //HALLAZGOS
-                DataTable tableHallazgos = new DataTable();
-                tableHallazgos.Columns.Add("Codigo");
-                tableHallazgos.Columns.Add("Descripcion");
-                tableHallazgos.Columns.Add("Curso");
+                HallazgoWS.HallazgoClient client = null;
+                HallazgoWS.HallazgoReporteCollectionDC hallazgos = null;
 
-                for (int i = 0; i < hallazgos.LstHallazgoReporte.Count(); i++)
+                try
                 {
-                    DataRow row = tableHallazgos.NewRow();
-                    row[0] = hallazgos.LstHallazgoReporte[i].CodigoHallazgo;
-                    row[1] = hallazgos.LstHallazgoReporte[i].Descripcion;
-                    row[2] = hallazgos.LstHallazgoReporte[i].NombreCurso;
-                    tableHallazgos.Rows.Add(row);
+                    client = new HallazgoWS.HallazgoClient();
+                    hallazgos = client.WSListarHallazgoReporte(
+                            Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value),
+                            Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value));
+
+                    //HALLAZGOS
+                    DataTable tableHallazgos = new DataTable();
+                    tableHallazgos.Columns.Add("Codigo");
+                    tableHallazgos.Columns.Add("Descripcion");
+                    tableHallazgos.Columns.Add("Curso");
+
+                    for (int i = 0; i < hallazgos.LstHallazgoReporte.Count(); i++)
+                    {
+                        DataRow row = tableHallazgos.NewRow();
+                        row[0] = hallazgos.LstHallazgoReporte[i].CodigoHallazgo;
+                        row[1] = hallazgos.LstHallazgoReporte[i].Descripcion;
+                        row[2] = hallazgos.LstHallazgoReporte[i].NombreCurso;
+                        tableHallazgos.Rows.Add(row);
+                    }
+
+                    String ruta = Server.MapPath("~/Reportes/Hallazgos.pdf");
+
+                    pdf.generearReporteHallazgos(combo_HallazgoCurso.SelectedItem.Text, combo_HallazgoCiclo.SelectedItem.Text, tableHallazgos, ruta);
                 }
-
-                String ruta = Server.MapPath("~/Reportes/Hallazgos.pdf");
-
-                pdf.generearReporteHallazgos(combo_HallazgoCurso.SelectedItem.Text, combo_HallazgoCiclo.SelectedItem.Text, tableHallazgos, ruta);
-            }
-            catch (Exception ex)
-            {
-                MostrarAlert("EXPORTAR HALLAZGOS: " + ex.Message);
-            }
-            finally
-            {
-                client = null;
+                catch (Exception ex)
+                {
+                    MostrarAlert("EXPORTAR HALLAZGOS: " + ex.Message);
+                }
+                finally
+                {
+                    client = null;
+                }
             }
         }
 
         protected void btnExportaAcciones_Click(object sender, EventArgs e)
         {
-            PDFGenerator pdf = new PDFGenerator();
-            
-            AccionMejoraWS.AccionMejoraClient client = null;
-            AccionMejoraWS.AccionMejoraReporteCollectionDC acciones = null;
+            PDFGenerator pdf = null;
 
-            String sEstado = null;
-
-            client = new AccionMejoraWS.AccionMejoraClient();
-
-            try
+            if(listaAcciones.LstAccionMejoraReporte.Count() <= 0)
             {
+                MostrarAlert("No existen acciones de mejora en la bandeja.");
+            }
+
+            else
+            {
+                pdf = new PDFGenerator();
+            
+                AccionMejoraWS.AccionMejoraClient client = null;
+                AccionMejoraWS.AccionMejoraReporteCollectionDC acciones = null;
+
+                String sEstado = null;
+
                 client = new AccionMejoraWS.AccionMejoraClient();
 
-                if (combo_AccionMejoraEstado.SelectedItem.Value.Equals("TODOS"))
-                    sEstado = "";
-                else
-                    sEstado = combo_AccionMejoraEstado.SelectedItem.Value;
-
-                acciones = client.WSListarAccionMejoraReporte(
-                            Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value), 
-                            Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value), sEstado);
-
-                //ACCIONES
-                DataTable tableAcciones = new DataTable();
-                tableAcciones.Columns.Add("Codigo");
-                tableAcciones.Columns.Add("Hallazgo");
-                tableAcciones.Columns.Add("Descripcion");
-                tableAcciones.Columns.Add("Curso");
-                tableAcciones.Columns.Add("Estado");
-
-                for (int i = 0; i < acciones.LstAccionMejoraReporte.Count(); i++)
+                try
                 {
-                    DataRow row = tableAcciones.NewRow();
-                    row[0] = acciones.LstAccionMejoraReporte[i].CodigoAccionMejora;
-                    row[1] = acciones.LstAccionMejoraReporte[i].CodigoHallazgo;
-                    row[2] = acciones.LstAccionMejoraReporte[i].Descripcion;
-                    row[3] = acciones.LstAccionMejoraReporte[i].NombreCurso;
-                    row[4] = acciones.LstAccionMejoraReporte[i].Estado;
-                    tableAcciones.Rows.Add(row);
+                    client = new AccionMejoraWS.AccionMejoraClient();
+
+                    if (combo_AccionMejoraEstado.SelectedItem.Value.Equals("TODOS"))
+                        sEstado = "";
+                    else
+                        sEstado = combo_AccionMejoraEstado.SelectedItem.Value;
+
+                    acciones = client.WSListarAccionMejoraReporte(
+                                Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value), 
+                                Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value), sEstado);
+
+                    //ACCIONES
+                    DataTable tableAcciones = new DataTable();
+                    tableAcciones.Columns.Add("Codigo");
+                    tableAcciones.Columns.Add("Hallazgo");
+                    tableAcciones.Columns.Add("Descripcion");
+                    tableAcciones.Columns.Add("Curso");
+                    tableAcciones.Columns.Add("Estado");
+
+                    for (int i = 0; i < acciones.LstAccionMejoraReporte.Count(); i++)
+                    {
+                        DataRow row = tableAcciones.NewRow();
+                        row[0] = acciones.LstAccionMejoraReporte[i].CodigoAccionMejora;
+                        row[1] = acciones.LstAccionMejoraReporte[i].CodigoHallazgo;
+                        row[2] = acciones.LstAccionMejoraReporte[i].Descripcion;
+                        row[3] = acciones.LstAccionMejoraReporte[i].NombreCurso;
+                        row[4] = acciones.LstAccionMejoraReporte[i].Estado;
+                        tableAcciones.Rows.Add(row);
+                    }
+
+                    String ruta = Server.MapPath("~/Reportes/AccionesDeMejora.pdf");
+
+                    pdf.generearReporteAcciones(combo_AccionMejoraCurso.SelectedItem.Text, combo_AccionMejoraCiclo.SelectedItem.Text, combo_AccionMejoraEstado.SelectedItem.Text, tableAcciones, ruta);
                 }
-
-                String ruta = Server.MapPath("~/Reportes/AccionesDeMejora.pdf");
-
-                pdf.generearReporteAcciones(combo_AccionMejoraCurso.SelectedItem.Text, combo_AccionMejoraCiclo.SelectedItem.Text, combo_AccionMejoraEstado.SelectedItem.Text, tableAcciones, ruta);
-            }
-            catch (Exception ex)
-            {
-                MostrarAlert("EXPORTAR ACCIONES: " + ex.Message);
-            }
-            finally
-            {
-                client = null;
-            }
+                catch (Exception ex)
+                {
+                    MostrarAlert("EXPORTAR ACCIONES: " + ex.Message);
+                }
+                finally
+                {
+                    client = null;
+                }
+            }      
         }
 
         public void grdInformes_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -412,7 +432,8 @@ namespace UPC.IFCDC.UI
             try
             {
                 client = new HallazgoWS.HallazgoClient();
-                grdHallazgos.DataSource = client.WSListarHallazgoReporte(Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value), Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value)).LstHallazgoReporte;
+                listaHallazgos = client.WSListarHallazgoReporte(Convert.ToInt32(combo_HallazgoCurso.SelectedItem.Value), Convert.ToInt32(combo_HallazgoCiclo.SelectedItem.Value));
+                grdHallazgos.DataSource = listaHallazgos.LstHallazgoReporte;
                 grdHallazgos.DataBind();
             }
             catch (Exception ex)
@@ -451,7 +472,8 @@ namespace UPC.IFCDC.UI
                 else
                     sEstado = combo_AccionMejoraEstado.SelectedItem.Value;
 
-                grdAccionesMejora.DataSource = client.WSListarAccionMejoraReporte(Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value), Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value), sEstado).LstAccionMejoraReporte;
+                listaAcciones = client.WSListarAccionMejoraReporte(Convert.ToInt32(combo_AccionMejoraCurso.SelectedItem.Value), Convert.ToInt32(combo_AccionMejoraCiclo.SelectedItem.Value), sEstado);
+                grdAccionesMejora.DataSource = listaAcciones.LstAccionMejoraReporte;
                 grdAccionesMejora.DataBind();
             }
             catch (Exception ex)

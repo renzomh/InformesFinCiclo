@@ -16,9 +16,33 @@ namespace UPC.IFCDC.UI
         String sUsuario = null;
         String sPassword = null;
 
+        PeriodoWS.PeriodoCollectionDC objPeriodoCollectionDC = null;
+        PeriodoCollectionBE listaPeriodosFiltrado = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            obtenerPeriodos();
+            setearCombo(); 
+        }
 
+        private void obtenerPeriodos()
+        {
+            PeriodoWS.PeriodoClient client = null;
+
+            try
+            {
+                client = new PeriodoWS.PeriodoClient();
+                objPeriodoCollectionDC = client.WSListarPeriodos();
+                listaPeriodosFiltrado = obtenerPeriodosFiltrados(objPeriodoCollectionDC);
+            }
+            catch (Exception ex)
+            {
+                MostrarAlert("OBTENER PERIODOS: " + ex.Message);
+            }
+            finally
+            {
+                client = null;
+            }
         }
 
         protected void ingresar_Click(object sender, EventArgs e)
@@ -35,9 +59,16 @@ namespace UPC.IFCDC.UI
                 {
                     if (personaDC != null && texto_password.Text.ToString().Trim().Equals(sPassword))
                     {
+                        PeriodoWS.PeriodoDC objPeriodoDC = new PeriodoWS.PeriodoDC();
+                        objPeriodoDC.PeriodoId = listaPeriodosFiltrado.LstPeriodos[combo_LoginCiclo.SelectedIndex].PeriodoId;
+                        objPeriodoDC.Descripcion = listaPeriodosFiltrado.LstPeriodos[combo_LoginCiclo.SelectedIndex].Descripcion;
+                        objPeriodoDC.FechaInicio = listaPeriodosFiltrado.LstPeriodos[combo_LoginCiclo.SelectedIndex].FechaInicio;
+                        objPeriodoDC.FechaFin = listaPeriodosFiltrado.LstPeriodos[combo_LoginCiclo.SelectedIndex].FechaFin;
+
                         Session["PersonaId"] = personaDC.PersonaId;
                         Session["NombreCompletoPersona"] = personaDC.Apellidos + ", " + personaDC.Nombres;
-
+                        Session["Periodo"] = objPeriodoDC;
+    
                         switch (personaDC.TipoPersona)
                         {
                             //ADMINISTRATIVO
@@ -71,6 +102,47 @@ namespace UPC.IFCDC.UI
             catch (Exception ex)
             {
                 MostrarAlert(ex.Message);
+            }
+        }
+
+        private PeriodoCollectionBE obtenerPeriodosFiltrados(PeriodoWS.PeriodoCollectionDC listaPeriodosTotal)
+        {
+            int posicionPeriodoActual = 0;
+            PeriodoCollectionBE lista = new PeriodoCollectionBE();
+            lista.LstPeriodos = new System.Collections.ObjectModel.Collection<PeriodoBE>();
+
+            for (int i = 0; i < listaPeriodosTotal.Count(); i++)
+            {
+                if (listaPeriodosTotal[i].EsActual == 1)
+                {
+                    posicionPeriodoActual = i;
+                    break;
+                }
+            }
+
+            for (int j = posicionPeriodoActual; j > posicionPeriodoActual - 3; j--)
+            {
+                if (j >= 0)
+                {
+                    PeriodoBE periodo = new PeriodoBE();
+                    periodo.PeriodoId = listaPeriodosTotal[j].PeriodoId;
+                    periodo.Descripcion = listaPeriodosTotal[j].Descripcion;
+                    periodo.EsActual = listaPeriodosTotal[j].EsActual;
+                    periodo.FechaInicio = listaPeriodosTotal[j].FechaInicio;
+                    periodo.FechaFin = listaPeriodosTotal[j].FechaFin;
+
+                    lista.LstPeriodos.Add(periodo);
+                }
+            }
+
+            return lista;
+        }
+
+        private void setearCombo()
+        {
+            for (int i = 0; i < listaPeriodosFiltrado.LstPeriodos.Count; i++)
+            {
+                combo_LoginCiclo.Items.Add(new ListItem(listaPeriodosFiltrado.LstPeriodos[i].Descripcion, listaPeriodosFiltrado.LstPeriodos[i].PeriodoId.ToString()));
             }
         }
 
