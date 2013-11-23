@@ -152,7 +152,6 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\bin\Debug\UPC.SSIA2013.WS.TranslatorLayer.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\bin\Debug\UPC.SSIA2013.DataAccess.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\UPC.SSIA2013.WS.ServiceLibrary.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\UPC.SSIA2013.WS.ServiceLibrary.pdb
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\bin\Debug\UPC.SSIA2013.WS.ServiceLibrary.dll
@@ -174,3 +173,4 @@ C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA20
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\UPC.SSIA2013.WS.ServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\UPC.SSIA2013.WS.ServiceLibrary.dll
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\UPC.SSIA2013.WS.ServiceLibrary.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SI\obj\Debug\UPC.SSIA2013.WS.ServiceLibrary.csprojResolveAssemblyReference.cache

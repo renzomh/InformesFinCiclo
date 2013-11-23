@@ -24,6 +24,6 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\UPC.IFCDC.BE.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\bin\Debug\UPC.IFCDC.BE.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\UPC.IFCDC.Utilitarios.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\UPC.IFCDC.Utilitarios.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Utilitarios\obj\Debug\UPC.IFCDC.Utilitarios.csprojResolveAssemblyReference.cache

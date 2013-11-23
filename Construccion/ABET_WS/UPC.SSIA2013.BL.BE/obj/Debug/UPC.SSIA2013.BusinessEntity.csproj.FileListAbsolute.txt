@@ -35,6 +35,6 @@ C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BE\obj\Debug\UPC.SSIA2013.Busines
 C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.BL.BE\obj\Debug\UPC.SSIA2013.BusinessEntity.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BE\bin\Debug\UPC.SSIA2013.BusinessEntity.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BE\bin\Debug\UPC.SSIA2013.BusinessEntity.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BE\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BE\obj\Debug\UPC.SSIA2013.BusinessEntity.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BE\obj\Debug\UPC.SSIA2013.BusinessEntity.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BE\obj\Debug\UPC.SSIA2013.BusinessEntity.csprojResolveAssemblyReference.cache

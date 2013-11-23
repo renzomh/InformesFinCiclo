@@ -5,19 +5,21 @@
         cargarUltimaPestania2();
     });
 </script>
-
-<ul class="tabs">
+<div class="box-central">
+ <ul class="tabs tabs2">
     <li onclick="change_view2('#informesFinCiclo');" >Informes de Fin de Ciclo</li><li onclick="change_view2('#hallazgos_ad');" >Hallazgos</li><li onclick="change_view2('#accionesMejora_ad');" >Acciones de Mejora</li>
  </ul>
-
+ </div>
+ 
  <div id="informesFinCiclo" class="box-central">
-    <p> Curso:
+    <div class="contenido-highlight">
+    <p><div class="espaciado">Curso:</div>
         <asp:DropDownList ID="combo_InformeFinCicloCurso" runat ="server"></asp:DropDownList>
     </p>
-    <p> Ciclo: 
+    <p><div class="espaciado">Ciclo:</div>
         <asp:DropDownList ID="combo_InformeFinCicloCiclo"  runat ="server"></asp:DropDownList>
     </p>
-    <p> Estado: 
+    <p><div class="espaciado">Estado: </div>
         <asp:DropDownList ID="combo_InformeFinCicloEstado" runat="server" >
             <asp:ListItem>TODOS</asp:ListItem>
             <asp:ListItem>NO REALIZADO</asp:ListItem>
@@ -25,14 +27,14 @@
             <asp:ListItem>FINALIZADO</asp:ListItem>
         </asp:DropDownList>
     </p>
-   
+   <div style="text-align:center">
    <asp:Button CssClass="btn-buscar" ID="btnBuscaInformesFinCiclo" runat="server" onclick="btnBuscaInformesFinCiclo_Click"/>
-  
+  </div>
     <table class="TablaNested">
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdInformes" OnRowCommand="grdInformes_RowCommand" runat="server" Width="100%"
+            <asp:GridView ID="grdInformes" OnRowCommand="grdInformes_RowCommand" runat="server" Width="100%" CssClass="grd"
              CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -61,23 +63,25 @@
     </tr>
     </tbody>
     </table>
+    </div>
  </div>
  
  <div id="hallazgos_ad" class="box-central">
-    <p>Curso: 
+ <div class="contenido-highlight">
+    <p><div class="espaciado">Curso:</div>
         <asp:DropDownList ID="combo_HallazgoCurso" runat ="server" ></asp:DropDownList>
     </p>
-    <p>Ciclo:
+    <p><div class="espaciado">Ciclo:</div>
         <asp:DropDownList ID="combo_HallazgoCiclo" runat="server" ></asp:DropDownList>
     </p>
-    
+    <div style="text-align:center">
     <asp:Button CssClass="btn-buscar" ID="btnBuscaHallazgos" runat="server" OnClick="btnBuscaHallazgos_Click"/>
-    
+    </div>
     <table class="TablaNested">
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdHallazgos" runat="server" Width="100%"
+            <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CssClass="grd"
              CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -95,17 +99,18 @@
     </tbody>
     </table>
     <asp:Button runat="server" ID="btnExportaHallazgo" Text="Exportar a PDF" OnClick="btnExportaHallazgo_Click"/>
+    </div>
  </div>
  
  <div id="accionesMejora_ad" class="box-central">
-    
-    <p>Curso:
+    <div class="contenido-highlight">
+    <p><div class="espaciado">Curso:</div>
         <asp:DropDownList ID="combo_AccionMejoraCurso" runat ="server" ></asp:DropDownList>
     </p>
-    <p>Ciclo:
+    <p><div class="espaciado">Ciclo:</div>
         <asp:DropDownList ID="combo_AccionMejoraCiclo" runat="server" ></asp:DropDownList>
     </p>
-    <p>Estado:
+    <p><div class="espaciado">Estado:</div>
         <asp:DropDownList ID="combo_AccionMejoraEstado" runat="server" >
             <asp:ListItem>TODOS</asp:ListItem>
             <asp:ListItem>NO REALIZADO</asp:ListItem>
@@ -113,14 +118,14 @@
             <asp:ListItem>IMPLEMENTADO</asp:ListItem>
         </asp:DropDownList>
     </p>
-   
+   <div style="text-align:center">
     <asp:Button CssClass="btn-buscar" ID="btnBuscaAcciones" runat="server" OnClick="btnBuscaAcciones_Click"/>
-
+    </div>
     <table class="TablaNested">
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdAccionesMejora" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
+            <asp:GridView ID="grdAccionesMejora" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd" > 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
                 <AlternatingRowStyle CssClass="grdFilasAlternas"/>
@@ -139,6 +144,7 @@
     </tbody>
     </table>
     <asp:Button runat="server" ID="btnExportaAcciones" Text="Exportar a PDF" OnClick="btnExportaAcciones_Click"/>
+    </div>
  </div>
  
 </asp:Content>

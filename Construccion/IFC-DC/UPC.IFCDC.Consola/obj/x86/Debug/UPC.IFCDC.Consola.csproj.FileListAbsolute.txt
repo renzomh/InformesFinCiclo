@@ -34,7 +34,6 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\bin\Debug\UPC.IFCDC.BC.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\bin\Debug\UPC.IFCDC.BE.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\bin\Debug\UPC.IFCDC.Utilitarios.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\UPC.IFCDC.Consola.exe
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\UPC.IFCDC.Consola.pdb
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\bin\Debug\UPC.IFCDC.Consola.exe
@@ -50,3 +49,4 @@ C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.C
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\UPC.IFCDC.Consola.csprojResolveAssemblyReference.cache
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\UPC.IFCDC.Consola.exe
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\UPC.IFCDC.Consola.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.Consola\obj\x86\Debug\UPC.IFCDC.Consola.csprojResolveAssemblyReference.cache

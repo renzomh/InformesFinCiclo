@@ -170,7 +170,6 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\bin\UPC.SSIA2013.WS.TranslatorLayer.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\bin\UPC.SSIA2013.BusinessEntity.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\bin\UPC.SSIA2013.DataAccess.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebService.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebService.pdb
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\bin\UPC.SSIA2013.WebService.dll
@@ -194,3 +193,4 @@ C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA20
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebService.csprojResolveAssemblyReference.cache
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebService.dll
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebService.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WebServices\obj\Debug\UPC.SSIA2013.WebService.csprojResolveAssemblyReference.cache

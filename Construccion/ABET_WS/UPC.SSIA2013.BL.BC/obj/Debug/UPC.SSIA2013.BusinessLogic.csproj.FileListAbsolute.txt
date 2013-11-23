@@ -84,7 +84,6 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataModel.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.DataAccess.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BusinessLogic.dll
@@ -100,3 +99,4 @@ C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA20
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.dll
 C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.BL.BC\obj\Debug\UPC.SSIA2013.BusinessLogic.csprojResolveAssemblyReference.cache

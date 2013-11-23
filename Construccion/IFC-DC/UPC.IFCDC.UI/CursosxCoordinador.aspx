@@ -3,15 +3,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
     <br />
 <div class="box-central">
-    <h1>CURSOS</h1>
-    <p>Ciclo: <asp:Label ID="texto_PeriodoActual" runat ="server" Text="TextoCiclo"></asp:Label></p>
-    <p>Fecha Límite: <asp:Label ID="texto_FechaLimite" Text="FechaLímite" runat ="server"></asp:Label></p>
+    <div class="highlight-celeste">Cursos</div>
+    <div class="contenido-highlight">
+    <p><b>Ciclo:</b> <asp:Label ID="texto_PeriodoActual" runat ="server" Text="TextoCiclo"></asp:Label></p>
+    <p><b>Fecha Límite:</b> <asp:Label ID="texto_FechaLimite" Text="FechaLímite" runat ="server"></asp:Label></p>
 
 <table class="TablaNested">
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdCursos" OnRowCommand="grdCursos_RowCommand" runat="server" Width="100%"
+            <asp:GridView ID="grdCursos" OnRowCommand="grdCursos_RowCommand" runat="server" Width="100%" CssClass="grd"
              CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" onselectedindexchanged="grdCursos_SelectedIndexChanged" 
                 >
              
@@ -38,5 +39,6 @@
     </tr>
     </tbody>
     </table>
+    </div>
 </div>
 </asp:Content>

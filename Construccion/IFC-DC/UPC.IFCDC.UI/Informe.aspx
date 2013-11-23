@@ -41,30 +41,26 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
-    <br />
 <div class="box-central">
-    <h1>INFORME DE FIN DE CICLO</h1>
-    <p>Ciclo: <asp:Label ID="texto_PeriodoActual" runat ="server" Text="TextoCiclo"></asp:Label></p>
-    <p>Fecha Límite: <asp:Label ID="texto_FechaLimite" Text="FechaLímite" runat ="server"></asp:Label></p>
-    <p>Curso: <asp:Label ID="texto_DescripcionCurso" runat="server" Text="TextoCurso" ></asp:Label></p>
+    
+    <ul class="tabs tabs1"><li onclick="change_view('#logros');" >Logros</li><li onclick="change_view('#accionesPrevias');" >Acciones Previas</li><li onclick="change_view('#hallazgos');" >Hallazgos</li><li onclick="change_view('#accionesMejora');" >Acciones de Mejora</li><li onclick="change_view('#comentario');" >Comentarios</li><li onclick="change_view('#antecedentes');">Antecedentes</li></ul>
+    <div class="highlight-celeste">Informe de Fin de Ciclo</div>
+    <div class="contenido-highlight">
+    <p><b>Ciclo:</b> <asp:Label ID="texto_PeriodoActual" runat ="server" Text="TextoCiclo"></asp:Label></p>
+    <p><b>Fecha Límite:</b> <asp:Label ID="texto_FechaLimite" Text="FechaLímite" runat ="server"></asp:Label></p>
+    <p><b>Curso:</b> <asp:Label ID="texto_DescripcionCurso" runat="server" Text="TextoCurso" ></asp:Label></p>
+    </div>
 </div>
-<ul class="tabs">
-    <li onclick="change_view('#logros');" >Logros</li>
-    <li onclick="change_view('#accionesPrevias');" >Acciones Previas</li>
-    <li onclick="change_view('#hallazgos');" >Hallazgos</li>
-    <li onclick="change_view('#accionesMejora');" >Acciones de Mejora</li>
-    <li onclick="change_view('#comentario');" >Comentarios</li>
-    <li onclick="change_view('#antecedentes');">Antecedentes</li>
- </ul>
+
 
 <!--ZONA DE LOGROS-->
 <div id="logros" class="box-central">
-    <h4>El Curso contribuye a alcanzar los siguientes Student Outcomes</h4>
+    <div class="highlight-celeste">El Curso contribuye a alcanzar los siguientes Student Outcomes</div>
     <table class="TablaNested">
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdOutcomes" runat="server" Width="100%"
+            <asp:GridView ID="grdOutcomes" runat="server" Width="100%" CssClass="grd"
              CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -80,8 +76,10 @@
     </tr>
     </tbody>
     </table>
-    <h4>El Curso tiene planteado el siguiente logro terminal</h4>
+    <div class="highlight-celeste">El Curso tiene planteado el siguiente logro terminal</div>
+    <div class="contenido-highlight">
     <asp:Label CssClass="disabled" Width="99%" ID="texto_LogroTerminal" Text="Logro terminal del curso" runat="server"></asp:Label>
+    </div>
 </div>
 
 <!--ZONA DE ACCIONES PREVIAS-->
@@ -90,7 +88,7 @@
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdAccionesPrevias" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"
+            <asp:GridView ID="grdAccionesPrevias" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd"
                 OnRowDataBound="grdvAccionesPrevias_RowDataBound" OnRowEditing="gvAccionesPrevias_RowEditing"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -125,7 +123,7 @@
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"
+            <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd"
                 OnRowCommand="grdHallazgos_RowCommand"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -176,7 +174,7 @@
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"
+            <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd"
                 OnRowCommand="grdAccionesMejora_RowCommand"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -217,29 +215,39 @@
 <!--ZONA DE COMENTARIOS-->
 <div id="comentario" class="box-central">
     <div class="sandbox">
-        <p>Desarrollo del Aprendizaje: </p>
+        <p class="highlight-celeste">Desarrollo del Aprendizaje: </p>
+         <div class="contenido-highlight">
         <div class="tooltip"  >?<div id="tp_apr" class="cont_tp">Se indica el nivel de avance logrado para las unidades de aprendizaje del curso</div></div>
         <asp:TextBox ID="txt_DesarrolloAprendizaje" CssClass="textComentarios" runat="server" TextMode="MultiLine"></asp:TextBox>
+     </div>
     </div>
     <div class="sandbox">
-        <p>Infraestructura:</p>
+        <p class="highlight-celeste">Infraestructura:</p>
+         <div class="contenido-highlight">
         <div class="tooltip"  >?<div id="tp_infr" class="cont_tp">Se describen los requerimientos de infraestructura del curso</div></div>
         <asp:TextBox ID="txt_Infraestructura" CssClass="textComentarios" runat="server" TextMode="MultiLine"></asp:TextBox>
         </div>
+        </div>
     <div class="sandbox">
-        <p>Alumnos:</p>
+        <p class="highlight-celeste">Alumnos:</p>
+        <div class="contenido-highlight">
         <div class="tooltip"  >?<div id="tp_alum" class="cont_tp">Se registra la apreciación del docente sobre el nivel de satisfacción de los alumnos con el curso</div></div>
         <asp:TextBox ID="txt_Alumnos" CssClass="textComentarios" runat="server" TextMode="MultiLine"></asp:TextBox>
+        </div>
      </div>
     <div class="sandbox">
-        <p>Apreciación del delegado del curso:</p>
+        <p class="highlight-celeste">Apreciación del delegado del curso:</p>
+        <div class="contenido-highlight">
         <div class="tooltip"  >?<div id="tp_del" class="cont_tp">Se registra la apreciación del docente sobre el desempeño del delegado del curso</div></div>
         <asp:TextBox ID="txt_Delegados" CssClass="textComentarios" runat="server" TextMode="MultiLine"></asp:TextBox>
+        </div>
     </div>
     <div class="sandbox">
-        <p>Comentarios de la encuesta académica:</p>
+        <p class="highlight-celeste">Comentarios de la encuesta académica:</p>
+        <div class="contenido-highlight">
         <div class="tooltip"  >?<div id="tp_enc" class="cont_tp">Se registra la apreciación del docente sobre el nivel de satisfacción de los alumnos con el curso tomando como base los resultados de la encuesta académica final del curso</div></div>
         <asp:TextBox ID="txt_EncuestaAcademica" CssClass="textComentarios" runat="server" TextMode="MultiLine"></asp:TextBox>
+        </div>
     </div>
     <br />
     <br />
@@ -251,7 +259,7 @@
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdInformes" OnRowCommand="grdInformes_RowCommand" runat="server" Width="100%"
+            <asp:GridView ID="grdInformes" OnRowCommand="grdInformes_RowCommand" runat="server" Width="100%" CssClass="grd"
              CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>

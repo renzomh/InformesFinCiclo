@@ -58,6 +58,6 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\bin\Debug\UPC.SSIA2013.WS.DataContract.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.WS.SC\obj\Debug\UPC.SSIA2013.WS.ServiceContract.csprojResolveAssemblyReference.cache

@@ -6,6 +6,6 @@ C:\Users\Renzo\Desktop\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\UPC.SSIA2013.Dat
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\bin\Debug\UPC.SSIA2013.DataModel.dll.config
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\bin\Debug\UPC.SSIA2013.DataModel.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\bin\Debug\UPC.SSIA2013.DataModel.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\UPC.SSIA2013.DataModel.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\UPC.SSIA2013.DataModel.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\UPC.SSIA2013.DataModel\obj\Debug\UPC.SSIA2013.DataModel.csprojResolveAssemblyReference.cache

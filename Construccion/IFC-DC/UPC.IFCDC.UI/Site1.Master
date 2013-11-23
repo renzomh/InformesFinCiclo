@@ -17,11 +17,10 @@
     <div id="header2">
         <img id="UPCImageLogo" src="Imagenes/logoUPC.png" />
             <div class="right">
-                <img class="user-photo" src="Imagenes/noImage.jpg" alt="user" /> 
-                &nbsp;
-                <asp:Label ID="texto_UsuarioRegistrado" Text="Usuario Registrado" runat="server" />
-                <br />
-                <a onclick="limpiarPestanias();" href="../Login.aspx" id="link_CerrarSesion">Cerrar Sesión</a>
+                <div class="rojoheader">Sistema de Informes de Fin de Ciclo </div> | <div class="azulheader">Bienvenido(a)</div>
+                <asp:Label ID="texto_UsuarioRegistrado" Text="Usuario Registrado" runat="server" CssClass="azulheader" />
+               
+                <a  class="bottomheader" onclick="limpiarPestanias();" href="../Login.aspx" id="link_CerrarSesion">Cerrar Sesión</a>
             </div>
     </div>
     <form id="form1" runat="server">
@@ -31,6 +30,10 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    <div id="footer" style=" width:1056px; margin: 0 auto; top: calc(100% - 415px);">
+        <div id="footerTexto01">Telf: 313-3333 | webmaster@upc.edu.pe | Prolongación Primavera 2390, Monterrico, Lima - Perú <br />Todos los derechos reservados</div>
+        <img id="UPCLogoBottom" src="Imagenes/logoUPCFooter.png" alt="UPCFOOTER" />
+    </div>
     
 </body>
 </html>

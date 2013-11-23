@@ -38,6 +38,6 @@ C:\Users\Renzo\Desktop\ABET_WS\ConsoleApplication1\obj\x86\Debug\ConsoleApplicat
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\ABET_WS\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
