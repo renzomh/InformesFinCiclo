@@ -58,6 +58,15 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.Label texto_LogroTerminal;
         
         /// <summary>
+        /// txt_AccionPreviaVacia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_AccionPreviaVacia;
+        
+        /// <summary>
         /// grdAccionesPrevias control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.GridView grdAccionesPrevias;
         
         /// <summary>
+        /// txt_HallazgosVacio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_HallazgosVacio;
+        
+        /// <summary>
         /// grdHallazgos control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace UPC.IFCDC.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdHallazgos;
+        
+        /// <summary>
+        /// txt_AccionesMejoraVacia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_AccionesMejoraVacia;
         
         /// <summary>
         /// grdAccionesdeMejora control.
@@ -128,6 +155,15 @@ namespace UPC.IFCDC.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_EncuestaAcademica;
+        
+        /// <summary>
+        /// txtAntecedentesVacio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtAntecedentesVacio;
         
         /// <summary>
         /// grdInformes control.

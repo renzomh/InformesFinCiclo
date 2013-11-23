@@ -9,6 +9,8 @@ using UPC.IFCDC.BC;
 using UPC.IFCDC.BE;
 using UPC.IFCDC.Utilitarios;
 
+using System.Web.Security;
+
 namespace UPC.IFCDC.UI
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -68,7 +70,14 @@ namespace UPC.IFCDC.UI
                         Session["PersonaId"] = personaDC.PersonaId;
                         Session["NombreCompletoPersona"] = personaDC.Apellidos + ", " + personaDC.Nombres;
                         Session["Periodo"] = objPeriodoDC;
-    
+                        Session["TipoPersona"] = personaDC.TipoPersona;
+
+                        Session.Add("NombreCompletoPersona", personaDC.Apellidos + ", " + personaDC.Nombres);
+                        Session.Add("TipoPersona", personaDC.TipoPersona);
+
+                        FormsAuthentication.RedirectFromLoginPage(personaDC.PersonaId, false); 
+
+                        /*
                         switch (personaDC.TipoPersona)
                         {
                             //ADMINISTRATIVO
@@ -86,7 +95,7 @@ namespace UPC.IFCDC.UI
                                 break;
 
                             default: break;
-                        }
+                        }*/
                     }
                     else
                     {

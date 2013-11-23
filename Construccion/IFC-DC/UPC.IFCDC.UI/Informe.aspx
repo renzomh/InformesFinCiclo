@@ -86,6 +86,9 @@
 <div id="accionesPrevias" class="box-central">
     <table class="TablaNested">
     <tbody>
+        <tr align="center">
+            <asp:Label ID="txt_AccionPreviaVacia" Text="No existen acciones previas registradas" runat="server" Visible="false"></asp:Label>
+        </tr>
         <tr>
         <td colspan="2" align="center" >
             <asp:GridView ID="grdAccionesPrevias" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd"
@@ -121,6 +124,9 @@
 <div id="hallazgos" class="box-central">
     <table class="TablaNested">
     <tbody>
+        <tr align="center">
+            <asp:Label ID="txt_HallazgosVacio" Text="No existen hallazgos registrados" runat="server" Visible="false"></asp:Label>
+        </tr>
         <tr>
         <td colspan="2" align="center" >
             <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd"
@@ -153,7 +159,7 @@
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEliminarHallazgo" runat="server" CommandName="cmdEliminarHallazgo" CommandArgument='<%#Eval("HallazgoId")%>'>
                                 <img src="Imagenes/delete.png" width="16" height="16" alt="deletehallazgo" border="0"
-                                    onclick="if(confirm('Si elimina el Hallazgos, tambíen se eliminarán las Acciones de Mejora correspondientes. ¿Está Ud. seguro que desea eliminar estes regitro?')){return true;} else{return false;}"/>
+                                    onclick="if(confirm('Si elimina el Hallazgo, tambíen se eliminarán las Acciones de Mejora correspondientes. ¿Está Ud. seguro que desea eliminar estes registro?')){return true;} else{return false;}"/>
                             </asp:LinkButton>                        
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -172,6 +178,9 @@
 <div id="accionesMejora" class="box-central">
     <table class="TablaNested">
     <tbody>
+        <tr align="center">
+            <asp:Label ID="txt_AccionesMejoraVacia" Text="No existen acciones de mejora registradas" runat="server" Visible="false"></asp:Label>
+        </tr>
         <tr>
         <td colspan="2" align="center" >
             <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" CssClass="grd"
@@ -257,6 +266,9 @@
  <div id="antecedentes" class="box-central">
     <table class="TablaNested">
     <tbody>
+        <tr align="center">
+            <asp:Label ID="txtAntecedentesVacio" Text="No existen Informes de Fin de ciclo del curso registrados." runat="server" Visible="false"></asp:Label>
+        </tr>
         <tr>
         <td colspan="2" align="center" >
             <asp:GridView ID="grdInformes" OnRowCommand="grdInformes_RowCommand" runat="server" Width="100%" CssClass="grd"
@@ -316,8 +328,8 @@
             <br />
             <asp:TextBox ID="popup_textoDescripcionAccionMejoraRegistrar" Width="400px" Height="200px" runat="server" TextMode="MultiLine"></asp:TextBox>
             <br />
-            <asp:Button ID="popup_buttonRegistrarAccionMejora" runat="server" Text="Registrar" OnClick="popup_buttonRegistrarAccioMejora_Click"/>
-            <button type="button" onclick="close_popup('#pAccionesMejoraRegistrar');">Cancelar</button>
+            <asp:Button ID="popup_buttonRegistrarAccionMejora" runat="server" CssClass="btn-guardar" OnClick="popup_buttonRegistrarAccioMejora_Click"/>
+            <button type="button" onclick="close_popup('#pAccionesMejoraRegistrar');" class="btn-cancelar"></button>
         </div>
     </div>
     
@@ -331,15 +343,15 @@
             <asp:TextBox Enabled="false" ID="pCodigoHallazgoEditar" Text="SI2014-2012-02" runat="server" />
             <br />
             Ciclo:
-            <asp:DropDownList ID="combo_AccionMejoraEditar" runat="server">
+            <asp:DropDownList ID="combo_AccionMejoraEditar" runat="server" Enabled="false">
             </asp:DropDownList>
             <br />
             Descripcion:
             <br />
             <asp:TextBox ID="popup_textoDescripcionAccionMejoraEditar" Width="400px" Height="200px" runat="server" TextMode="MultiLine"></asp:TextBox>
             <br />
-            <asp:Button ID="popup_buttonEditarAccionMejora" runat="server" Text="Editar" OnClick="popup_buttonEditarAccioMejora_Click"/>
-            <button type="button" onclick="close_popup('#pAccionesMejoraEditar');">Cancelar</button>
+            <asp:Button ID="popup_buttonEditarAccionMejora" runat="server" CssClass="btn-guardar" OnClick="popup_buttonEditarAccioMejora_Click"/>
+            <button type="button" onclick="close_popup('#pAccionesMejoraEditar');" class="btn-cancelar"></button>
         </div>
     </div>
 
@@ -351,8 +363,8 @@
             <asp:TextBox ID="popup_textoDescripcionHallazgoRegistrar" Width="400px" Height="100px" runat="server" CssClass="CajaTextoNormal" TextMode="MultiLine"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="popup_buttonRegistrarHallazgo" runat="server" Text="Registrar" OnClick="popup_buttonRegistrarHallazgo_Click"/>
-            <button type="button" onclick="close_popup('#pHallazgoRegistrar');">Cancelar</button>
+            <asp:Button ID="popup_buttonRegistrarHallazgo" runat="server" CssClass="btn-guardar" OnClick="popup_buttonRegistrarHallazgo_Click"/>
+            <button type="button" onclick="close_popup('#pHallazgoRegistrar');" class="btn-cancelar"></button>
         </div>
     </div>
 
@@ -368,8 +380,8 @@
             <br />
             
             <br />
-            <asp:Button ID="popup_buttonEditarHallazgo" runat="server" Text="Editar" OnClick="popup_buttonEditarHallazgo_Click"/>
-            <button type="button" onclick="close_popup('#pHallazgoEditar');">Cancelar</button>
+            <asp:Button ID="popup_buttonEditarHallazgo" runat="server" CssClass="btn-guardar" OnClick="popup_buttonEditarHallazgo_Click"/>
+            <button type="button" onclick="close_popup('#pHallazgoEditar');" class="btn-cancelar"></button>
         </div>
     </div>
 

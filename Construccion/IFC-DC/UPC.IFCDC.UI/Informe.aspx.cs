@@ -13,6 +13,8 @@ using UPC.IFCDC.Utilitarios;
 using System.Text;
 using System.Data;
 
+using System.Web.Security;
+
 namespace UPC.IFCDC.UI
 {
     public partial class WebForm2 : System.Web.UI.Page
@@ -25,6 +27,15 @@ namespace UPC.IFCDC.UI
         PeriodoCollectionBE listaPeriodosFiltrada = null;
 
         AccionMejoraWS.AccionMejoraCollectionDC listaAccionesPrevias = null;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(Session["TipoPersona"].ToString()) != 2)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect("Default.aspx");
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -121,6 +132,17 @@ namespace UPC.IFCDC.UI
 
                 grdInformes.DataSource = client.WSListarInformeFinCicloReporte(objCursoxProfesorDC.CursoId, 0, sEstado).LstInformeFinCicloReporte;
                 grdInformes.DataBind();
+
+                if (client.WSListarInformeFinCicloReporte(objCursoxProfesorDC.CursoId, 0, sEstado).LstInformeFinCicloReporte.Count() <= 0)
+                {
+                    grdInformes.Visible = false;
+                    txtAntecedentesVacio.Visible = true;
+                }
+                else
+                {
+                    grdInformes.Visible = true;
+                    txtAntecedentesVacio.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -141,6 +163,17 @@ namespace UPC.IFCDC.UI
                 hallazgoClient = new HallazgoWS.HallazgoClient();
                 grdHallazgos.DataSource = hallazgoClient.WSListarHallazgosxInformeFinCiclo(objInformeDC.InformeFinCicloId).LstHallazgos;
                 grdHallazgos.DataBind();
+
+                if (hallazgoClient.WSListarHallazgosxInformeFinCiclo(objInformeDC.InformeFinCicloId).LstHallazgos.Count() <= 0)
+                {
+                    grdHallazgos.Visible = false;
+                    txt_HallazgosVacio.Visible = true;
+                }
+                else
+                {
+                    grdHallazgos.Visible = true;
+                    txt_HallazgosVacio.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -181,6 +214,17 @@ namespace UPC.IFCDC.UI
                 accionMejoraClient = new AccionMejoraWS.AccionMejoraClient();
                 grdAccionesdeMejora.DataSource = accionMejoraClient.WSListarAccionesMejoraxInformeFinCiclo(objInformeDC.InformeFinCicloId).LstAccionesMejora;
                 grdAccionesdeMejora.DataBind();
+
+                if (accionMejoraClient.WSListarAccionesMejoraxInformeFinCiclo(objInformeDC.InformeFinCicloId).LstAccionesMejora.Count() <= 0)
+                {
+                    grdAccionesdeMejora.Visible = false;
+                    txt_AccionesMejoraVacia.Visible = true;
+                }
+                else
+                {
+                    grdAccionesdeMejora.Visible = true;
+                    txt_AccionesMejoraVacia.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -202,6 +246,17 @@ namespace UPC.IFCDC.UI
                 listaAccionesPrevias = accionPreviaClient.WSListarAccionesMejoraPrevias(objInformeDC.CursoId, objInformeDC.PeriodoId);
                 grdAccionesPrevias.DataSource = listaAccionesPrevias.LstAccionesMejora;
                 grdAccionesPrevias.DataBind();
+
+                if (listaAccionesPrevias.LstAccionesMejora.Count() <= 0)
+                {
+                    grdAccionesPrevias.Visible = false;
+                    txt_AccionPreviaVacia.Visible = true;
+                }
+                else
+                {
+                    grdAccionesPrevias.Visible = true;
+                    txt_AccionPreviaVacia.Visible = false;
+                }
             }
             catch (Exception ex)
             {

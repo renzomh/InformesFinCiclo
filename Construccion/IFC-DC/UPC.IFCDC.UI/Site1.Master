@@ -13,17 +13,19 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body> 
+<body>
+    <form id="form1" runat="server">
     <div id="header2">
         <img id="UPCImageLogo" src="Imagenes/logoUPC.png" />
             <div class="right">
-                <div class="rojoheader">Sistema de Informes de Fin de Ciclo </div> | <div class="azulheader">Bienvenido(a)</div>
+                <div class="rojoheader">Gestión de Informes de Fin de Ciclo </div> | <div class="azulheader">Bienvenido(a)</div>
                 <asp:Label ID="texto_UsuarioRegistrado" Text="Usuario Registrado" runat="server" CssClass="azulheader" />
-               
-                <a  class="bottomheader" onclick="limpiarPestanias();" href="../Login.aspx" id="link_CerrarSesion">Cerrar Sesión</a>
+                    <asp:LinkButton ID="link_CerrarSesion" Text="Cerrar Sesión" CssClass="bottomheader"
+                        OnClientClick="limpiarPestanias();" OnClick="lnkLogOff_Click" runat="server"></asp:LinkButton>
+                <!--<a  class="bottomheader" onclick="limpiarPestanias();" href="../Login.aspx" id="link_CerrarSesion">Cerrar Sesión</a>-->
             </div>
     </div>
-    <form id="form1" runat="server">
+    
     <div>
         <asp:ContentPlaceHolder ID="Contenido" runat="server">
         

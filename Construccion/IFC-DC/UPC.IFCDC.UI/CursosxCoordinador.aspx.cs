@@ -9,6 +9,8 @@ using UPC.IFCDC.BE;
 using UPC.IFCDC.BC;
 using UPC.IFCDC.Utilitarios;
 
+using System.Web.Security;
+
 namespace UPC.IFCDC.UI
 {
     public partial class WebForm3 : System.Web.UI.Page
@@ -21,7 +23,14 @@ namespace UPC.IFCDC.UI
         CursoWS.CursoClient cursoClient = null;
         CursoWS.CursoxProfesorCollectionDC objCursoCollectionDC = null;
 
-
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(Session["TipoPersona"].ToString()) != 2)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect("Default.aspx");
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -31,6 +31,15 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// texto_UsuarioRegistrado control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.Label texto_UsuarioRegistrado;
         
         /// <summary>
-        /// form1 control.
+        /// link_CerrarSesion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton link_CerrarSesion;
         
         /// <summary>
         /// Contenido control.

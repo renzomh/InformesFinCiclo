@@ -10,6 +10,7 @@ using UPC.IFCDC.BC;
 using UPC.IFCDC.Utilitarios;
 
 using System.Data;
+using System.Web.Security;
 
 namespace UPC.IFCDC.UI
 {
@@ -33,6 +34,15 @@ namespace UPC.IFCDC.UI
 
         HallazgoWS.HallazgoReporteCollectionDC listaHallazgos = null;
         AccionMejoraWS.AccionMejoraReporteCollectionDC listaAcciones = null;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(Session["TipoPersona"].ToString()) != 1)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect("Default.aspx");
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

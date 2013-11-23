@@ -13,3 +13,7 @@ C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.dll
 C:\Users\Miguel\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\bin\Debug\UPC.IFCDC.BE.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\bin\Debug\UPC.IFCDC.BE.pdb
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.dll
+C:\Users\Renzo\Documents\GitHub\InformesFinCiclo\Construccion\IFC-DC\UPC.IFCDC.BE\obj\Debug\UPC.IFCDC.BE.pdb
